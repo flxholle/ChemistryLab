@@ -65,6 +65,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        android:visibility="gone"
         android:gravity="center_vertical"
         android:weightSum="10"
         android:clickable="true"
