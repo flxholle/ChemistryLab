@@ -8,9 +8,9 @@
     <dimen name="medium_font">20sp</dimen>
     <dimen name="small_font">15sp</dimen>
     <dimen name="substance_font">14sp</dimen>
-    <dimen name="equipment_font">10sp</dimen>
+    <dimen name="equipment_font">12sp</dimen>
     <dimen name="tip_font">13sp</dimen>
-    <dimen name="devider_width">1dp</dimen>
+    <dimen name="divider_width">1dp</dimen>
     <dimen name="list_hint_height">80dp</dimen>
     <dimen name="item_hint_height">20dp</dimen>
     <dimen name="bound">35dp</dimen>
