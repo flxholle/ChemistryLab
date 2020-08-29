@@ -6,12 +6,6 @@
     <string name="menu_2">Solution</string>
     <string name="menu_3">Solid</string>
     <string name="menu_4">Gas</string>
-    <string name="menu_2_1">Water</string>
-    <string name="menu_2_2">Acid</string>
-    <string name="menu_2_3">Basic</string>
-    <string name="menu_2_4">Salt</string>
-    <string name="menu_3_1">Metal</string>
-    <string name="menu_3_2">Nonmetal</string>
     <string name="button_clear">Cleaning</string>
     <string name="button_remove">Delete</string>
     <string name="search_hint">Search</string>

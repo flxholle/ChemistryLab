@@ -4,12 +4,6 @@
     <string name="menu_2">Dung Dịch</string>
     <string name="menu_3">Chất Rắn</string>
     <string name="menu_4">Chất Khí</string>
-    <string name="menu_2_1">Nước</string>
-    <string name="menu_2_2">Axit</string>
-    <string name="menu_2_3">Bazơ</string>
-    <string name="menu_2_4">Muối</string>
-    <string name="menu_3_1">Kim Loại</string>
-    <string name="menu_3_2">Phi Kim</string>
     <string name="button_clear">Làm Sạch</string>
     <string name="button_remove">Xoá</string>
     <string name="search_hint">Tìm kiếm</string>
