@@ -27,9 +27,10 @@ public class ElementToolTip{
     }
 
     private void initViews(Context context) {
+        int size = 400;
         rootView = View.inflate(context, R.layout.item_element, null);
-        rootView.setLayoutParams(new LinearLayout.LayoutParams(500, 500));
-        rootView.measure(500, 500);
+        rootView.setLayoutParams(new LinearLayout.LayoutParams(size, size));
+        rootView.measure(size, size);
         textAtomicMass  = rootView.findViewById(R.id.txt_atomic_mass);
         textAtomicNumber  = rootView.findViewById(R.id.txt_atomic_number);
         textName  = rootView.findViewById(R.id.txt_name);

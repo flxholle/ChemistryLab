@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="menu_1">Dụng Cụ Thí Nhiệm</string>
-    <string name="menu_2">Dung Dịch</string>
-    <string name="menu_3">Chất Rắn</string>
-    <string name="menu_4">Chất Khí</string>
+    <string name="tools">Dụng Cụ Thí Nhiệm</string>
+    <string name="liquid">Dung Dịch</string>
+    <string name="solid">Chất Rắn</string>
+    <string name="gas">Chất Khí</string>
     <string name="button_clear">Làm Sạch</string>
     <string name="button_remove">Xoá</string>
     <string name="search_hint">Tìm kiếm</string>
@@ -27,4 +27,15 @@
     <string name="fire">Lửa</string>
     <string name="tripod">Kiềng</string>
     <string name="alcohol_burner">Đèn Cồn</string>
+    <string name="chapter_one">Khái Niệm Và Các Định Luật Cơ Bản</string>
+    <string name="chapter_two">Cấu Tạo Nguyên Tố và Hệ Thống Tuần Hoàn</string>
+    <string name="chapter_three">Cấu Tạo Phân Tử và Liên Kết Hoá Học</string>
+    <string name="chapter_four">Nhiệt Động Hoá Học</string>
+    <string name="chapter_five">Động Hoá Học</string>
+    <string name="chapter_six">Cân Bằng Hoá Học</string>
+    <string name="chapter_seven">Dung Dịch</string>
+    <string name="chapter_eight">Dung Dịch Điện Li</string>
+    <string name="chapter_nine">Hoá Keo</string>
+    <string name="chapter_ten">Diện Hoá Học</string>
+    <string name="chapter_eleven">Phục Lục</string>
 </resources>
