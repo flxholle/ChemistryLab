@@ -1,14 +1,12 @@
 package com.chemistry.admin.chemistrylab.customview;
 
 import android.content.Context;
-import android.text.SpannableString;
 import android.util.AttributeSet;
-import android.widget.TextView;
 
 /**
  * Created by Admin on 8/18/2016.
  */
-public class ChemicalSymbolView extends android.support.v7.widget.AppCompatTextView {
+public class ChemicalSymbolView extends androidx.appcompat.widget.AppCompatTextView {
 
     public ChemicalSymbolView(Context context) {
         super(context);
