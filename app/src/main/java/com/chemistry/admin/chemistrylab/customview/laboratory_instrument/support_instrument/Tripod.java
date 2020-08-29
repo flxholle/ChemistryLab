@@ -21,7 +21,7 @@ import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.holder_
  */
 public class Tripod extends LaboratorySupportInstrument implements View.OnDragListener {
     private static final String TAG = "Tripod";
-    public static final String NAME = "Kiềng";
+    public final String NAME = getContext().getString(R.string.tripod);
     private static Bitmap tripodImage;
     private AlcoholBurner alcoholBurner;
     private LaboratoryHolderInstrument holder;

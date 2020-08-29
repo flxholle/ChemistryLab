@@ -5,6 +5,7 @@ import android.graphics.Path;
 import android.graphics.Point;
 import android.text.SpannableString;
 
+import com.chemistry.admin.chemistrylab.R;
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.LaboratoryInstrument;
 import com.chemistry.admin.chemistrylab.database.DatabaseManager;
 
@@ -17,7 +18,7 @@ public class ConicalFlask extends LaboratoryHolderInstrument {
     public static final int CONICAL_FLASK_STANDARD_WIDTH = CONTAINED_SPACE_WIDTH + 2 * LaboratoryInstrument.STROKE_WIDTH;
     public static final int CONICAL_FLASK_STANDARD_HEIGHT = CONTAINED_SPACE_HEIGHT + 2 * LaboratoryInstrument.STROKE_WIDTH;
     private static final String TAG = "ConicalFlask";
-    public static final String NAME = "Bình Tam Giác";
+    public final String NAME = getContext().getString(R.string.conical_flask);
     private static Point[] arrPoint;
     private static Path instrumentPath;
 

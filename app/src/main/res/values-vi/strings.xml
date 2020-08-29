@@ -17,4 +17,14 @@
     <string name="theme">Chủ Đề</string>
     <string name="periodic_table_of_chemical_elements">BẢNG TUẦN HOÀN CÁC NGUYÊN TỐ HOÁ HỌC</string>
     <string name="density">Mật độ (g / ml)</string>
+    <string name="breaker">Cốc Trụ</string>
+    <string name="conical_flask">Bình Tam Giác</string>
+    <string name="flask">Bình Cầu</string>
+    <string name="gas_bottle">Bình Chứa Khí</string>
+    <string name="jar">Lọ Chứa Hoá Chất</string>
+    <string name="test_tube">Ống Nghiệm</string>
+    <string name="trough">Chậu</string>
+    <string name="fire">Lửa</string>
+    <string name="tripod">Kiềng</string>
+    <string name="alcohol_burner">Đèn Cồn</string>
 </resources>

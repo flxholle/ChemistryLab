@@ -6,6 +6,7 @@ import android.graphics.Point;
 import android.graphics.RectF;
 import android.text.SpannableString;
 
+import com.chemistry.admin.chemistrylab.R;
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.LaboratoryInstrument;
 import com.chemistry.admin.chemistrylab.database.DatabaseManager;
 
@@ -18,7 +19,7 @@ public class Trough extends LaboratoryHolderInstrument {
     public static final int TROUGH_STANDARD_WIDTH = CONTAINED_SPACE_WIDTH + 2 * LaboratoryInstrument.STROKE_WIDTH;
     public static final int TROUGH_STANDARD_HEIGHT = CONTAINED_SPACE_HEIGHT + 2 * LaboratoryInstrument.STROKE_WIDTH;
     private static final String TAG = "Trough";
-    public static final String NAME = "Chậu";
+    public final String NAME = getContext().getString(R.string.trough);
     private static Point[] arrPoint;
     private static Path instrumentPath;
 

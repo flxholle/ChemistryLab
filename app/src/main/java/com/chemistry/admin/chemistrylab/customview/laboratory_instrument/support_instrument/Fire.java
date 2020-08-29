@@ -17,7 +17,7 @@ import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.Laborat
 
 public class Fire extends LaboratoryInstrument {
     private static final String TAG = "Fire";
-    public static final String NAME = "Lửa";
+    public final String NAME = getContext().getString(R.string.fire);
 
     private static Bitmap[] fireState;
     private int fireStateIndex;

@@ -6,6 +6,7 @@ import android.graphics.Point;
 import android.graphics.RectF;
 import android.text.SpannableString;
 
+import com.chemistry.admin.chemistrylab.R;
 import com.chemistry.admin.chemistrylab.database.DatabaseManager;
 
 /**
@@ -17,7 +18,7 @@ public class TestTube extends LaboratoryHolderInstrument {
     public static final int TEST_TUBE_STANDARD_WIDTH = CONTAINED_SPACE_WIDTH + 2 * STROKE_WIDTH;
     public static final int TEST_TUBE_STANDARD_HEIGHT = CONTAINED_SPACE_HEIGHT + 2 * STROKE_WIDTH;
     private static final String TAG = "TestTube";
-    public static final String NAME = "Ống Nghiệm";
+    public final String NAME = getContext().getString(R.string.test_tube);
     private static Point[] arrPoint;
     private static Path instrumentPath;
 

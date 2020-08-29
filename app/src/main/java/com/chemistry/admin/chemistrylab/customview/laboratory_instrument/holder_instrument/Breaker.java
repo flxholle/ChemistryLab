@@ -6,6 +6,7 @@ import android.graphics.Point;
 import android.graphics.RectF;
 import android.text.SpannableString;
 
+import com.chemistry.admin.chemistrylab.R;
 import com.chemistry.admin.chemistrylab.chemical.liquid.Liquid;
 import com.chemistry.admin.chemistrylab.database.DatabaseManager;
 
@@ -18,7 +19,7 @@ public class Breaker extends LaboratoryHolderInstrument {
     public static final int BREAKER_STANDARD_WIDTH = CONTAINED_SPACE_WIDTH + 10 + 2 * STROKE_WIDTH;
     public static final int BREAKER_STANDARD_HEIGHT = CONTAINED_SPACE_HEIGHT + 2 * STROKE_WIDTH;
     private static final String TAG = "Breaker";
-    public static final String NAME = "Cốc Trụ";
+    public final String NAME = getContext().getString(R.string.breaker);
     private static Point[] arrPoint;
     private static Path instrumentPath;
 

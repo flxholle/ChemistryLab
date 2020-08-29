@@ -6,6 +6,7 @@ import android.graphics.Point;
 import android.graphics.RectF;
 import android.text.SpannableString;
 
+import com.chemistry.admin.chemistrylab.R;
 import com.chemistry.admin.chemistrylab.chemical.solid.Solid;
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.LaboratoryInstrument;
 import com.chemistry.admin.chemistrylab.database.DatabaseManager;
@@ -19,7 +20,7 @@ public class Jar extends LaboratoryHolderInstrument {
     public static final int JAR_STANDARD_WIDTH = CONTAINED_SPACE_WIDTH + 2 * LaboratoryInstrument.STROKE_WIDTH;
     public static final int JAR_STANDARD_HEIGHT = CONTAINED_SPACE_HEIGHT + 2 * LaboratoryInstrument.STROKE_WIDTH;
     private static final String TAG = "Jar";
-    public static final String NAME = "Lọ Chứa Hoá Chất";
+    public final String NAME = getContext().getString(R.string.jar);
     private static Point[] arrPoint;
     private static Path instrumentPath;
 

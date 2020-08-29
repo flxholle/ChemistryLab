@@ -16,7 +16,7 @@ import com.chemistry.admin.chemistrylab.observer.OnBoilListener;
  * Created by Admin on 9/8/2016.
  */
 public class AlcoholBurner extends LaboratoryInstrument {
-    public static final String NAME = "Đèn Cồn";
+    public final String NAME = getContext().getString(R.string.alcohol_burner);
     private static final String TAG = "Burner";
     private static int flameImageWidth;
     private static Bitmap burnerOpenedImage;

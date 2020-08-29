@@ -8,6 +8,7 @@ import android.graphics.Point;
 import android.graphics.RectF;
 import android.text.SpannableString;
 
+import com.chemistry.admin.chemistrylab.R;
 import com.chemistry.admin.chemistrylab.chemical.BaseSubstanceManager;
 import com.chemistry.admin.chemistrylab.chemical.gas.Gas;
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.LaboratoryInstrument;
@@ -22,7 +23,7 @@ public class GasBottle extends LaboratoryHolderInstrument {
     public static final int GAS_BOTTLE_STANDARD_WIDTH = CONTAINED_SPACE_WIDTH + 2 * LaboratoryInstrument.STROKE_WIDTH;
     public static final int GAS_BOTTLE_STANDARD_HEIGHT = CONTAINED_SPACE_HEIGHT + 10 + 2 * LaboratoryInstrument.STROKE_WIDTH;
     private static final String TAG = "GasBottle";
-    public static final String NAME = "Bình Chứa Khí";
+    public final String NAME = getContext().getString(R.string.gas_bottle);
     private static Point[] arrPoint;
     private static Path instrumentPath;
 
