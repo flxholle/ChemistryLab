@@ -12,7 +12,6 @@ import com.chemistry.admin.chemistrylab.chemical.BaseSubstanceManager;
 import com.chemistry.admin.chemistrylab.chemical.gas.Gas;
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.LaboratoryInstrument;
 import com.chemistry.admin.chemistrylab.database.DatabaseManager;
-import com.chemistry.admin.chemistrylab.util.PointAnalyzer;
 
 /**
  * Created by Admin on 8/23/2016.
@@ -24,7 +23,7 @@ public class GasBottle extends LaboratoryHolderInstrument {
     public static final int GAS_BOTTLE_STANDARD_HEIGHT = CONTAINED_SPACE_HEIGHT + 10 + 2 * LaboratoryInstrument.STROKE_WIDTH;
     private static final String TAG = "GasBottle";
     public static final String NAME = "Bình Chứa Khí";
-    private static Point arrPoint[];
+    private static Point[] arrPoint;
     private static Path instrumentPath;
 
     public GasBottle(Context context, int widthView, int heightView) {

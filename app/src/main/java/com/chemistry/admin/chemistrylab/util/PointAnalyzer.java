@@ -20,7 +20,7 @@ public class PointAnalyzer {
         int length = Math.round(m.getLength());
         Log.i(TAG, "length: " + length);
         int distance = 0;
-        float endPoint[] = new float[2];
+        float[] endPoint = new float[2];
         float yStartPoint = -1.0f;
 
         while (distance <= length) {
@@ -38,7 +38,7 @@ public class PointAnalyzer {
 //
         Log.i(TAG, "-------------------------------------------");
         Log.i(TAG, "size: " + listPoint.size());
-        return listPoint.toArray(new Point[listPoint.size()]);
+        return listPoint.toArray(new Point[0]);
     }
 
     public static Point[] analyzePointHorizontal(Path path) {
@@ -46,7 +46,7 @@ public class PointAnalyzer {
         PathMeasure m = new PathMeasure(path, false);
         int length = Math.round(m.getLength());
         int distance = 0;
-        float endPoint[] = new float[2];
+        float[] endPoint = new float[2];
         float xStartPoint = -1.0f;
 
         while (distance <= length) {
@@ -67,6 +67,6 @@ public class PointAnalyzer {
         }
         Log.i(TAG, "-------------------------------------------");
         Log.i(TAG, "size: " + listPoint.size());
-        return listPoint.toArray(new Point[listPoint.size()]);
+        return listPoint.toArray(new Point[0]);
     }
 }

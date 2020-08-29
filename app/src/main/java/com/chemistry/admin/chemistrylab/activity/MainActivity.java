@@ -42,7 +42,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private RelativeLayout mainLayout;
     private RelativeLayout menuLayout;
     private LinearLayout layoutMenuButton;
-    private Button buttonMenu, buttonLaboratory, buttonSearch, buttonDocument, buttonSettings;
+    private Button buttonMenu;
+    private Button buttonLaboratory;
+    private Button buttonSearch;
     private ImageView removeArea;
 
     private LaboratoryFragment laboratoryFragment;
@@ -71,16 +73,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initViews() {
         DatabaseManager.getInstance(this);//Copy data to database
-        buttonMenu = (Button) findViewById(R.id.btn_menu);
+        buttonMenu = findViewById(R.id.btn_menu);
         buttonMenu.setOnClickListener(this);
 
-        layoutMenuButton = (LinearLayout) findViewById(R.id.ln_button_menu);
+        layoutMenuButton = findViewById(R.id.ln_button_menu);
 
-        mainLayout = (RelativeLayout) findViewById(R.id.rl_main);
+        mainLayout = findViewById(R.id.rl_main);
         mainLayout.setOnDragListener(this);
         mainLayout.setOnClickListener(this);
 
-        menuLayout = (RelativeLayout) findViewById(R.id.rl_menu);
+        menuLayout = findViewById(R.id.rl_menu);
 
         final ViewTreeObserver viewTreeObserver = mainLayout.getViewTreeObserver();
         viewTreeObserver.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -91,18 +93,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 mainLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
             }
         });
-        equationsView = (TextView) findViewById(R.id.txt_equation);
+        equationsView = findViewById(R.id.txt_equation);
 
-        buttonLaboratory = (Button) findViewById(R.id.btn_laboratory);
-        buttonSearch = (Button) findViewById(R.id.btn_search);
-        buttonDocument = (Button) findViewById(R.id.btn_document);
-        buttonSettings = (Button) findViewById(R.id.btn_settings);
+        buttonLaboratory = findViewById(R.id.btn_laboratory);
+        buttonSearch = findViewById(R.id.btn_search);
+        Button buttonDocument = findViewById(R.id.btn_document);
+        Button buttonSettings = findViewById(R.id.btn_settings);
         buttonLaboratory.setOnClickListener(this);
         buttonSearch.setOnClickListener(this);
         buttonDocument.setOnClickListener(this);
         buttonSettings.setOnClickListener(this);
 
-        removeArea = (ImageView) findViewById(R.id.img_remove);
+        removeArea = findViewById(R.id.img_remove);
         removeArea.setOnDragListener(this);
 
         createItemRemovingAnimation();
@@ -349,7 +351,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public boolean onDrag(View view, DragEvent dragEvent) {
         switch (dragEvent.getAction()) {
-            case DragEvent.ACTION_DRAG_STARTED: {
+            case DragEvent.ACTION_DRAG_STARTED:
+
+            case DragEvent.ACTION_DRAG_ENDED:
+
+            case DragEvent.ACTION_DRAG_LOCATION: {
 
             }
             break;
@@ -359,11 +365,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (view.getId() == R.id.img_remove) {
                     removeArea.startAnimation(AnimationUtils.loadAnimation(this, R.anim.bubble_animation));
                 }
-            }
-            break;
-
-            case DragEvent.ACTION_DRAG_LOCATION: {
-
             }
             break;
 
@@ -377,11 +378,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case DragEvent.ACTION_DROP: {
                 checkViewTakeActionDrop(view, dragEvent);
-            }
-            break;
-
-            case DragEvent.ACTION_DRAG_ENDED: {
-
             }
             break;
         }

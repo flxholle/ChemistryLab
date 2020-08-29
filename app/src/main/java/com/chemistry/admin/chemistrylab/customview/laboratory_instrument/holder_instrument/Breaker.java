@@ -19,7 +19,7 @@ public class Breaker extends LaboratoryHolderInstrument {
     public static final int BREAKER_STANDARD_HEIGHT = CONTAINED_SPACE_HEIGHT + 2 * STROKE_WIDTH;
     private static final String TAG = "Breaker";
     public static final String NAME = "Cốc Trụ";
-    private static Point arrPoint[];
+    private static Point[] arrPoint;
     private static Path instrumentPath;
 
     public Breaker(Context context, int widthView, int heightView) {

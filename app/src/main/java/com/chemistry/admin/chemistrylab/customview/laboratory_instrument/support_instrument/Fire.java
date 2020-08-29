@@ -19,7 +19,7 @@ public class Fire extends LaboratoryInstrument {
     private static final String TAG = "Fire";
     public static final String NAME = "Lửa";
 
-    private static Bitmap fireState[];
+    private static Bitmap[] fireState;
     private int fireStateIndex;
     private int i;
 

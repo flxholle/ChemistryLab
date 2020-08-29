@@ -14,13 +14,12 @@ import com.joanzapata.pdfview.PDFView;
  */
 
 public class LectureContentViewFragment extends Fragment {
-    private PDFView pdfView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.lecture_content_view_fragment, container, false);
         Bundle receiverBundle = getArguments();
-        pdfView = (PDFView) rootView.findViewById(R.id.pdf_view);
+        PDFView pdfView = rootView.findViewById(R.id.pdf_view);
         pdfView.fromAsset(receiverBundle.getString(LectureFragment.KEY_PDF_PATH))
                 .defaultPage(1)
                 .showMinimap(false)

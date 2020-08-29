@@ -12,7 +12,7 @@ public class SparkAnimation {
     public static final int NUMBER_OF_PARTICLES = 50;
     public static final int PARTICLE_LIVE_TIME = 1500;
     public static final int PARTICLE_DRAWABLE_ID = R.mipmap.ic_spark;
-    private LaboratoryHolderInstrument holder;
+    private final LaboratoryHolderInstrument holder;
 
     public SparkAnimation(LaboratoryHolderInstrument holder) {
         this.holder = holder;

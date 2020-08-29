@@ -15,13 +15,13 @@ import java.io.Serializable;
  */
 public abstract class Substance implements Serializable {
     private static final String TAG = "Substance";
-    protected String name;
-    protected String symbol;
-    protected String state;
+    protected final String name;
+    protected final String symbol;
+    protected final String state;
     protected int color;
-    protected String colorHex;
-    protected double M;
-    protected double density;
+    protected final String colorHex;
+    protected final double M;
+    protected final double density;
     protected double mole;
     protected double maxMoleInHolder;
     protected double width;
@@ -152,12 +152,7 @@ public abstract class Substance implements Serializable {
      * @return the amount of mole lost
      */
     public double reduceAmount(double mole){
-        double moleLost;
-        if(mole > this.mole){
-            moleLost = this.mole;
-        }else {
-            moleLost = mole;
-        }
+        double moleLost = Math.min(mole, this.mole);
         this.mole -= moleLost;
         if(manager != null) {
             manager.onHeightChange(this, -PixelConverter.calculateHeightByVolume(getVolume(moleLost), width));

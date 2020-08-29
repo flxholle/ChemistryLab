@@ -19,7 +19,7 @@ public class Trough extends LaboratoryHolderInstrument {
     public static final int TROUGH_STANDARD_HEIGHT = CONTAINED_SPACE_HEIGHT + 2 * LaboratoryInstrument.STROKE_WIDTH;
     private static final String TAG = "Trough";
     public static final String NAME = "Chậu";
-    private static Point arrPoint[];
+    private static Point[] arrPoint;
     private static Path instrumentPath;
 
     public Trough(Context context, int widthView, int heightView) {

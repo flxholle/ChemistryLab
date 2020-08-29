@@ -21,7 +21,7 @@ public class AlcoholBurner extends LaboratoryInstrument {
     private static int flameImageWidth;
     private static Bitmap burnerOpenedImage;
     private static Bitmap burnerClosedImage;
-    private static Bitmap flameState[];
+    private static Bitmap[] flameState;
     private Bitmap currentState;
     private boolean isBurning;
     private int flameStateIndex;

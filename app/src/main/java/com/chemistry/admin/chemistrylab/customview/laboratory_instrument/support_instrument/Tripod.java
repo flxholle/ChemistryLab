@@ -121,7 +121,11 @@ public class Tripod extends LaboratorySupportInstrument implements View.OnDragLi
     @Override
     public boolean onDrag(View view, DragEvent dragEvent) {
         switch (dragEvent.getAction()) {
-            case DragEvent.ACTION_DRAG_STARTED: {
+            case DragEvent.ACTION_DRAG_STARTED:
+
+            case DragEvent.ACTION_DRAG_ENDED:
+
+            case DragEvent.ACTION_DRAG_LOCATION: {
 
             }
             break;
@@ -129,11 +133,6 @@ public class Tripod extends LaboratorySupportInstrument implements View.OnDragLi
             case DragEvent.ACTION_DRAG_ENTERED: {
                 view.setScaleX(1.1f);
                 view.setScaleY(1.1f);
-            }
-            break;
-
-            case DragEvent.ACTION_DRAG_LOCATION: {
-
             }
             break;
 
@@ -152,11 +151,6 @@ public class Tripod extends LaboratorySupportInstrument implements View.OnDragLi
                 view.setScaleX(1.0f);
                 view.setScaleY(1.0f);
                 dragItem.setVisibility(VISIBLE);
-            }
-            break;
-
-            case DragEvent.ACTION_DRAG_ENDED: {
-
             }
             break;
 

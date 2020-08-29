@@ -88,7 +88,7 @@ public class DatabaseManager {
     public static final String KEY_X_END = "xEnd";
     public static final String KEY_Y = "y";
 
-    private Context context;
+    private final Context context;
     private SQLiteDatabase database;
     public static DatabaseManager instance;
 
@@ -117,7 +117,7 @@ public class DatabaseManager {
         try {
             DataInputStream inputStream = new DataInputStream(context.getAssets().open(folderName + "/" + fileName));
             DataOutputStream outputStream = new DataOutputStream(new FileOutputStream(fileDatabase));
-            byte buff[] = new byte[1024];
+            byte[] buff = new byte[1024];
             int length;
             while ((length = inputStream.read(buff)) != -1) {
                 outputStream.write(buff, 0, length);
@@ -148,7 +148,7 @@ public class DatabaseManager {
         String conditionCase1 = substance1.getState() + "_" + substance2.getState();
         String searchStringCase2 = substance2.getSymbol() + "+" + substance1.getSymbol();
         String conditionCase2 = substance2.getState() + "_" + substance1.getState();
-        String balanceIndex[];
+        String[] balanceIndex;
 
 
         Cursor cursor = database.rawQuery("SELECT * FROM " + REACTIONS_TABLE_NAME +
@@ -192,8 +192,8 @@ public class DatabaseManager {
         int resultColumnIndex = cursor.getColumnIndex(KEY_RESULT);
         int resultStateColumnIndex = cursor.getColumnIndex(KEY_RESULT_STATE);
 
-        String buffSymbolResult[] = cursor.getString(resultColumnIndex).split("\\+");
-        String buffStateResult[] = cursor.getString(resultStateColumnIndex).split("_");
+        String[] buffSymbolResult = cursor.getString(resultColumnIndex).split("\\+");
+        String[] buffStateResult = cursor.getString(resultStateColumnIndex).split("_");
         int length = buffSymbolResult.length;
         for (int i = 0; i < length; i++) {
             Substance substance = getSubstanceBySymbolAndState(buffSymbolResult[i], buffStateResult[i]);
@@ -267,7 +267,7 @@ public class DatabaseManager {
     public Point[] getArrayPointOf(String tableName) {
         openDatabase();
         Cursor cursor = database.rawQuery("SELECT * FROM " + tableName, null);
-        Point result[] = new Point[cursor.getCount()];
+        Point[] result = new Point[cursor.getCount()];
         int i = 0;
         cursor.moveToFirst();
         int xStartColumnIndex = cursor.getColumnIndex(KEY_X_START);
@@ -359,7 +359,7 @@ public class DatabaseManager {
         openDatabase();
         Cursor cursor = database.rawQuery("SELECT " + KEY_SYMBOL + " FROM " + ELEMENTS_TABLE_NAME, null);
         cursor.moveToFirst();
-        String result[] = new String[cursor.getCount()];
+        String[] result = new String[cursor.getCount()];
         int index = 0;
         while (!cursor.isAfterLast()) {
             result[index++] = cursor.getString(0);

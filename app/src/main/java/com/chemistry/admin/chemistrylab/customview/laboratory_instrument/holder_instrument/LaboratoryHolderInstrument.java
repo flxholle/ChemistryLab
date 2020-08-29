@@ -6,7 +6,6 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Point;
-import androidx.annotation.IntDef;
 import android.text.SpannableString;
 import android.view.DragEvent;
 import android.view.View;
@@ -54,8 +53,8 @@ public abstract class LaboratoryHolderInstrument extends LaboratoryInstrument im
     //Can Hold 4 levels volume - gas / liquid
     protected List<BaseSubstanceManager> listSubstanceManagers;
     protected OnReactionListener onReactionListener;
-    protected HeightChangingAnimationManager heightChangingAnimationManager;
-    protected BubbleAnimationManager bubbleAnimationManager;
+    protected final HeightChangingAnimationManager heightChangingAnimationManager;
+    protected final BubbleAnimationManager bubbleAnimationManager;
     protected ToolTip toolTip;
     protected Paint instrumentPaint;
     protected BoilingAnimation boilingAnimation;
@@ -261,22 +260,15 @@ public abstract class LaboratoryHolderInstrument extends LaboratoryInstrument im
     @Override
     public boolean onDrag(View view, DragEvent dragEvent) {
         switch (dragEvent.getAction()) {
-            case DragEvent.ACTION_DRAG_STARTED: {
+            case DragEvent.ACTION_DRAG_STARTED:
 
-            }
-            break;
+            case DragEvent.ACTION_DRAG_ENDED:
+
+            case DragEvent.ACTION_DRAG_EXITED:
+
+            case DragEvent.ACTION_DRAG_LOCATION:
 
             case DragEvent.ACTION_DRAG_ENTERED: {
-
-            }
-            break;
-
-            case DragEvent.ACTION_DRAG_LOCATION: {
-
-            }
-            break;
-
-            case DragEvent.ACTION_DRAG_EXITED: {
 
             }
             break;
@@ -291,11 +283,6 @@ public abstract class LaboratoryHolderInstrument extends LaboratoryInstrument im
                     new SparkAnimation(this).start();
                 }
                 dragItem.setVisibility(VISIBLE);
-            }
-            break;
-
-            case DragEvent.ACTION_DRAG_ENDED: {
-
             }
             break;
 

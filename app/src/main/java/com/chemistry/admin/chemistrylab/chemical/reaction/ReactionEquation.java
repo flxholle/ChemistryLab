@@ -4,9 +4,6 @@ import android.text.SpannableString;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.chemistry.admin.chemistrylab.chemical.Substance;
-import com.chemistry.admin.chemistrylab.util.PixelConverter;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +13,7 @@ import java.util.List;
 public class ReactionEquation {
     private static final String TAG = "ReactionEquation";
     public static final double MOLE_CHANGE_PER_LOOP = 0.1;//mole
-    private List<ReactionSubstance> listReactionSubstances;
+    private final List<ReactionSubstance> listReactionSubstances;
     private ReactionSubstance baseReactionSubstance;
     private int numberOfStartSubstance;
     private boolean hasGasCreated;

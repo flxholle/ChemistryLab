@@ -24,8 +24,8 @@ import java.util.List;
 public class ListSubstancesPreviewAdapter extends BaseAdapter {
     private static final String TAG = "HListViewAdapter";
 
-    private Context context;
-    private LayoutInflater inflater;
+    private final Context context;
+    private final LayoutInflater inflater;
     private List<? extends LaboratoryInstrument> listItems;
     private int mode;
 
@@ -61,8 +61,8 @@ public class ListSubstancesPreviewAdapter extends BaseAdapter {
         if (view == null) {
             viewHolder = new ViewHolder();
             view = inflater.inflate(R.layout.item_instrument, viewGroup, false);
-            viewHolder.reviewInstrument = (ImageView) view.findViewById(R.id.img_review_instrument);
-            viewHolder.textSymbol = (ChemicalSymbolView) view.findViewById(R.id.txt_name);
+            viewHolder.reviewInstrument = view.findViewById(R.id.img_review_instrument);
+            viewHolder.textSymbol = view.findViewById(R.id.txt_name);
             if (mode == LaboratoryFragment.EQUIPMENT_MODE) {
                 viewHolder.textSymbol.setTextSize(TypedValue.COMPLEX_UNIT_PX, context.getResources().getDimension(R.dimen.equipment_font));
             } else {

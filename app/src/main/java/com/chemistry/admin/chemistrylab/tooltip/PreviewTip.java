@@ -21,7 +21,7 @@ public class PreviewTip extends RelativeLayout implements SeekBar.OnSeekBarChang
     private TextView textSubstanceDensity;
     private TextView textSubstanceMole;
     private SeekBar seekBarMole;
-    private ListSubstancesPreviewAdapter adapter;
+    private final ListSubstancesPreviewAdapter adapter;
     private Substance baseSubstance;
 
 
@@ -34,11 +34,11 @@ public class PreviewTip extends RelativeLayout implements SeekBar.OnSeekBarChang
 
     private void initView(Context context) {
         View rootView = View.inflate(context, R.layout.substance_preview_tip, this);
-        textSubstanceName = (TextView) rootView.findViewById(R.id.txt_substance_name);
-        textSubstanceM = (TextView) rootView.findViewById(R.id.txt_M);
-        textSubstanceDensity = (TextView) rootView.findViewById(R.id.txt_density);
-        textSubstanceMole = (TextView) rootView.findViewById(R.id.txt_mole);
-        seekBarMole = (SeekBar) rootView.findViewById(R.id.seek_bar_mole);
+        textSubstanceName = rootView.findViewById(R.id.txt_substance_name);
+        textSubstanceM = rootView.findViewById(R.id.txt_M);
+        textSubstanceDensity = rootView.findViewById(R.id.txt_density);
+        textSubstanceMole = rootView.findViewById(R.id.txt_mole);
+        seekBarMole = rootView.findViewById(R.id.seek_bar_mole);
         seekBarMole.setOnSeekBarChangeListener(this);
     }
 

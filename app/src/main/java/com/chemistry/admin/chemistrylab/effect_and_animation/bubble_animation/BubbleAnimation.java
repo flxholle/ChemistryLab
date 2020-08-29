@@ -25,15 +25,15 @@ public class BubbleAnimation implements BaseAnimation {
     public static final int BUBBLE_SPEED_MAX = 3;
     public static final int BUBBLE_SPEED_MIN = 1;
     private static final String TAG = "BubbleAnimation";
-    private List<Bubble> listBubble;
+    private final List<Bubble> listBubble;
     private int bubbleCount;
-    private Random random;
-    private String holderTableName;
-    private Context context;
-    private Solid solid;
-    private LiquidManager liquidManager;
-    private Substance baseSubstance;
-    private LaboratoryHolderInstrument holder;
+    private final Random random;
+    private final String holderTableName;
+    private final Context context;
+    private final Solid solid;
+    private final LiquidManager liquidManager;
+    private final Substance baseSubstance;
+    private final LaboratoryHolderInstrument holder;
 
     public BubbleAnimation(LaboratoryHolderInstrument holder, Solid solid, Substance baseSubstance) {
         this.holder = holder;
@@ -100,11 +100,7 @@ public class BubbleAnimation implements BaseAnimation {
         int yEnd;
         int yBubbleMax = DatabaseManager.getInstance(context).getYByX(holderTableName, xBubble);
         int holderEmptyHeight = (int) liquidManager.getEmptyHeight();
-        if (yBubbleMax <= holderEmptyHeight) {
-            yEnd = holderEmptyHeight;
-        } else {
-            yEnd = yBubbleMax;
-        }
+        yEnd = Math.max(yBubbleMax, holderEmptyHeight);
         int speed = random.nextInt(BUBBLE_SPEED_MAX) + BUBBLE_SPEED_MIN;
         boolean isSmall =  random.nextInt(2) == 0;
         Bubble bubble = new Bubble(xBubble, yBubble, yBubbleMax, speed, isSmall);
@@ -116,11 +112,7 @@ public class BubbleAnimation implements BaseAnimation {
     private void reCreateYEnd(Bubble bubble) {
         int yEnd = (int) liquidManager.getEmptyHeight();
         int yMin = bubble.getYMin();
-        if (yMin <= yEnd) {
-            bubble.setYEnd(yEnd);
-        } else {
-            bubble.setYEnd(yMin);
-        }
+        bubble.setYEnd(Math.max(yMin, yEnd));
     }
 
     @Override

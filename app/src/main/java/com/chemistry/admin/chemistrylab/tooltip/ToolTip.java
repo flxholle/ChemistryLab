@@ -13,7 +13,7 @@ import com.michael.easydialog.EasyDialog;
  */
 public class ToolTip extends LinearLayout implements View.OnClickListener {
     public static final int TOOL_TIP_WIDTH = 270;
-    private LaboratoryHolderInstrument holder;
+    private final LaboratoryHolderInstrument holder;
     private LinearLayout listItemLayout;
     private EasyDialog toolTip;
 
@@ -32,7 +32,7 @@ public class ToolTip extends LinearLayout implements View.OnClickListener {
         View rootView = View.inflate(getContext(), R.layout.holder_tip, this);
         rootView.findViewById(R.id.btn_clear).setOnClickListener(this);
         rootView.findViewById(R.id.btn_remove).setOnClickListener(this);
-        listItemLayout = (LinearLayout) rootView.findViewById(R.id.ll_list_item);
+        listItemLayout = rootView.findViewById(R.id.ll_list_item);
     }
 
     public void addItem(ItemTip item) {

@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.widget.SeekBar;
@@ -34,9 +33,9 @@ public class SettingsDialog extends Dialog implements SeekBar.OnSeekBarChangeLis
     }
 
     private void initDialog(Context context) {
-        SeekBar speedBar = (SeekBar) findViewById(R.id.seek_bar_speed);
+        SeekBar speedBar = findViewById(R.id.seek_bar_speed);
         speedBar.setMax(19);
-        textSpeed = (TextView) findViewById(R.id.txt_speed);
+        textSpeed = findViewById(R.id.txt_speed);
         sharedPreferences = context
                 .getSharedPreferences(DatabaseManager.SETTINGS, Context.MODE_PRIVATE);
         currentSpeed = Double.parseDouble(sharedPreferences.getString(DatabaseManager.KEY_SPEED, "1.0"));

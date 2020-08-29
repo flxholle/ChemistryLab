@@ -30,13 +30,13 @@ public class ElementToolTip{
         rootView = View.inflate(context, R.layout.item_element, null);
         rootView.setLayoutParams(new LinearLayout.LayoutParams(500, 500));
         rootView.measure(500, 500);
-        textAtomicMass  = (TextView) rootView.findViewById(R.id.txt_atomic_mass);
-        textAtomicNumber  = (TextView) rootView.findViewById(R.id.txt_atomic_number);
-        textName  = (TextView) rootView.findViewById(R.id.txt_name);
-        textSymbol  = (TextView) rootView.findViewById(R.id.txt_symbol);
-        textElectronicGravity  = (TextView) rootView.findViewById(R.id.txt_electronic_gravity);
-        textElectronicConfig  = (TextView) rootView.findViewById(R.id.txt_electron_config);
-        textOxidationStates  = (TextView) rootView.findViewById(R.id.txt_oxidation_states);
+        textAtomicMass  = rootView.findViewById(R.id.txt_atomic_mass);
+        textAtomicNumber  = rootView.findViewById(R.id.txt_atomic_number);
+        textName  = rootView.findViewById(R.id.txt_name);
+        textSymbol  = rootView.findViewById(R.id.txt_symbol);
+        textElectronicGravity  = rootView.findViewById(R.id.txt_electronic_gravity);
+        textElectronicConfig  = rootView.findViewById(R.id.txt_electron_config);
+        textOxidationStates  = rootView.findViewById(R.id.txt_oxidation_states);
     }
 
     public View getRootView() {

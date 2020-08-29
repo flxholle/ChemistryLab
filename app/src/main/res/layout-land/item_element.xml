@@ -72,7 +72,7 @@
         android:layout_marginTop="5dp"
         android:text="[Ne]3s^23p^1"
         android:textColor="@android:color/white"
-        android:textSize="11sp"
+        android:textSize="12sp"
         android:bufferType="spannable"/>
 
 
@@ -85,7 +85,7 @@
         android:layout_marginTop="5dp"
         android:text="+1 +2 +4 -4 -5"
         android:textColor="@android:color/white"
-        android:textSize="11sp"/>
+        android:textSize="12sp"/>
 
 
 </RelativeLayout>

@@ -36,7 +36,7 @@ public class SymbolConverter {
     }
 
     public static CharSequence getElectronConfig(String raw) {
-        String parts[] = raw.split("_");
+        String[] parts = raw.split("_");
         CharSequence convertString = "";
         for (String aPart : parts) {
             SpannableString temp = new SpannableString(aPart);

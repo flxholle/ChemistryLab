@@ -75,13 +75,10 @@ public class HorizontalListView extends AdapterView<ListAdapter> {
     private static final String BUNDLE_ID_PARENT_STATE = "BUNDLE_ID_PARENT_STATE";
 
     /** Tracks ongoing flings */
-    protected Scroller mFlingTracker = new Scroller(getContext());
-
-    /** Gesture listener to receive callbacks when gestures are detected */
-    private final GestureListener mGestureListener = new GestureListener();
+    protected final Scroller mFlingTracker = new Scroller(getContext());
 
     /** Used for detecting gestures within this view so they can be handled */
-    private GestureDetector mGestureDetector;
+    private final GestureDetector mGestureDetector;
 
     /** This tracks the starting layout position of the leftmost view */
     private int mDisplayOffset;
@@ -90,13 +87,13 @@ public class HorizontalListView extends AdapterView<ListAdapter> {
     protected ListAdapter mAdapter;
 
     /** Holds a cache of recycled views to be reused as needed */
-    private List<Queue<View>> mRemovedViewsCache = new ArrayList<Queue<View>>();
+    private final List<Queue<View>> mRemovedViewsCache = new ArrayList<>();
 
     /** Flag used to mark when the adapters data has changed, so the view can be relaid out */
     private boolean mDataChanged = false;
 
     /** Temporary rectangle to be used for measurements */
-    private Rect mRect = new Rect();
+    private final Rect mRect = new Rect();
 
     /** Tracks the currently touched view, used to delegate touches to the view being touched */
     private View mViewBeingTouched = null;
@@ -156,12 +153,12 @@ public class HorizontalListView extends AdapterView<ListAdapter> {
     /**
      * Tracks the state of the left edge glow.
      */
-    private EdgeEffectCompat mEdgeGlowLeft;
+    private final EdgeEffectCompat mEdgeGlowLeft;
 
     /**
      * Tracks the state of the right edge glow.
      */
-    private EdgeEffectCompat mEdgeGlowRight;
+    private final EdgeEffectCompat mEdgeGlowRight;
 
     /** The height measure spec for this view, used to help size children views */
     private int mHeightMeasureSpec;
@@ -181,6 +178,8 @@ public class HorizontalListView extends AdapterView<ListAdapter> {
         super(context, attrs);
         mEdgeGlowLeft = new EdgeEffectCompat(context);
         mEdgeGlowRight = new EdgeEffectCompat(context);
+        /** Gesture listener to receive callbacks when gestures are detected */
+        GestureListener mGestureListener = new GestureListener();
         mGestureDetector = new GestureDetector(context, mGestureListener);
         bindGestureDetector();
         initView();
@@ -278,7 +277,7 @@ public class HorizontalListView extends AdapterView<ListAdapter> {
             Bundle bundle = (Bundle) state;
 
             // Restore our state from the bundle
-            mRestoreX = Integer.valueOf((bundle.getInt(BUNDLE_ID_CURRENT_X)));
+            mRestoreX = (bundle.getInt(BUNDLE_ID_CURRENT_X));
 
             // Restore out parent's state from the bundle
             super.onRestoreInstanceState(bundle.getParcelable(BUNDLE_ID_PARENT_STATE));
@@ -333,7 +332,7 @@ public class HorizontalListView extends AdapterView<ListAdapter> {
     }
 
     /** DataSetObserver used to capture adapter data change events */
-    private DataSetObserver mAdapterDataObserver = new DataSetObserver() {
+    private final DataSetObserver mAdapterDataObserver = new DataSetObserver() {
         @Override
         public void onChanged() {
             mDataChanged = true;
@@ -612,7 +611,7 @@ public class HorizontalListView extends AdapterView<ListAdapter> {
     }
 
     /** Use to schedule a request layout via a runnable */
-    private Runnable mDelayedLayout = new Runnable() {
+    private final Runnable mDelayedLayout = new Runnable() {
         @Override
         public void run() {
             requestLayout();
@@ -625,7 +624,7 @@ public class HorizontalListView extends AdapterView<ListAdapter> {
 
         // Cache off the measure spec
         mHeightMeasureSpec = heightMeasureSpec;
-    };
+    }
 
     /**
      * Determine the Max X position. This is the farthest that the user can scroll the screen. Until the last adapter item has been
@@ -1076,7 +1075,7 @@ public class HorizontalListView extends AdapterView<ListAdapter> {
                 }
             }
         }
-    };
+    }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -1137,7 +1136,7 @@ public class HorizontalListView extends AdapterView<ListAdapter> {
     /**
      * This listener is used to allow notification when the HorizontalListView is running low on data to display.
      */
-    public static interface RunningOutOfDataListener {
+    public interface RunningOutOfDataListener {
         /** Called when the HorizontalListView is running out of data and has reached at least the provided threshold. */
         void onRunningOutOfData();
     }
@@ -1173,7 +1172,7 @@ public class HorizontalListView extends AdapterView<ListAdapter> {
      * Interface definition for a callback to be invoked when the view scroll state has changed.
      */
     public interface OnScrollStateChangedListener {
-        public enum ScrollState {
+        enum ScrollState {
             /**
              * The view is not scrolling. Note navigating the list using the trackball counts as being
              * in the idle state since these transitions are not animated.
@@ -1197,7 +1196,7 @@ public class HorizontalListView extends AdapterView<ListAdapter> {
          *
          * @param scrollState The current scroll state.
          */
-        public void onScrollStateChanged(ScrollState scrollState);
+        void onScrollStateChanged(ScrollState scrollState);
     }
 
     /**

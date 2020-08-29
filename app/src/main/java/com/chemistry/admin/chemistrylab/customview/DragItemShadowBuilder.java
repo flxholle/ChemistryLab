@@ -3,7 +3,6 @@ package com.chemistry.admin.chemistrylab.customview;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Point;
-import android.util.Log;
 import android.view.View;
 
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.LaboratoryInstrument;
@@ -17,10 +16,11 @@ import java.util.List;
  */
 public class DragItemShadowBuilder extends View.DragShadowBuilder {
     private static final String TAG = "ShadowBuilder";
-    private List<Bitmap> listShadowImages;
-    private List<Point> listShadowImagesLocation;
-    private int widthShadow, heightShadow;
-    private int yShadowTouch;
+    private final List<Bitmap> listShadowImages;
+    private final List<Point> listShadowImagesLocation;
+    private final int widthShadow;
+    private final int heightShadow;
+    private final int yShadowTouch;
 
     public DragItemShadowBuilder(LaboratoryInstrument instrument) {
         listShadowImages = new ArrayList<>();

@@ -21,11 +21,11 @@ import java.util.List;
  */
 public class BoilingAnimation implements BaseAnimation {
     private static final String TAG = "BoilingAnimation";
-    private LiquidManager liquidManager;
-    protected List<ReactionSubstance> listReactionSubstances;
-    protected ItemTip tips[];
+    private final LiquidManager liquidManager;
+    protected final List<ReactionSubstance> listReactionSubstances;
+    protected final ItemTip[] tips;
     private boolean isStopped;
-    private LaboratoryHolderInstrument holder;
+    private final LaboratoryHolderInstrument holder;
 
     public BoilingAnimation(LaboratoryHolderInstrument holder) {
         this.holder = holder;

@@ -21,13 +21,13 @@ import java.util.List;
  */
 
 public abstract class BaseSubstanceManager implements ContainerCallBack {
-    protected Context context;
-    protected LaboratoryHolderInstrument holder;
+    protected final Context context;
+    protected final LaboratoryHolderInstrument holder;
     protected OnReactionListener onReactionListener;
-    protected List<Substance> listSubstances;
+    protected final List<Substance> listSubstances;
     protected double currentHeight;
-    protected double maxHeight;
-    protected double width;
+    protected final double maxHeight;
+    protected final double width;
 
     public BaseSubstanceManager(Context context, LaboratoryHolderInstrument holder) {
         this.context = context;

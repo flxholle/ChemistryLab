@@ -20,7 +20,7 @@ public class Jar extends LaboratoryHolderInstrument {
     public static final int JAR_STANDARD_HEIGHT = CONTAINED_SPACE_HEIGHT + 2 * LaboratoryInstrument.STROKE_WIDTH;
     private static final String TAG = "Jar";
     public static final String NAME = "Lọ Chứa Hoá Chất";
-    private static Point arrPoint[];
+    private static Point[] arrPoint;
     private static Path instrumentPath;
 
 

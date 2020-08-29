@@ -36,7 +36,8 @@
             android:gravity="center_vertical"
             android:hint="@string/search_hint"
             android:textStyle="italic"
-            android:background="@drawable/search_bar_background"/>
+            android:background="@drawable/search_bar_background"
+            android:inputType="text"/>
 
         <ProgressBar
             android:id="@+id/loading_bar"

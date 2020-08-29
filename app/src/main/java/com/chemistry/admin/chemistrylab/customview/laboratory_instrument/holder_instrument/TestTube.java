@@ -18,7 +18,7 @@ public class TestTube extends LaboratoryHolderInstrument {
     public static final int TEST_TUBE_STANDARD_HEIGHT = CONTAINED_SPACE_HEIGHT + 2 * STROKE_WIDTH;
     private static final String TAG = "TestTube";
     public static final String NAME = "Ống Nghiệm";
-    private static Point arrPoint[];
+    private static Point[] arrPoint;
     private static Path instrumentPath;
 
     public TestTube(Context context, int widthView, int heightView) {

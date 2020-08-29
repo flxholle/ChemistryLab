@@ -14,10 +14,10 @@ import java.util.List;
  */
 public class ReactionAnimation implements BaseAnimation {
     public static final String TAG = "ReactionAnimation";
-    private List<ReactionSubstance> listReactionSubstances;
-    private ItemTip tips[];
-    private Substance baseSubstance;
-    private LaboratoryHolderInstrument holder;
+    private final List<ReactionSubstance> listReactionSubstances;
+    private final ItemTip[] tips;
+    private final Substance baseSubstance;
+    private final LaboratoryHolderInstrument holder;
 
     public ReactionAnimation(LaboratoryHolderInstrument holder, ReactionEquation equation) {
         this.holder = holder;

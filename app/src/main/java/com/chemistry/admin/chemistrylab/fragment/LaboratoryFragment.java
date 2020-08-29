@@ -67,13 +67,13 @@ public class LaboratoryFragment extends Fragment implements View.OnClickListener
         rootView.findViewById(R.id.btn_solid).setOnClickListener(this);
         rootView.findViewById(R.id.btn_gas).setOnClickListener(this);
 
-        listItemsView = (HorizontalListView) rootView.findViewById(R.id.h_list_view);
+        listItemsView = rootView.findViewById(R.id.h_list_view);
         listItemsView.setOnItemLongClickListener(this);
         listItemsView.setOnItemClickListener(this);
         adapter = new ListSubstancesPreviewAdapter(getActivity());
         listItemsView.setAdapter(adapter);
 
-        loadingBar = (ProgressBar) rootView.findViewById(R.id.loading_bar);
+        loadingBar = rootView.findViewById(R.id.loading_bar);
         return rootView;
     }
 

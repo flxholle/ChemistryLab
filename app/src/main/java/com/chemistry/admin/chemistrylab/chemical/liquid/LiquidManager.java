@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class LiquidManager extends BaseSubstanceManager {
     public static final String TAG = "LiquidManager";
-    private Point holderArrPoint[];
+    private final Point[] holderArrPoint;
 
     public LiquidManager(Context context, LaboratoryHolderInstrument holder) {
         super(context, holder);

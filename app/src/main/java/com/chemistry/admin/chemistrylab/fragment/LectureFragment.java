@@ -22,7 +22,7 @@ public class LectureFragment extends Fragment implements AdapterView.OnItemClick
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.lecture_fragment, container, false);
-        ListView listViewLecture = (ListView) rootView.findViewById(R.id.list_view_lecture);
+        ListView listViewLecture = rootView.findViewById(R.id.list_view_lecture);
         listViewLecture.setOnItemClickListener(this);
         listViewLecture.setAdapter(new LectureAdapter(getActivity()));
         return rootView;

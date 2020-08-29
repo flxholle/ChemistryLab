@@ -18,8 +18,8 @@ import com.chemistry.admin.chemistrylab.chemical.solid.Solid;
  */
 public class ItemTip extends RelativeLayout {
     private static final String TAG = "ItemToolTip";
-    private TextView textMole;
-    private Substance substance;
+    private final TextView textMole;
+    private final Substance substance;
     private double previousMoleValue;
 
     public ItemTip(Context context, Substance substance) {
@@ -27,7 +27,7 @@ public class ItemTip extends RelativeLayout {
         this.substance = substance;
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.item_information, this, false);
-        TextView textSymbol = ((TextView) view.findViewById(R.id.txt_symbol));
+        TextView textSymbol = view.findViewById(R.id.txt_symbol);
         textSymbol.setText(substance.getConvertSymbol());
         if(substance instanceof Solid){
             textSymbol.setTextColor(context.getResources().getColor(R.color.solid_tip_color));
@@ -36,7 +36,7 @@ public class ItemTip extends RelativeLayout {
         }else {
             textSymbol.setTextColor(context.getResources().getColor(R.color.gas_tip_color));
         }
-        textMole = (TextView) view.findViewById(R.id.txt_mole);
+        textMole = view.findViewById(R.id.txt_mole);
         previousMoleValue = Math.round(substance.getMole() * 100) * 1.0 / 100;
         if(previousMoleValue != 0) {
             update();

@@ -19,7 +19,7 @@ public class Flask extends LaboratoryHolderInstrument {
     public static final int FLASK_STANDARD_HEIGHT = CONTAINED_SPACE_HEIGHT + 2 * LaboratoryInstrument.STROKE_WIDTH;
     private static final String TAG = "Flask";
     public static final String NAME = "Bình Cầu";
-    private static Point arrPoint[];
+    private static Point[] arrPoint;
     private static Path instrumentPath;
 
     public Flask(Context context, int widthView, int heightView) {

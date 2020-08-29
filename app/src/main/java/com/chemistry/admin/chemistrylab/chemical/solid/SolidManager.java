@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class SolidManager extends BaseSubstanceManager {
     private static final String TAG = "SolidManager";
-    private Point holderArrPoint[];
+    private final Point[] holderArrPoint;
 
     public SolidManager(Context context, LaboratoryHolderInstrument holder) {
         super(context, holder);

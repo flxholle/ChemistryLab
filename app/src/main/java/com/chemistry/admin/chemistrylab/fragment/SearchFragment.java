@@ -37,16 +37,16 @@ public class SearchFragment extends Fragment implements View.OnClickListener, Te
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.search_fragment, container, false);
-        searchBar = (EditText) rootView.findViewById(R.id.edt_search_bar);
+        searchBar = rootView.findViewById(R.id.edt_search_bar);
         searchBar.addTextChangedListener(this);
-        listHint = (ListView) rootView.findViewById(R.id.list_hint);
+        listHint = rootView.findViewById(R.id.list_hint);
         listHint.setOnItemClickListener(this);
         adapter = new ListHintAdapter(getActivity());
         listHint.setAdapter(adapter);
-        buttonSearch = (ImageButton) rootView.findViewById(R.id.btn_search);
+        buttonSearch = rootView.findViewById(R.id.btn_search);
         buttonSearch.setOnClickListener(this);
 
-        webView = (WebView) rootView.findViewById(R.id.web_view);
+        webView = rootView.findViewById(R.id.web_view);
         WebViewClient webViewClient = new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
@@ -66,7 +66,7 @@ public class SearchFragment extends Fragment implements View.OnClickListener, Te
         };
         webView.setWebViewClient(webViewClient);
 
-        loadingBar = (ProgressBar) rootView.findViewById(R.id.loading_bar);
+        loadingBar = rootView.findViewById(R.id.loading_bar);
 
         return rootView;
     }

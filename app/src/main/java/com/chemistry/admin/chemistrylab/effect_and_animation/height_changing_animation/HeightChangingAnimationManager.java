@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.SystemClock;
-import android.util.Log;
 
 import com.chemistry.admin.chemistrylab.database.DatabaseManager;
 import com.chemistry.admin.chemistrylab.effect_and_animation.BaseAnimation;
@@ -18,7 +17,7 @@ import java.util.List;
 public class HeightChangingAnimationManager {
     private static final String TAG = "HCAnimationSet";
     public static int TIME_PER_LOOP = 1000;
-    private List<BaseAnimation> listAnimations;
+    private final List<BaseAnimation> listAnimations;
     private int animationCount;
     private boolean isRunning;
 

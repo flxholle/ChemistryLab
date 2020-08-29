@@ -1,7 +1,6 @@
 package com.chemistry.admin.chemistrylab.adapter;
 
 import android.content.Context;
-import android.text.SpannableString;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,9 +20,9 @@ import java.util.List;
  */
 
 public class ListHintAdapter extends BaseAdapter {
-    private LayoutInflater inflater;
-    private Context context;
-    private List<Substance> listHints;
+    private final LayoutInflater inflater;
+    private final Context context;
+    private final List<Substance> listHints;
 
     public ListHintAdapter(Context context){
         this.context = context;
@@ -66,7 +65,7 @@ public class ListHintAdapter extends BaseAdapter {
         if(view == null){
             view = inflater.inflate(R.layout.item_hint, container, false);
             viewHolder = new ViewHolder();
-            viewHolder.textSymbol = (ChemicalSymbolView) view.findViewById(R.id.txt_hint_content);
+            viewHolder.textSymbol = view.findViewById(R.id.txt_hint_content);
             view.setTag(viewHolder);
         }else {
             viewHolder = (ViewHolder) view.getTag();
@@ -77,7 +76,7 @@ public class ListHintAdapter extends BaseAdapter {
         return view;
     }
 
-    private class ViewHolder{
+    private static class ViewHolder{
         ChemicalSymbolView textSymbol;
     }
 }

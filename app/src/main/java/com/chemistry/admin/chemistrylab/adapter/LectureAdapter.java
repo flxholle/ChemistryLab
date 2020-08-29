@@ -18,7 +18,7 @@ import java.util.List;
 
 public class LectureAdapter extends BaseAdapter {
     private List<ItemLecture> listItemLecture;
-    private LayoutInflater inflater;
+    private final LayoutInflater inflater;
 
     public LectureAdapter(Context context){
         inflater = LayoutInflater.from(context);
@@ -72,7 +72,7 @@ public class LectureAdapter extends BaseAdapter {
         if(convertView == null){
             convertView = inflater.inflate(R.layout.item_lecture, parent, false);
             viewHolder = new ViewHolder();
-            viewHolder.textLectureTitle = (TextView) convertView.findViewById(R.id.txt_lecture_title);
+            viewHolder.textLectureTitle = convertView.findViewById(R.id.txt_lecture_title);
             convertView.setTag(viewHolder);
         }else {
             viewHolder = (ViewHolder) convertView.getTag();
@@ -81,13 +81,13 @@ public class LectureAdapter extends BaseAdapter {
         return convertView;
     }
 
-    private class ViewHolder{
+    private static class ViewHolder{
         TextView textLectureTitle;
     }
 
     public static class ItemLecture{
-        private String path;
-        private String title;
+        private final String path;
+        private final String title;
 
         public ItemLecture(String path, String title) {
             this.path = path;

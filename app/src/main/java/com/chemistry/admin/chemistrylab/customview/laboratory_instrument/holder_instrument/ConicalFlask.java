@@ -18,7 +18,7 @@ public class ConicalFlask extends LaboratoryHolderInstrument {
     public static final int CONICAL_FLASK_STANDARD_HEIGHT = CONTAINED_SPACE_HEIGHT + 2 * LaboratoryInstrument.STROKE_WIDTH;
     private static final String TAG = "ConicalFlask";
     public static final String NAME = "Bình Tam Giác";
-    private static Point arrPoint[];
+    private static Point[] arrPoint;
     private static Path instrumentPath;
 
     public ConicalFlask(Context context, int widthView, int heightView) {

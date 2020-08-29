@@ -10,11 +10,12 @@ public class Bubble {
     public static final int BUBBLE_SIZE = 5;
     public static Bitmap smallBubbleImage;
     public static Bitmap bigBubbleImage;
-    private int x, y;
+    private final int x;
+    private int y;
     private int yEnd;
-    private int speed;
-    private int yMin;
-    private Bitmap bubble;
+    private final int speed;
+    private final int yMin;
+    private final Bitmap bubble;
 
 
     public Bubble(int x, int y, int yMin, int speed, boolean isSmall) {

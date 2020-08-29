@@ -17,7 +17,7 @@ import java.util.List;
 public class BubbleAnimationManager {
     public static int TIME_PER_LOOP = 50;
     private static final String TAG = "BAnimationSet";
-    private List<BubbleAnimation> listAnimations;
+    private final List<BubbleAnimation> listAnimations;
     private int animationCount;
     private boolean isRunning;
 

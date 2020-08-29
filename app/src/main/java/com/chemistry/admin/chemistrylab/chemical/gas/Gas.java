@@ -1,7 +1,6 @@
 package com.chemistry.admin.chemistrylab.chemical.gas;
 
 import com.chemistry.admin.chemistrylab.chemical.Substance;
-import com.chemistry.admin.chemistrylab.observer.ContainerCallBack;
 
 /**
  * Created by Admin on 8/22/2016.
@@ -14,7 +13,7 @@ public class Gas extends Substance {
     public static final int HIGHEST_ALPHA = 200;
     public static final double ALPHA_PER_ML = HIGHEST_ALPHA * 1.0 / UNCHANGED_ALPHA_VOLUME;
     public static final String TAG = "gas";
-    private boolean isColorless;
+    private final boolean isColorless;
 
     public Gas(String name, String symbol, String colorHex, double M, double density, double volume) {
         super(name, symbol, TAG, colorHex, M, density);

@@ -40,7 +40,7 @@ public class PeriodicTableFragment extends Fragment implements EasyDialog.OnEasy
         });
 
         Context context = getActivity();
-        String arrElementName[] = DatabaseManager.getInstance(context).getAllElementSymbol();
+        String[] arrElementName = DatabaseManager.getInstance(context).getAllElementSymbol();
         String packageName = context.getPackageName();
         Resources res = context.getResources();
         for (String anElementName : arrElementName) {
@@ -91,13 +91,13 @@ public class PeriodicTableFragment extends Fragment implements EasyDialog.OnEasy
     }
 
     public static class ElementItem {
-        private String name;
-        private double atomicMass;
-        private int atomicNumber;
-        private String symbol;
-        private String electronConfig;
-        private double electronicGravity;
-        private String oxidationStates;
+        private final String name;
+        private final double atomicMass;
+        private final int atomicNumber;
+        private final String symbol;
+        private final String electronConfig;
+        private final double electronicGravity;
+        private final String oxidationStates;
 
         public ElementItem(String name,
                            String symbol,
