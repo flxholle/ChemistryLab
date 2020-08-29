@@ -1,12 +1,11 @@
 package com.chemistry.admin.chemistrylab.fragment;
 
-import android.app.Fragment;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +26,6 @@ import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.holder_
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.holder_instrument.Jar;
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.holder_instrument.TestTube;
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.holder_instrument.Trough;
-import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.support_instrument.Fire;
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.support_instrument.Tripod;
 import com.chemistry.admin.chemistrylab.database.DatabaseManager;
 import com.chemistry.admin.chemistrylab.tooltip.PreviewTip;

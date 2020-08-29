@@ -36,7 +36,7 @@ public class DatabaseManager {
     private static final String APP_DATA_PATH = Environment.getDataDirectory().getPath() + "/data/com.chemistry.admin.chemistrylab/";
 
     private static final String DATABASE_FOLDER_NAME = "database";
-    private static final String DATABASE_NAME = "database-test";
+    private static final String DATABASE_NAME = "chemistry-database";
     private static final String DATABASE_DATA_PATH = Environment.getDataDirectory().getPath() + "/data/com.chemistry.admin.chemistrylab/" + DATABASE_FOLDER_NAME + "/" + DATABASE_NAME;
 
     public static final String SETTINGS = "settings";

@@ -1,8 +1,8 @@
 package com.chemistry.admin.chemistrylab.activity;
 
-import android.app.Activity;
-import android.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 
 import com.chemistry.admin.chemistrylab.R;
 import com.chemistry.admin.chemistrylab.fragment.CategoryFragment;
@@ -11,7 +11,7 @@ import com.chemistry.admin.chemistrylab.fragment.CategoryFragment;
  * Created by Admin on 10/13/2016.
  */
 
-public class DocumentActivity extends Activity {
+public class DocumentActivity extends AppCompatActivity {
     private static final String TAG = "DocumentActivity";
     private CategoryFragment categoryFragment;
 
@@ -24,13 +24,13 @@ public class DocumentActivity extends Activity {
 
     private void initViews() {
         categoryFragment = new CategoryFragment();
-        getFragmentManager().beginTransaction()
+        getSupportFragmentManager().beginTransaction()
                 .add(R.id.ll_main, categoryFragment)
                 .commit();
     }
 
     public void showFragment(Fragment fragment) {
-        getFragmentManager().beginTransaction()
+        getSupportFragmentManager().beginTransaction()
                 .hide(categoryFragment)
                 .setCustomAnimations(android.R.animator.fade_in,
                                     android.R.animator.fade_out,

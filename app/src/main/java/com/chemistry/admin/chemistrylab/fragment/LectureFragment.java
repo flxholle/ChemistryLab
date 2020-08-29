@@ -1,7 +1,7 @@
 package com.chemistry.admin.chemistrylab.fragment;
 
-import android.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,7 +36,7 @@ public class LectureFragment extends Fragment implements AdapterView.OnItemClick
         LectureContentViewFragment lectureContentViewFragment = new LectureContentViewFragment();
         lectureContentViewFragment.setArguments(sendBundle);
         DocumentActivity documentActivity = (DocumentActivity) getActivity();
-        documentActivity.getFragmentManager().beginTransaction()
+        documentActivity.getSupportFragmentManager().beginTransaction()
                 .hide(this)
                 .add(R.id.ll_main,lectureContentViewFragment)
                 .show(lectureContentViewFragment).addToBackStack("BACK_TO_LECTURE_LIST")

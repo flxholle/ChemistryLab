@@ -1,11 +1,11 @@
 package com.chemistry.admin.chemistrylab.activity;
 
-import android.app.Activity;
-import android.app.Fragment;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.view.DragEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -20,24 +20,24 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.holder_instrument.LaboratoryHolderInstrument;
+import com.chemistry.admin.chemistrylab.R;
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.LaboratoryInstrument;
+import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.holder_instrument.LaboratoryHolderInstrument;
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.support_instrument.LaboratorySupportInstrument;
 import com.chemistry.admin.chemistrylab.database.DatabaseManager;
 import com.chemistry.admin.chemistrylab.dialog.SettingsDialog;
 import com.chemistry.admin.chemistrylab.effect_and_animation.bubble_animation.BubbleAnimationManager;
 import com.chemistry.admin.chemistrylab.effect_and_animation.height_changing_animation.HeightChangingAnimationManager;
+import com.chemistry.admin.chemistrylab.fragment.LaboratoryFragment;
 import com.chemistry.admin.chemistrylab.fragment.SearchFragment;
 import com.chemistry.admin.chemistrylab.observer.OnReactionListener;
-import com.chemistry.admin.chemistrylab.R;
-import com.chemistry.admin.chemistrylab.fragment.LaboratoryFragment;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.nineoldandroids.animation.Animator;
 
 import java.util.List;
 
-public class MainActivity extends Activity implements View.OnClickListener, View.OnDragListener, OnReactionListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, View.OnDragListener, OnReactionListener {
     private static final String TAG = "MainActivity";
     private RelativeLayout mainLayout;
     private RelativeLayout menuLayout;
@@ -179,7 +179,7 @@ public class MainActivity extends Activity implements View.OnClickListener, View
             @Override
             public void onAnimationEnd(Animator animation) {
                 if (previousFragment != null) {
-                    getFragmentManager().beginTransaction()
+                    getSupportFragmentManager().beginTransaction()
                             .remove(previousFragment)
                             .commit();
                 }
@@ -270,7 +270,7 @@ public class MainActivity extends Activity implements View.OnClickListener, View
 
     private void showMenuFragment(Fragment fragment) {
         currentFragment = fragment;
-        getFragmentManager().beginTransaction()
+        getSupportFragmentManager().beginTransaction()
                 .replace(R.id.rl_menu, fragment)
                 .commit();
 
