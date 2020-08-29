@@ -39,8 +39,8 @@ public class BubbleAnimation implements BaseAnimation {
         this.holder = holder;
         this.context = holder.getContext();
         if (Bubble.smallBubbleImage == null) {
-            Bubble.smallBubbleImage = BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_bubble_small);
-            Bubble.bigBubbleImage = BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_bubble_big);
+            Bubble.smallBubbleImage = BitmapFactory.decodeResource(context.getResources(), R.mipmap.ic_bubble_small);
+            Bubble.bigBubbleImage = BitmapFactory.decodeResource(context.getResources(), R.mipmap.ic_bubble_big);
         }
         this.random = new Random();
         this.listBubble = new ArrayList<>();

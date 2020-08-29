@@ -34,7 +34,7 @@ public class Tripod extends LaboratorySupportInstrument implements View.OnDragLi
     private void initView() {
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inScaled = false;
-        tripodImage = BitmapFactory.decodeResource(getResources(), R.drawable.tripod, options);
+        tripodImage = BitmapFactory.decodeResource(getResources(), R.mipmap.tripod, options);
         widthView = tripodImage.getWidth();
         heightView = tripodImage.getHeight();
         totalWidth = widthView;
@@ -115,7 +115,7 @@ public class Tripod extends LaboratorySupportInstrument implements View.OnDragLi
         }
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inSampleSize = Math.round(1 / ratio);
-        return BitmapFactory.decodeResource(getResources(), R.drawable.tripod, options);
+        return BitmapFactory.decodeResource(getResources(), R.mipmap.tripod, options);
     }
 
     @Override

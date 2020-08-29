@@ -18,7 +18,7 @@
             android:layout_height="200dp"
             android:background="@drawable/category_button"
             android:scaleType="centerInside"
-            app:srcCompat="@drawable/ic_periodic_table_category" />
+            app:srcCompat="@mipmap/ic_periodic_table_category" />
 
         <TextView
             android:layout_width="match_parent"
@@ -43,7 +43,7 @@
             android:layout_height="200dp"
             android:background="@drawable/category_button"
             android:scaleType="centerInside"
-            app:srcCompat="@drawable/ic_lecture_category" />
+            app:srcCompat="@mipmap/ic_lecture_category" />
 
         <TextView
             android:layout_width="match_parent"

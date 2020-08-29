@@ -35,15 +35,15 @@ public class Fire extends LaboratoryInstrument {
     private void initFireState() {
         Resources resources = getContext().getResources();
         fireState = new Bitmap[9];
-        fireState[0] = BitmapFactory.decodeResource(resources, R.drawable.fire_1);
-        fireState[1] = BitmapFactory.decodeResource(resources, R.drawable.fire_2);
-        fireState[2] = BitmapFactory.decodeResource(resources, R.drawable.fire_3);
-        fireState[3] = BitmapFactory.decodeResource(resources, R.drawable.fire_4);
-        fireState[4] = BitmapFactory.decodeResource(resources, R.drawable.fire_5);
-        fireState[5] = BitmapFactory.decodeResource(resources, R.drawable.fire_6);
-        fireState[6] = BitmapFactory.decodeResource(resources, R.drawable.fire_7);
-        fireState[7] = BitmapFactory.decodeResource(resources, R.drawable.fire_8);
-        fireState[8] = BitmapFactory.decodeResource(resources, R.drawable.fire_9);
+        fireState[0] = BitmapFactory.decodeResource(resources, R.mipmap.fire_1);
+        fireState[1] = BitmapFactory.decodeResource(resources, R.mipmap.fire_2);
+        fireState[2] = BitmapFactory.decodeResource(resources, R.mipmap.fire_3);
+        fireState[3] = BitmapFactory.decodeResource(resources, R.mipmap.fire_4);
+        fireState[4] = BitmapFactory.decodeResource(resources, R.mipmap.fire_5);
+        fireState[5] = BitmapFactory.decodeResource(resources, R.mipmap.fire_6);
+        fireState[6] = BitmapFactory.decodeResource(resources, R.mipmap.fire_7);
+        fireState[7] = BitmapFactory.decodeResource(resources, R.mipmap.fire_8);
+        fireState[8] = BitmapFactory.decodeResource(resources, R.mipmap.fire_9);
     }
 
     @Override

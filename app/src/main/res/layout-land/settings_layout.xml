@@ -32,7 +32,7 @@
             android:layout_weight="1"
             android:padding="5dp"
             android:scaleType="centerInside"
-            app:srcCompat="@drawable/ic_speed"/>
+            app:srcCompat="@mipmap/ic_speed"/>
 
         <TextView
             android:layout_width="0dp"
@@ -77,7 +77,7 @@
             android:layout_weight="1"
             android:padding="5dp"
             android:scaleType="centerInside"
-            app:srcCompat="@drawable/ic_help"/>
+            app:srcCompat="@mipmap/ic_help"/>
 
         <TextView
             android:layout_width="0dp"
@@ -107,7 +107,7 @@
             android:layout_weight="1"
             android:padding="5dp"
             android:scaleType="centerInside"
-            app:srcCompat="@drawable/ic_about"/>
+            app:srcCompat="@mipmap/ic_about"/>
 
         <TextView
             android:layout_width="0dp"

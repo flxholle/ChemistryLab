@@ -33,8 +33,8 @@ public class AlcoholBurner extends LaboratoryInstrument {
         if (burnerClosedImage == null) {
             BitmapFactory.Options options = new BitmapFactory.Options();
             options.inScaled = false;
-            burnerOpenedImage = BitmapFactory.decodeResource(getResources(), R.drawable.burner_opened, options);
-            burnerClosedImage = BitmapFactory.decodeResource(getResources(), R.drawable.burner_closed, options);
+            burnerOpenedImage = BitmapFactory.decodeResource(getResources(), R.mipmap.burner_opened, options);
+            burnerClosedImage = BitmapFactory.decodeResource(getResources(), R.mipmap.burner_closed, options);
             createFlameState();
         }
 
@@ -52,15 +52,15 @@ public class AlcoholBurner extends LaboratoryInstrument {
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inScaled = false;
         Resources resources = getResources();
-        flameState[0] = BitmapFactory.decodeResource(resources, R.drawable.ic_flame_burner_1, options);
+        flameState[0] = BitmapFactory.decodeResource(resources, R.mipmap.ic_flame_burner_1, options);
         flameImageWidth = flameState[0].getWidth();
-        flameState[1] = BitmapFactory.decodeResource(resources, R.drawable.ic_flame_burner_2, options);
-        flameState[2] = BitmapFactory.decodeResource(resources, R.drawable.ic_flame_burner_3, options);
-        flameState[3] = BitmapFactory.decodeResource(resources, R.drawable.ic_flame_burner_4, options);
-        flameState[4] = BitmapFactory.decodeResource(resources, R.drawable.ic_flame_burner_5, options);
-        flameState[5] = BitmapFactory.decodeResource(resources, R.drawable.ic_flame_burner_6, options);
-        flameState[6] = BitmapFactory.decodeResource(resources, R.drawable.ic_flame_burner_7, options);
-        flameState[7] = BitmapFactory.decodeResource(resources, R.drawable.ic_flame_burner_8, options);
+        flameState[1] = BitmapFactory.decodeResource(resources, R.mipmap.ic_flame_burner_2, options);
+        flameState[2] = BitmapFactory.decodeResource(resources, R.mipmap.ic_flame_burner_3, options);
+        flameState[3] = BitmapFactory.decodeResource(resources, R.mipmap.ic_flame_burner_4, options);
+        flameState[4] = BitmapFactory.decodeResource(resources, R.mipmap.ic_flame_burner_5, options);
+        flameState[5] = BitmapFactory.decodeResource(resources, R.mipmap.ic_flame_burner_6, options);
+        flameState[6] = BitmapFactory.decodeResource(resources, R.mipmap.ic_flame_burner_7, options);
+        flameState[7] = BitmapFactory.decodeResource(resources, R.mipmap.ic_flame_burner_8, options);
 
         flameStateIndex = 0;
     }
@@ -118,7 +118,7 @@ public class AlcoholBurner extends LaboratoryInstrument {
         }
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inSampleSize = Math.round(1 / ratio);
-        return BitmapFactory.decodeResource(getResources(), R.drawable.burner_closed, options);
+        return BitmapFactory.decodeResource(getResources(), R.mipmap.burner_closed, options);
     }
 
     @Override
