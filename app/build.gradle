@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion "24.0.2"
+    compileSdkVersion 28
+    buildToolsVersion "24.0.3"
 
     defaultConfig {
-        applicationId "com.chemistry.admin.chemistrylab"
+        applicationId "com.chemistry.chemistrylab"
         minSdkVersion 17
-        targetSdkVersion 22
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
     }
@@ -20,19 +20,19 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.13'
     //Horizontal listview
-    compile project(':HorizontalListView')
-    compile 'com.nineoldandroids:library:2.4.0'
-    compile 'com.daimajia.easing:library:1.0.1@aar'
+    implementation project(':HorizontalListView')
+    implementation 'com.nineoldandroids:library:2.4.0'
+    implementation 'com.daimajia.easing:library:1.0.1@aar'
     //Yoyo animation
-    compile 'com.daimajia.androidanimations:library:1.1.3@aar'
+    implementation 'com.daimajia.androidanimations:library:1.1.3@aar'
     //Tool tip
-    compile 'com.github.michaelye.easydialog:easydialog:1.4'
+    implementation 'com.github.michaelye.easydialog:easydialog:1.4'
     //
-    compile 'com.plattysoft.leonids:LeonidsLib:1.3.2'
+    implementation 'com.plattysoft.leonids:LeonidsLib:1.3.2'
     //pdf viewer
-    compile 'com.joanzapata.pdfview:android-pdfview:1.0.4@aar'
-    compile 'com.android.support:appcompat-v7:22.2.0'
+    implementation 'com.joanzapata.pdfview:android-pdfview:1.0.4@aar'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
 }
