@@ -31,12 +31,12 @@ public class LectureAdapter extends BaseAdapter {
 
     private void initListLecture() {
         String lang = Locale.getDefault().getLanguage();
-        List<String> availableLanguages = Arrays.asList("vi");
+        List<String> availableLanguages = Arrays.asList("vi", "en");
         String langFolder;
         if (availableLanguages.contains(lang))
             langFolder = lang;
         else
-            langFolder = "vi";
+            langFolder = "en";
 
         listItemLecture = new ArrayList<>();
         listItemLecture.add(new ItemLecture(langFolder + "_Chapter1.pdf",
