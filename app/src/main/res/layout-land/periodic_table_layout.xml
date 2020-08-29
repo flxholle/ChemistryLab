@@ -65,7 +65,7 @@
         android:layout_width="@dimen/bound"
         android:layout_height="@dimen/bounds"
         android:layout_columnSpan="11"
-        android:layout_gravity="right"
+        android:layout_gravity="end"
         android:layout_rowSpan="1"
         android:background="@drawable/box_blue"
         android:text="B" />
@@ -146,7 +146,7 @@
         android:layout_width="@dimen/bound"
         android:layout_height="@dimen/bounds"
         android:layout_columnSpan="11"
-        android:layout_gravity="right"
+        android:layout_gravity="end"
         android:layout_rowSpan="1"
         android:background="@drawable/box_blue"
         android:text="Al" />
@@ -777,7 +777,7 @@
         android:layout_width="@dimen/bound"
         android:layout_height="@dimen/bounds"
         android:layout_columnSpan="4"
-        android:layout_gravity="right"
+        android:layout_gravity="end"
         android:layout_rowSpan="1"
         android:background="@drawable/box_violet"
         android:text="Ce"/>
@@ -921,7 +921,7 @@
         android:layout_rowSpan="1"
         android:background="@drawable/box_pink"
         android:text="Th"
-        android:layout_gravity="right"/>
+        android:layout_gravity="end"/>
 
     <Button
         android:id="@+id/btn_Pa"
