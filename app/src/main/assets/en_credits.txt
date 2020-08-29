@@ -1,0 +1,50 @@
+Chemistry 2e
+
+Senior Contributing Authors:
+Paul Flowers, University of North Carolina at Pembroke
+Klaus Theopold, University of Delaware
+Richard Langley, Stephen F. Austin State University
+William R. Robinson, PhD
+
+Contributing Authors:
+Don Frantz, Wilfrid Laurier University
+Paul Hooker, Westminster College
+George Kaminski, Worcester Polytechnic Institute
+Jennifer Look, Mercer University
+Carol Martinez, Central New Mexico Community College
+Andrew Eklund, Alfred University
+Mark Blaser, Shasta College
+Tom Sorensen, University of Wisconsin-Milwaukee
+Allison Soult, University of Kentucky
+Troy Milliken, Jackson State University
+Vicki Moravec, Trine University
+Jason Powell, Ferrum College
+Emad El-Giar, University of Louisiana at Monroe
+Simon Bott, University of Houston
+Don Carpenetti, Craven Community College
+
+(c) Copyright: openstax
+by OpenStax is licensed under Creative Commons Attribution License v4.0
+
+Link: https://openstax.org/details/books/chemistry-2e
+
+Edits: The book was cut into some smaller pdfs.
+
+More Information:
+
+Publish Date:
+Feb 14, 2019
+
+Web Version Last Updated:
+Jan 09, 2020
+
+Hardcover:
+ISBN-10: 1-947172-62-X
+ISBN-13: 978-1-947172-62-3
+
+Paperback:
+ISBN-13: 978-1-59399-578-2
+
+Digital:
+ISBN-10: 1-947172-61-1
+ISBN-13: 978-1-947172-61-6
