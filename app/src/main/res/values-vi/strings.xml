@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_1">Dụng Cụ Thí Nhiệm</string>
+    <string name="menu_2">Dung Dịch</string>
+    <string name="menu_3">Chất Rắn</string>
+    <string name="menu_4">Chất Khí</string>
+    <string name="menu_2_1">Nước</string>
+    <string name="menu_2_2">Axit</string>
+    <string name="menu_2_3">Bazơ</string>
+    <string name="menu_2_4">Muối</string>
+    <string name="menu_3_1">Kim Loại</string>
+    <string name="menu_3_2">Phi Kim</string>
+    <string name="button_clear">Làm Sạch</string>
+    <string name="button_remove">Xoá</string>
+    <string name="search_hint">Tìm kiếm</string>
+    <string name="settings_title">Cài Đặt</string>
+    <string name="cancel">Huỷ Bỏ</string>
+    <string name="okay">Đồng Ý</string>
+    <string name="speed">Tốc Độ</string>
+    <string name="help">Trợ Giúp</string>
+    <string name="about">Về Chúng Tôi</string>
+    <string name="periodic_table">Bảng Tuần Hoàn</string>
+    <string name="theme">Chủ Đề</string>
+    <string name="periodic_table_of_chemical_elements">BẢNG TUẦN HOÀN CÁC NGUYÊN TỐ HOÁ HỌC</string>
+    <string name="density">Mật độ (g / ml)</string>
+</resources>

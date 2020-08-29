@@ -2,7 +2,6 @@
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main_background_color"
     android:columnCount="18"
     android:paddingTop="50dp"
     android:paddingStart="20dp"
@@ -25,8 +24,8 @@
         android:layout_columnSpan="16"
         android:layout_rowSpan="1"
         android:gravity="center"
-        android:text="BẢNG TUẦN HOÀN CÁC NGUYÊN TỐ HOÁ HỌC"
-        android:textColor="@android:color/white"
+        android:text="@string/periodic_table_of_chemical_elements"
+        android:textColor="@android:color/black"
         android:textSize="@dimen/medium_font"
         android:textStyle="bold" />
 

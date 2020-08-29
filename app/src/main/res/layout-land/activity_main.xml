@@ -4,7 +4,6 @@
     style="@style/AppTheme"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main_background_color"
     tools:context=".activity.MainActivity">
 
     <RelativeLayout
@@ -16,7 +15,7 @@
             android:id="@+id/txt_equation"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:textSize="@dimen/large_font"
             android:gravity="start"
             android:layout_centerHorizontal="true"
@@ -79,8 +78,8 @@
 
     <ImageView
         android:id="@+id/img_remove"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_margin="10dp"

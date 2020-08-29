@@ -5,7 +5,7 @@ android {
     buildToolsVersion "24.0.3"
 
     defaultConfig {
-        applicationId "com.chemistry.chemistrylab"
+        applicationId "com.chemistry.admin.chemistrylab"
         minSdkVersion 17
         targetSdkVersion 28
         versionCode 1

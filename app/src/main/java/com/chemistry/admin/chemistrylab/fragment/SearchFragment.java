@@ -87,20 +87,14 @@ public class SearchFragment extends Fragment implements View.OnClickListener, Te
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btn_search: {
-                adapter.clearListItems();
-                listHint.setVisibility(View.INVISIBLE);
-                v.setVisibility(View.INVISIBLE);
-                loadingBar.setVisibility(View.VISIBLE);
-                String content = searchBar.getText().toString().toLowerCase(Locale.getDefault());
-                webView.loadUrl("https://vi.wikipedia.org/wiki/" + content);
-            }
-            break;
-
-            default: {
-                break;
-            }
+        if (v.getId() == R.id.btn_search) {
+            adapter.clearListItems();
+            listHint.setVisibility(View.INVISIBLE);
+            v.setVisibility(View.INVISIBLE);
+            loadingBar.setVisibility(View.VISIBLE);
+            String content = searchBar.getText().toString().toLowerCase(Locale.getDefault());
+            String languageCode = Locale.getDefault().getLanguage();
+            webView.loadUrl("https://" + languageCode + ".wikipedia.org/wiki/" + content);
         }
     }
 

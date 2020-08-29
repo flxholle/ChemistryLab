@@ -8,7 +8,7 @@ import android.widget.TextView;
 /**
  * Created by Admin on 8/18/2016.
  */
-public class ChemicalSymbolView extends TextView {
+public class ChemicalSymbolView extends android.support.v7.widget.AppCompatTextView {
 
     public ChemicalSymbolView(Context context) {
         super(context);

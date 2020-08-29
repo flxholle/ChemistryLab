@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="300px"
-    android:layout_height="300px"
+    android:layout_width="300dp"
+    android:layout_height="300dp"
     android:layout_gravity="center"
     android:background="@drawable/bgsubstance"
     android:orientation="vertical"
@@ -56,7 +56,7 @@
         android:layout_below="@+id/txt_symbol"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:text="Nhôm"
+        android:text="Aluminum"
         android:textColor="@android:color/white"
         android:textStyle="bold"
         android:textSize="12sp"

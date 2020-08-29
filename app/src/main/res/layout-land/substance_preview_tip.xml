@@ -34,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/txt_substance_name"
-        android:text="Density (g/ml)"
+        android:text="@string/density"
         android:textColor="@android:color/black"
         android:textSize="@dimen/equipment_font"
         android:textStyle="italic" />
@@ -69,7 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:gravity="end"
-            android:text="mol"
+            android:text="@string/mol"
             android:textColor="@android:color/black"
             android:textSize="@dimen/equipment_font"
             android:layout_centerVertical="true"/>

@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main_background_color"
     android:gravity="center"
     android:orientation="horizontal">
 
@@ -25,8 +24,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:gravity="center"
-            android:text="Bảng Tuần Hoàn"
-            android:textColor="@android:color/white"
+            android:text="@string/periodic_table"
+            android:textColor="@android:color/black"
             android:textSize="@dimen/large_font"
             android:textStyle="bold" />
     </LinearLayout>
@@ -50,8 +49,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:gravity="center"
-            android:text="Chủ Đề"
-            android:textColor="@android:color/white"
+            android:text="@string/theme"
+            android:textColor="@android:color/black"
             android:textSize="@dimen/large_font"
             android:textStyle="bold" />
 

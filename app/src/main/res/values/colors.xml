@@ -13,8 +13,6 @@
     <color name="transparent">#80000000</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
-    <color name="simpletooltip_background">@color/white</color>
-    <color name="simpletooltip_arrow">@color/white</color>
     <color name="light_gray">#CCCCCC</color>
     <color name="devider_color">#E4E4E4</color>
     <color name="solid_tip_color">@color/black</color>
