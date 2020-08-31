@@ -470,7 +470,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void reactionHappened(CharSequence equation) {
         closeMenuFragment();
-        YoYo.with(Techniques.FadeOutUp).duration(500).delay(15000).withListener(equationAnimatorListener).playOn(equationsView);
+        YoYo.with(Techniques.FadeOutUp).duration(500).delay(12000).withListener(equationAnimatorListener).playOn(equationsView);
         equationsView.setText(equation);
     }
 }

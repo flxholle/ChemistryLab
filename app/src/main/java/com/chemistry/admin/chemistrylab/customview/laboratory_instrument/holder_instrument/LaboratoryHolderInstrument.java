@@ -13,23 +13,23 @@ import android.widget.LinearLayout;
 
 import com.chemistry.admin.chemistrylab.activity.MainActivity;
 import com.chemistry.admin.chemistrylab.chemical.BaseSubstanceManager;
-import com.chemistry.admin.chemistrylab.chemical.gas.Gas;
-import com.chemistry.admin.chemistrylab.chemical.reaction.ReactionEquation;
 import com.chemistry.admin.chemistrylab.chemical.Substance;
+import com.chemistry.admin.chemistrylab.chemical.gas.Gas;
 import com.chemistry.admin.chemistrylab.chemical.gas.GasManager;
 import com.chemistry.admin.chemistrylab.chemical.liquid.Liquid;
 import com.chemistry.admin.chemistrylab.chemical.liquid.LiquidManager;
+import com.chemistry.admin.chemistrylab.chemical.reaction.ReactionEquation;
 import com.chemistry.admin.chemistrylab.chemical.reaction.ReactionSubstance;
 import com.chemistry.admin.chemistrylab.chemical.solid.Solid;
 import com.chemistry.admin.chemistrylab.chemical.solid.SolidManager;
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.LaboratoryInstrument;
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.support_instrument.Fire;
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.support_instrument.Tripod;
-import com.chemistry.admin.chemistrylab.effect_and_animation.bubble_animation.BubbleAnimationManager;
 import com.chemistry.admin.chemistrylab.effect_and_animation.BaseAnimation;
-import com.chemistry.admin.chemistrylab.effect_and_animation.height_changing_animation.HeightChangingAnimationManager;
-import com.chemistry.admin.chemistrylab.effect_and_animation.height_changing_animation.BoilingAnimation;
 import com.chemistry.admin.chemistrylab.effect_and_animation.bubble_animation.BubbleAnimation;
+import com.chemistry.admin.chemistrylab.effect_and_animation.bubble_animation.BubbleAnimationManager;
+import com.chemistry.admin.chemistrylab.effect_and_animation.height_changing_animation.BoilingAnimation;
+import com.chemistry.admin.chemistrylab.effect_and_animation.height_changing_animation.HeightChangingAnimationManager;
 import com.chemistry.admin.chemistrylab.effect_and_animation.height_changing_animation.ReactionAnimation;
 import com.chemistry.admin.chemistrylab.effect_and_animation.spark_animation.SparkAnimation;
 import com.chemistry.admin.chemistrylab.observer.OnBoilListener;
@@ -268,12 +268,10 @@ public abstract class LaboratoryHolderInstrument extends LaboratoryInstrument im
 
             case DragEvent.ACTION_DRAG_LOCATION:
 
-            case DragEvent.ACTION_DRAG_ENTERED: {
+            case DragEvent.ACTION_DRAG_ENTERED:
+                break;
 
-            }
-            break;
-
-            case DragEvent.ACTION_DROP: {
+            case DragEvent.ACTION_DROP:
                 LaboratoryInstrument dragItem = (LaboratoryInstrument) dragEvent.getLocalState();
                 if (dragItem instanceof LaboratoryHolderInstrument) {
                     LaboratoryHolderInstrument holder = (LaboratoryHolderInstrument) dragItem;
@@ -283,12 +281,10 @@ public abstract class LaboratoryHolderInstrument extends LaboratoryInstrument im
                     new SparkAnimation(this).start();
                 }
                 dragItem.setVisibility(VISIBLE);
-            }
-            break;
-
-            default: {
                 break;
-            }
+
+            default:
+                break;
         }
         return true;
     }
