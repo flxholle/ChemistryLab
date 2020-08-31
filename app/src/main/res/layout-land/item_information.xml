@@ -10,7 +10,7 @@
     <com.chemistry.admin.chemistrylab.customview.ChemicalSymbolView
         android:id="@+id/txt_symbol"
         android:layout_width="wrap_content"
-        android:layout_height="16dp"
+        android:layout_height="@dimen/item_hint_height"
         android:gravity="center"
         android:textSize="@dimen/equipment_font"
         android:textColor="@android:color/black"

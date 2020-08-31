@@ -12,7 +12,6 @@ import com.michael.easydialog.EasyDialog;
  * Created by Admin on 10/12/2016.
  */
 public class ToolTip extends LinearLayout implements View.OnClickListener {
-    public static final int TOOL_TIP_WIDTH = 270;
     private final LaboratoryHolderInstrument holder;
     private LinearLayout listItemLayout;
     private EasyDialog toolTip;
@@ -21,7 +20,7 @@ public class ToolTip extends LinearLayout implements View.OnClickListener {
         super(holder.getContext());
         this.holder = holder;
         initViews();
-        setLayoutParams(new LinearLayout.LayoutParams(TOOL_TIP_WIDTH, LinearLayout.LayoutParams.WRAP_CONTENT));
+        setLayoutParams(new LinearLayout.LayoutParams(getResources().getDimensionPixelOffset(R.dimen.tool_tip_width), LinearLayout.LayoutParams.WRAP_CONTENT));
     }
 
     public void setToolTip(EasyDialog toolTip) {

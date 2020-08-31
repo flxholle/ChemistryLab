@@ -29,7 +29,7 @@ public class PreviewTip extends RelativeLayout implements SeekBar.OnSeekBarChang
         super(context);
         this.adapter = adapter;
         initView(context);
-        setLayoutParams(new LayoutParams(400, RelativeLayout.LayoutParams.WRAP_CONTENT));
+        setLayoutParams(new LayoutParams(getResources().getDimensionPixelOffset(R.dimen.preview_tip_width), RelativeLayout.LayoutParams.WRAP_CONTENT));
     }
 
     private void initView(Context context) {

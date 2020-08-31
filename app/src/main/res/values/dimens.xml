@@ -15,5 +15,6 @@
     <dimen name="item_hint_height">20dp</dimen>
     <dimen name="bound">35dp</dimen>
     <dimen name="bounds">33dp</dimen>
-
+    <dimen name="preview_tip_width">300dp</dimen>
+    <dimen name="tool_tip_width">300dp</dimen>
 </resources>

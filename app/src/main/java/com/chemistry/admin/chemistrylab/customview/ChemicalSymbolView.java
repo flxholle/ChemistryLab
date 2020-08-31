@@ -3,10 +3,12 @@ package com.chemistry.admin.chemistrylab.customview;
 import android.content.Context;
 import android.util.AttributeSet;
 
+import androidx.appcompat.widget.AppCompatTextView;
+
 /**
  * Created by Admin on 8/18/2016.
  */
-public class ChemicalSymbolView extends androidx.appcompat.widget.AppCompatTextView {
+public class ChemicalSymbolView extends AppCompatTextView {
 
     public ChemicalSymbolView(Context context) {
         super(context);
