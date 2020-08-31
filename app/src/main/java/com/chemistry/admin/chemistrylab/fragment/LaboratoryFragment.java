@@ -1,5 +1,6 @@
 package com.chemistry.admin.chemistrylab.fragment;
 
+import android.animation.Animator;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -33,7 +34,6 @@ import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.meetme.android.horizontallistview.HorizontalListView;
 import com.michael.easydialog.EasyDialog;
-import com.nineoldandroids.animation.Animator;
 
 import java.util.ArrayList;
 import java.util.List;

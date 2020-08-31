@@ -1,5 +1,6 @@
 package com.chemistry.admin.chemistrylab.activity;
 
+import android.animation.Animator;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -33,7 +34,6 @@ import com.chemistry.admin.chemistrylab.fragment.SearchFragment;
 import com.chemistry.admin.chemistrylab.observer.OnReactionListener;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
-import com.nineoldandroids.animation.Animator;
 
 import java.util.List;
 

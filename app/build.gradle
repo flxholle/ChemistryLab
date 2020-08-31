@@ -33,11 +33,10 @@ dependencies {
 
     //Horizontal listview
     implementation project(':HorizontalListView')
-    implementation 'com.nineoldandroids:library:2.4.0'
-    implementation 'com.daimajia.easing:library:1.0.1@aar'
 
     //Yoyo animation
-    implementation 'com.daimajia.androidanimations:library:1.1.3@aar'
+    implementation 'com.daimajia.androidanimations:library:2.4@aar'
+    implementation 'com.daimajia.easing:library:2.4@aar'
 
     //Tool tip
     implementation 'com.github.michaelye.easydialog:easydialog:1.4'
