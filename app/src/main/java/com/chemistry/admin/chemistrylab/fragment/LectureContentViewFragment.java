@@ -7,7 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.chemistry.admin.chemistrylab.R;
-import com.joanzapata.pdfview.PDFView;
+import com.github.barteksc.pdfviewer.PDFView;
+import com.github.barteksc.pdfviewer.util.FitPolicy;
 
 /**
  * Created by Admin on 10/19/2016.
@@ -22,9 +23,10 @@ public class LectureContentViewFragment extends Fragment {
         PDFView pdfView = rootView.findViewById(R.id.pdf_view);
         pdfView.fromAsset(receiverBundle.getString(LectureFragment.KEY_PDF_PATH))
                 .defaultPage(1)
-                .showMinimap(false)
                 .enableSwipe(true)
-                .swipeVertical(true)
+                .enableDoubletap(true)
+                .pageFitPolicy(FitPolicy.WIDTH) // mode to fit pages in the view
+                .landscapeOrientation(true)
                 .load();
         pdfView.zoomTo(3.0f);
         return rootView;
