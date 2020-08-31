@@ -4,13 +4,14 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.LinearLayout;
+
+import androidx.fragment.app.Fragment;
 
 import com.chemistry.admin.chemistrylab.R;
 import com.chemistry.admin.chemistrylab.database.DatabaseManager;
@@ -25,7 +26,9 @@ public class PeriodicTableFragment extends Fragment implements EasyDialog.OnEasy
     private static final String TAG = "PTRagment";
     private ElementToolTip toolTip;
     private int fragmentWidth;
-    private int fragmentHeight;
+
+    private String[] elements;
+    private String[] elementsNames;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -34,7 +37,6 @@ public class PeriodicTableFragment extends Fragment implements EasyDialog.OnEasy
             @Override
             public void onGlobalLayout() {
                 fragmentWidth = rootView.getWidth();
-                fragmentHeight = rootView.getHeight();
                 rootView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
             }
         });
@@ -48,6 +50,8 @@ public class PeriodicTableFragment extends Fragment implements EasyDialog.OnEasy
                     .setOnClickListener(this);
         }
         toolTip = new ElementToolTip(context);
+        elements = context.getResources().getStringArray(R.array.element_names);
+        elementsNames = context.getResources().getStringArray(R.array.element_names_values);
         return rootView;
     }
 
@@ -62,6 +66,8 @@ public class PeriodicTableFragment extends Fragment implements EasyDialog.OnEasy
         Context context = getActivity();
         Button button = (Button) v;
         ElementItem item = DatabaseManager.getInstance(context).getElement((button.getText().toString()));
+        item.name = getElementName(item);
+
         toolTip.setData(item);
 
         int easyDialogOrient;
@@ -90,8 +96,16 @@ public class PeriodicTableFragment extends Fragment implements EasyDialog.OnEasy
                 .show();
     }
 
+    private String getElementName(ElementItem element) {
+        for (int i = 0; i < elements.length; i++) {
+            if (elements[i].equals(element.symbol))
+                return elementsNames[i];
+        }
+        return element.name;
+    }
+
     public static class ElementItem {
-        private final String name;
+        private String name;
         private final double atomicMass;
         private final int atomicNumber;
         private final String symbol;
