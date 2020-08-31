@@ -69,7 +69,7 @@ public class SettingsDialog extends Dialog implements SeekBar.OnSeekBarChangeLis
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btn_ok: {
+            case R.id.btn_ok:
                 double newSpeed = Double.parseDouble(textSpeed.getText().toString());
                 BubbleAnimationManager.TIME_PER_LOOP -= (newSpeed - currentSpeed) * 40;
                 HeightChangingAnimationManager.TIME_PER_LOOP -= (newSpeed - currentSpeed) * 900;
@@ -77,24 +77,17 @@ public class SettingsDialog extends Dialog implements SeekBar.OnSeekBarChangeLis
                 editor.putString(DatabaseManager.KEY_SPEED, textSpeed.getText().toString());
                 editor.apply();
                 dismiss();
-            }
-            break;
-
-            case R.id.btn_cancel: {
+                break;
+            case R.id.btn_cancel:
                 dismiss();
-            }
-
-            case R.id.ll_about_us: {
+                break;
+            case R.id.ll_about_us:
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse("https://github.com/quwepiro/ChemistryLab"));
                 getOwnerActivity().startActivity(intent);
-            }
-            break;
-
-            case R.id.ll_help: {
-
-            }
-            break;
+                break;
+            case R.id.ll_help:
+                break;
         }
 
     }
