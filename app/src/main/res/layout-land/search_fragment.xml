@@ -55,25 +55,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ScrollView
+        <WebView
+            android:id="@+id/web_view"
             android:padding="2dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true">
-
-            <WebView
-                android:id="@+id/web_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="invisible"/>
-        </ScrollView>
+            android:visibility="invisible" />
 
         <ListView
             android:id="@+id/list_hint"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/list_hint_height"
-            android:background="#90A59E9B"
+            android:layout_height="wrap_content"
+            android:background="@color/list_hint_background"
             android:paddingEnd="10dp"
             android:paddingStart="10dp"
             android:visibility="invisible" />

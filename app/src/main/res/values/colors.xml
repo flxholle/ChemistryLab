@@ -30,4 +30,5 @@
 
     <color name="colorBlue200">#311b92</color>
     <color name="blue_light">#A0FCFC</color>
+    <color name="list_hint_background">#90A59E9B</color>
 </resources>

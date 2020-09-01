@@ -104,6 +104,7 @@ public class SearchFragment extends Fragment implements View.OnClickListener, Te
         searchBar.setText(content);
         adapter.clearListItems();
         listHint.setVisibility(View.INVISIBLE);
+        buttonSearch.performClick();
     }
 
     @Override
