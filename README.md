@@ -10,6 +10,7 @@ The functionality has not changed, only the user interface.
  - App does now support different screen dpis
  - Bugfixes
 
+### Screenshots:
 <img src="https://github.com/asdoi/ChemistryLab/raw/master/fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" width="60%">
 <img src="https://github.com/asdoi/ChemistryLab/raw/master/fastlane/metadata/android/en-US/images/phoneScreenshots/2.png" width="60%">
 <img src="https://github.com/asdoi/ChemistryLab/raw/master/fastlane/metadata/android/en-US/images/phoneScreenshots/3.png" width="60%">
