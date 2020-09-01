@@ -23,7 +23,9 @@ public class LectureAdapter extends BaseAdapter {
     private final LayoutInflater inflater;
     private final Context context;
 
-    public LectureAdapter(Context context){
+    public static final String LITERATURE_DOWNLOAD_LINK = "https://github.com/asdoi/ChemistryLab/raw/reduce_size/literature/";
+
+    public LectureAdapter(Context context) {
         this.context = context;
         inflater = LayoutInflater.from(context);
         initListLecture();
@@ -39,27 +41,27 @@ public class LectureAdapter extends BaseAdapter {
             langFolder = "en";
 
         listItemLecture = new ArrayList<>();
-        listItemLecture.add(new ItemLecture(langFolder + "_Chapter1.pdf",
+        listItemLecture.add(new ItemLecture(LITERATURE_DOWNLOAD_LINK + langFolder + "_Chapter1.pdf",
                 context.getString(R.string.chapter_one)));
-        listItemLecture.add(new ItemLecture(langFolder + "_Chapter2.pdf",
+        listItemLecture.add(new ItemLecture(LITERATURE_DOWNLOAD_LINK + langFolder + "_Chapter2.pdf",
                 context.getString(R.string.chapter_two)));
-        listItemLecture.add(new ItemLecture(langFolder + "_Chapter3.pdf",
+        listItemLecture.add(new ItemLecture(LITERATURE_DOWNLOAD_LINK + langFolder + "_Chapter3.pdf",
                 context.getString(R.string.chapter_three)));
-        listItemLecture.add(new ItemLecture(langFolder + "_Chapter4.pdf",
+        listItemLecture.add(new ItemLecture(LITERATURE_DOWNLOAD_LINK + langFolder + "_Chapter4.pdf",
                 context.getString(R.string.chapter_four)));
-        listItemLecture.add(new ItemLecture(langFolder + "_Chapter5.pdf",
+        listItemLecture.add(new ItemLecture(LITERATURE_DOWNLOAD_LINK + langFolder + "_Chapter5.pdf",
                 context.getString(R.string.chapter_five)));
-        listItemLecture.add(new ItemLecture(langFolder + "_Chapter6.pdf",
+        listItemLecture.add(new ItemLecture(LITERATURE_DOWNLOAD_LINK + langFolder + "_Chapter6.pdf",
                 context.getString(R.string.chapter_six)));
-        listItemLecture.add(new ItemLecture(langFolder + "_Chapter7.pdf",
+        listItemLecture.add(new ItemLecture(LITERATURE_DOWNLOAD_LINK + langFolder + "_Chapter7.pdf",
                 context.getString(R.string.chapter_seven)));
-        listItemLecture.add(new ItemLecture(langFolder + "_Chapter8.pdf",
+        listItemLecture.add(new ItemLecture(LITERATURE_DOWNLOAD_LINK + langFolder + "_Chapter8.pdf",
                 context.getString(R.string.chapter_eight)));
-        listItemLecture.add(new ItemLecture(langFolder + "_Chapter9.pdf",
+        listItemLecture.add(new ItemLecture(LITERATURE_DOWNLOAD_LINK + langFolder + "_Chapter9.pdf",
                 context.getString(R.string.chapter_nine)));
-        listItemLecture.add(new ItemLecture(langFolder + "_Chapter10.pdf",
+        listItemLecture.add(new ItemLecture(LITERATURE_DOWNLOAD_LINK + langFolder + "_Chapter10.pdf",
                 context.getString(R.string.chapter_ten)));
-        listItemLecture.add(new ItemLecture(langFolder + "_Chapter11.pdf",
+        listItemLecture.add(new ItemLecture(LITERATURE_DOWNLOAD_LINK + langFolder + "_Chapter11.pdf",
                 context.getString(R.string.chapter_eleven)));
     }
 

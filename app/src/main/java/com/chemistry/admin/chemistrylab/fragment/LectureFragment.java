@@ -1,5 +1,7 @@
 package com.chemistry.admin.chemistrylab.fragment;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AlertDialog;
@@ -97,16 +99,7 @@ public class LectureFragment extends Fragment implements AdapterView.OnItemClick
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         String path = ((LectureAdapter)parent.getAdapter()).getItem(position).getPath();
-        Bundle sendBundle = new Bundle();
-        sendBundle.putString(KEY_PDF_PATH, path);
-        LectureContentViewFragment lectureContentViewFragment = new LectureContentViewFragment();
-        lectureContentViewFragment.setArguments(sendBundle);
-        DocumentActivity documentActivity = (DocumentActivity) getActivity();
-        documentActivity.getSupportFragmentManager().beginTransaction()
-                .hide(this)
-                .add(R.id.ll_main,lectureContentViewFragment)
-                .show(lectureContentViewFragment).addToBackStack("BACK_TO_LECTURE_LIST")
-                .commit();
-//        ((DocumentActivity)getActivity()).showFragment(lectureContentViewFragment);
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(path));
+        startActivity(browserIntent);
     }
 }
