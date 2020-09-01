@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="25dp"
+    android:layout_height="@dimen/chemical_font_height"
     android:paddingEnd="6dp"
     android:paddingStart="6dp"
     android:paddingTop="2dp"
@@ -10,9 +10,9 @@
     <com.chemistry.admin.chemistrylab.customview.ChemicalSymbolView
         android:id="@+id/txt_symbol"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/item_hint_height"
+        android:layout_height="match_parent"
         android:gravity="center"
-        android:textSize="@dimen/equipment_font"
+        android:textSize="@dimen/chemical_font"
         android:textColor="@android:color/black"
         android:layout_centerVertical="true"/>
 

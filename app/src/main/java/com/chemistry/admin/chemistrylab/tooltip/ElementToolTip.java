@@ -27,7 +27,7 @@ public class ElementToolTip{
     }
 
     private void initViews(Context context) {
-        int size = 400;
+        int size = context.getResources().getDimensionPixelSize(R.dimen.element_tool_tip_size);
         rootView = View.inflate(context, R.layout.item_element, null);
         rootView.setLayoutParams(new LinearLayout.LayoutParams(size, size));
         rootView.measure(size, size);
