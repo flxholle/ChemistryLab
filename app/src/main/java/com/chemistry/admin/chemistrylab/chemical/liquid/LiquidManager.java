@@ -41,6 +41,8 @@ public class LiquidManager extends BaseSubstanceManager {
     public void drawAllSubstances(Canvas canvas, Paint paint) {
         int startIndex = (int) maxHeight;
         int endIndex = startIndex - ((int) currentHeight);
+        if (endIndex < 0)
+            endIndex = 0;
         paint.setStyle(Paint.Style.STROKE);
         for (int i = listSubstances.size() - 1; i >= 0; i--) {
             Liquid aLiquid = getSubstance(i);
