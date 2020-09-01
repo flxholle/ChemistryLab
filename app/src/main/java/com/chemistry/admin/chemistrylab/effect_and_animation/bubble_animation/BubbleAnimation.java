@@ -95,7 +95,7 @@ public class BubbleAnimation implements BaseAnimation {
 
     private void createABubble() {
         Point surfaceLine = solid.getSurfaceLine();
-        int xBubble = random.nextInt(surfaceLine.y - Bubble.BUBBLE_SIZE - surfaceLine.x) + surfaceLine.x;
+        int xBubble = random.nextInt(surfaceLine.y - context.getResources().getDimensionPixelOffset(R.dimen.bubble_size) - surfaceLine.x) + surfaceLine.x;
         int yBubble = solid.getYTop();
         int yEnd;
         int yBubbleMax = DatabaseManager.getInstance(context).getYByX(holderTableName, xBubble);

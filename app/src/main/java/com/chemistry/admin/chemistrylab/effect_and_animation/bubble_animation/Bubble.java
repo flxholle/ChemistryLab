@@ -7,7 +7,6 @@ import android.graphics.Canvas;
  * Created by Admin on 8/28/2016.
  */
 public class Bubble {
-    public static final int BUBBLE_SIZE = 5;
     public static Bitmap smallBubbleImage;
     public static Bitmap bigBubbleImage;
     private final int x;
