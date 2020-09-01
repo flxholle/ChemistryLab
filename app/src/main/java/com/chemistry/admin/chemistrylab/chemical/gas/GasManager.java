@@ -44,7 +44,7 @@ public class GasManager extends BaseSubstanceManager {
 //            for (int j = 1; j < gasCount; j++) {
 //                Gas gas1 = listGas.get(i);
 //                Gas gas2 = listGas.get(j);
-//                ReactionEquation result = DatabaseManager.getInstance(context).findReaction(gas1, gas2);
+//                ReactionEquation result = LaboratoryDatabaseManager.getInstance(context).findReaction(gas1, gas2);
 //                if (result != null) {
 //                    onReactionListener.reactionHappened(result.getEquation());
 //                    listGas.remove(gas1);

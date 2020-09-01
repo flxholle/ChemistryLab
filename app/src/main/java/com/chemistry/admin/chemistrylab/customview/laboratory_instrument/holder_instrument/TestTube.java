@@ -7,7 +7,7 @@ import android.graphics.RectF;
 import android.text.SpannableString;
 
 import com.chemistry.admin.chemistrylab.R;
-import com.chemistry.admin.chemistrylab.database.DatabaseManager;
+import com.chemistry.admin.chemistrylab.database.LaboratoryDatabaseManager;
 
 /**
  * Created by Admin on 9/6/2016.
@@ -53,8 +53,8 @@ public class TestTube extends LaboratoryHolderInstrument {
                                 180, -180);
             instrumentPath.lineTo(spaceWidth, 0);
 
-            arrPoint = DatabaseManager.getInstance(getContext())
-                    .getArrayPointOf(DatabaseManager.TEST_TUBE_MAP_VERTICAL_TABLE_NAME);
+            arrPoint = LaboratoryDatabaseManager.getInstance(getContext())
+                    .getArrayPointOf(LaboratoryDatabaseManager.TEST_TUBE_MAP_VERTICAL_TABLE_NAME);
         }
     }
 
@@ -75,7 +75,7 @@ public class TestTube extends LaboratoryHolderInstrument {
 
     @Override
     public String getTableName() {
-        return DatabaseManager.TEST_TUBE_MAP_HORIZONTAL_TABLE_NAME;
+        return LaboratoryDatabaseManager.TEST_TUBE_MAP_HORIZONTAL_TABLE_NAME;
     }
 
     @Override

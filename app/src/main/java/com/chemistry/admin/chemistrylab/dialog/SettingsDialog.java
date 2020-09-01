@@ -12,7 +12,8 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.chemistry.admin.chemistrylab.R;
-import com.chemistry.admin.chemistrylab.database.DatabaseManager;
+import com.chemistry.admin.chemistrylab.database.LaboratoryDatabaseManager;
+import com.chemistry.admin.chemistrylab.database.ReactionsDatabaseManager;
 import com.chemistry.admin.chemistrylab.effect_and_animation.bubble_animation.BubbleAnimationManager;
 import com.chemistry.admin.chemistrylab.effect_and_animation.height_changing_animation.HeightChangingAnimationManager;
 
@@ -39,8 +40,8 @@ public class SettingsDialog extends Dialog implements SeekBar.OnSeekBarChangeLis
         speedBar.setMax(19);
         textSpeed = findViewById(R.id.txt_speed);
         sharedPreferences = context
-                .getSharedPreferences(DatabaseManager.SETTINGS, Context.MODE_PRIVATE);
-        currentSpeed = Double.parseDouble(sharedPreferences.getString(DatabaseManager.KEY_SPEED, "1.0"));
+                .getSharedPreferences(ReactionsDatabaseManager.SETTINGS, Context.MODE_PRIVATE);
+        currentSpeed = Double.parseDouble(sharedPreferences.getString(ReactionsDatabaseManager.KEY_SPEED, "1.0"));
         speedBar.setOnSeekBarChangeListener(this);
         speedBar.setProgress((int) (currentSpeed * 10));
         textSpeed.setText(String.valueOf(currentSpeed));
@@ -74,7 +75,7 @@ public class SettingsDialog extends Dialog implements SeekBar.OnSeekBarChangeLis
                 BubbleAnimationManager.TIME_PER_LOOP -= (newSpeed - currentSpeed) * 40;
                 HeightChangingAnimationManager.TIME_PER_LOOP -= (newSpeed - currentSpeed) * 900;
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString(DatabaseManager.KEY_SPEED, textSpeed.getText().toString());
+                editor.putString(ReactionsDatabaseManager.KEY_SPEED, textSpeed.getText().toString());
                 editor.apply();
                 dismiss();
                 break;

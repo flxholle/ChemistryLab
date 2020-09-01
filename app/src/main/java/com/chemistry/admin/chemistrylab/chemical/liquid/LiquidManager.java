@@ -104,7 +104,7 @@ public class LiquidManager extends BaseSubstanceManager {
 //                Liquid liquid1 = listLiquid.get(i);
 //                Liquid liquid2 = listLiquid.get(j);
 ////                Log.i(TAG,"Reaction: "+ liquid1.toString() + " " + liquid2.toString());
-//                ReactionEquation equation = DatabaseManager.getInstance(context).findReaction(liquid1, liquid2);
+//                ReactionEquation equation = LaboratoryDatabaseManager.getInstance(context).findReaction(liquid1, liquid2);
 //                if (equation != null) {
 ////                    Log.i(TAG, "equation: " + equation.getResultSubstances().toString());
 //                    onReactionListener.reactionHappened(equation.getEquation());

@@ -28,7 +28,8 @@ import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.holder_
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.holder_instrument.TestTube;
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.holder_instrument.Trough;
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.support_instrument.Tripod;
-import com.chemistry.admin.chemistrylab.database.DatabaseManager;
+import com.chemistry.admin.chemistrylab.database.LaboratoryDatabaseManager;
+import com.chemistry.admin.chemistrylab.database.ReactionsDatabaseManager;
 import com.chemistry.admin.chemistrylab.tooltip.PreviewTip;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
@@ -272,17 +273,17 @@ public class LaboratoryFragment extends Fragment implements View.OnClickListener
                 break;
 
                 case SOLID_MODE: {
-                    adapter.setListItems(DatabaseManager.getInstance(getActivity()).getAllSolidPreview(), mode);
+                    adapter.setListItems(ReactionsDatabaseManager.getInstance(getActivity()).getAllSolidPreview(), mode);
                 }
                 break;
 
                 case LIQUID_MODE: {
-                    adapter.setListItems(DatabaseManager.getInstance(getActivity()).getAllLiquidPreview(), mode);
+                    adapter.setListItems(ReactionsDatabaseManager.getInstance(getActivity()).getAllLiquidPreview(), mode);
                 }
                 break;
 
                 case GAS_MODE: {
-                    adapter.setListItems(DatabaseManager.getInstance(getActivity()).getAllGasPreview(), mode);
+                    adapter.setListItems(ReactionsDatabaseManager.getInstance(getActivity()).getAllGasPreview(), mode);
                 }
                 break;
 

@@ -14,7 +14,8 @@ import android.widget.LinearLayout;
 import androidx.fragment.app.Fragment;
 
 import com.chemistry.admin.chemistrylab.R;
-import com.chemistry.admin.chemistrylab.database.DatabaseManager;
+import com.chemistry.admin.chemistrylab.database.LaboratoryDatabaseManager;
+import com.chemistry.admin.chemistrylab.database.ReactionsDatabaseManager;
 import com.chemistry.admin.chemistrylab.tooltip.ElementToolTip;
 import com.chemistry.admin.chemistrylab.util.SymbolConverter;
 import com.michael.easydialog.EasyDialog;
@@ -42,7 +43,7 @@ public class PeriodicTableFragment extends Fragment implements EasyDialog.OnEasy
         });
 
         Context context = getActivity();
-        String[] arrElementName = DatabaseManager.getInstance(context).getAllElementSymbol();
+        String[] arrElementName = ReactionsDatabaseManager.getInstance(context).getAllElementSymbol();
         String packageName = context.getPackageName();
         Resources res = context.getResources();
         for (String anElementName : arrElementName) {
@@ -65,7 +66,7 @@ public class PeriodicTableFragment extends Fragment implements EasyDialog.OnEasy
     public void onClick(View v) {
         Context context = getActivity();
         Button button = (Button) v;
-        ElementItem item = DatabaseManager.getInstance(context).getElement((button.getText().toString()));
+        ElementItem item = ReactionsDatabaseManager.getInstance(context).getElement((button.getText().toString()));
         item.name = getElementName(item);
 
         toolTip.setData(item);

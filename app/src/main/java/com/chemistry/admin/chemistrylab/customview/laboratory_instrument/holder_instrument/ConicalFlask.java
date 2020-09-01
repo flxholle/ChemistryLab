@@ -6,7 +6,7 @@ import android.graphics.Point;
 import android.text.SpannableString;
 
 import com.chemistry.admin.chemistrylab.R;
-import com.chemistry.admin.chemistrylab.database.DatabaseManager;
+import com.chemistry.admin.chemistrylab.database.LaboratoryDatabaseManager;
 
 /**
  * Created by Admin on 9/7/2016.
@@ -53,7 +53,7 @@ public class ConicalFlask extends LaboratoryHolderInstrument {
             instrumentPath.quadTo(spaceWidth, spaceHeight - roundBottomCornerDiameter / 3, (spaceWidth - bottleNeckWidth) / 2 + bottleNeckWidth, bottleNeckHeight);
             instrumentPath.lineTo((spaceWidth - bottleNeckWidth) / 2 + bottleNeckWidth, 0);
 
-            arrPoint = DatabaseManager.getInstance(getContext()).getArrayPointOf(DatabaseManager.FLASK_MAP_VERTICAL_TABLE_NAME);
+            arrPoint = LaboratoryDatabaseManager.getInstance(getContext()).getArrayPointOf(LaboratoryDatabaseManager.FLASK_MAP_VERTICAL_TABLE_NAME);
         }
     }
 
@@ -74,7 +74,7 @@ public class ConicalFlask extends LaboratoryHolderInstrument {
 
     @Override
     public String getTableName() {
-        return DatabaseManager.CONICAL_FLASK_MAP_HORIZONTAL_TABLE_NAME;
+        return LaboratoryDatabaseManager.CONICAL_FLASK_MAP_HORIZONTAL_TABLE_NAME;
     }
 
     @Override

@@ -5,7 +5,8 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.SystemClock;
 
-import com.chemistry.admin.chemistrylab.database.DatabaseManager;
+import com.chemistry.admin.chemistrylab.database.LaboratoryDatabaseManager;
+import com.chemistry.admin.chemistrylab.database.ReactionsDatabaseManager;
 import com.chemistry.admin.chemistrylab.effect_and_animation.BaseAnimation;
 
 import java.util.ArrayList;
@@ -26,8 +27,8 @@ public class HeightChangingAnimationManager {
         this.animationCount = 0;
         isRunning = false;
         SharedPreferences sharedPreferences = context
-                .getSharedPreferences(DatabaseManager.SETTINGS, Context.MODE_PRIVATE);
-        double currentSpeed = Double.parseDouble(sharedPreferences.getString(DatabaseManager.KEY_SPEED, "1.0"));
+                .getSharedPreferences(ReactionsDatabaseManager.SETTINGS, Context.MODE_PRIVATE);
+        double currentSpeed = Double.parseDouble(sharedPreferences.getString(ReactionsDatabaseManager.KEY_SPEED, "1.0"));
         TIME_PER_LOOP -= (currentSpeed - 1) * 900;
     }
 

@@ -26,7 +26,7 @@ import com.chemistry.admin.chemistrylab.R;
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.LaboratoryInstrument;
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.holder_instrument.LaboratoryHolderInstrument;
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.support_instrument.LaboratorySupportInstrument;
-import com.chemistry.admin.chemistrylab.database.DatabaseManager;
+import com.chemistry.admin.chemistrylab.database.LaboratoryDatabaseManager;
 import com.chemistry.admin.chemistrylab.dialog.SettingsDialog;
 import com.chemistry.admin.chemistrylab.effect_and_animation.bubble_animation.BubbleAnimationManager;
 import com.chemistry.admin.chemistrylab.effect_and_animation.height_changing_animation.HeightChangingAnimationManager;
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initViews() {
-        DatabaseManager.getInstance(this);//Copy data to database
+        LaboratoryDatabaseManager.getInstance(this);//Copy data to database
         buttonMenu = findViewById(R.id.btn_menu);
         buttonMenu.setOnClickListener(this);
 

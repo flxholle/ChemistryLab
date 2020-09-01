@@ -10,7 +10,8 @@ import android.widget.BaseAdapter;
 import com.chemistry.admin.chemistrylab.R;
 import com.chemistry.admin.chemistrylab.chemical.Substance;
 import com.chemistry.admin.chemistrylab.customview.ChemicalSymbolView;
-import com.chemistry.admin.chemistrylab.database.DatabaseManager;
+import com.chemistry.admin.chemistrylab.database.LaboratoryDatabaseManager;
+import com.chemistry.admin.chemistrylab.database.ReactionsDatabaseManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +36,7 @@ public class ListHintAdapter extends BaseAdapter {
         if(text.isEmpty()){
             return;
         }
-        listHints.addAll(DatabaseManager.getInstance(context).findSubstancesByName(text));
+        listHints.addAll(ReactionsDatabaseManager.getInstance(context).findSubstancesByName(text));
         notifyDataSetChanged();
     }
 

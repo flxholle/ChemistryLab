@@ -8,7 +8,8 @@ import com.chemistry.admin.chemistrylab.chemical.reaction.ReactionEquation;
 import com.chemistry.admin.chemistrylab.chemical.solid.Solid;
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.holder_instrument.GasBottle;
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.holder_instrument.LaboratoryHolderInstrument;
-import com.chemistry.admin.chemistrylab.database.DatabaseManager;
+import com.chemistry.admin.chemistrylab.database.LaboratoryDatabaseManager;
+import com.chemistry.admin.chemistrylab.database.ReactionsDatabaseManager;
 import com.chemistry.admin.chemistrylab.observer.OnReactionListener;
 import com.chemistry.admin.chemistrylab.observer.ContainerCallBack;
 import com.chemistry.admin.chemistrylab.util.PixelConverter;
@@ -75,11 +76,11 @@ public abstract class BaseSubstanceManager implements ContainerCallBack {
                         getSubstance(0).getClass() == Solid.class)) {
             return listEquationResult;
         }
-        DatabaseManager databaseManager = DatabaseManager.getInstance(context);
+        ReactionsDatabaseManager reactionsDatabaseManager = ReactionsDatabaseManager.getInstance(context);
         boolean isBoiling = holder.isBoiling();
         for (int i = listSubstances.size() - 1; i >= 0; i--) {
             if(listSubstances.get(i) != substance) {
-                ReactionEquation equation = databaseManager.findReaction(substance, listSubstances.get(i), isBoiling);
+                ReactionEquation equation = reactionsDatabaseManager.findReaction(substance, listSubstances.get(i), isBoiling);
                 if (equation != null) {
                     listEquationResult.add(equation);
                 }

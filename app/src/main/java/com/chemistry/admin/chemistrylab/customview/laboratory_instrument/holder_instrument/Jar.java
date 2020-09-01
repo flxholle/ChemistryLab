@@ -8,7 +8,7 @@ import android.text.SpannableString;
 
 import com.chemistry.admin.chemistrylab.R;
 import com.chemistry.admin.chemistrylab.chemical.solid.Solid;
-import com.chemistry.admin.chemistrylab.database.DatabaseManager;
+import com.chemistry.admin.chemistrylab.database.LaboratoryDatabaseManager;
 
 /**
  * Created by Admin on 8/26/2016.
@@ -77,9 +77,9 @@ public class Jar extends LaboratoryHolderInstrument {
                                 0, -90);
             instrumentPath.lineTo((spaceWidth - bottleNeckWidth) / 2 + bottleNeckWidth, 0);
 
-//          DatabaseManager.getInstance(getContext()).insertToDataBase(DatabaseManager.JAR_MAP_VERTICAL_TABLE_NAME,PointAnalyzer.analyzePointVertical(instrumentPath));
-            arrPoint = DatabaseManager.getInstance(getContext())
-                    .getArrayPointOf(DatabaseManager.JAR_MAP_VERTICAL_TABLE_NAME);
+//          LaboratoryDatabaseManager.getInstance(getContext()).insertToDataBase(LaboratoryDatabaseManager.JAR_MAP_VERTICAL_TABLE_NAME,PointAnalyzer.analyzePointVertical(instrumentPath));
+            arrPoint = LaboratoryDatabaseManager.getInstance(getContext())
+                    .getArrayPointOf(LaboratoryDatabaseManager.JAR_MAP_VERTICAL_TABLE_NAME);
         }
     }
 
@@ -108,7 +108,7 @@ public class Jar extends LaboratoryHolderInstrument {
 
     @Override
     public String getTableName() {
-        return DatabaseManager.JAR_MAP_HORIZONTAL_TABLE_NAME;
+        return LaboratoryDatabaseManager.JAR_MAP_HORIZONTAL_TABLE_NAME;
     }
 
     @Override

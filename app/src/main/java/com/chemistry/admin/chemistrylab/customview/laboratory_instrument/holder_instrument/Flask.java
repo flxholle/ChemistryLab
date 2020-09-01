@@ -7,7 +7,7 @@ import android.graphics.RectF;
 import android.text.SpannableString;
 
 import com.chemistry.admin.chemistrylab.R;
-import com.chemistry.admin.chemistrylab.database.DatabaseManager;
+import com.chemistry.admin.chemistrylab.database.LaboratoryDatabaseManager;
 
 /**
  * Created by Admin on 9/6/2016.
@@ -55,8 +55,8 @@ public class Flask extends LaboratoryHolderInstrument {
                                 startAngle, sweepAngle);
             instrumentPath.lineTo((spaceWidth - bottleNeckWidth) / 2 + bottleNeckWidth, 0);
 
-            arrPoint = DatabaseManager.getInstance(getContext())
-                    .getArrayPointOf(DatabaseManager.FLASK_MAP_VERTICAL_TABLE_NAME);
+            arrPoint = LaboratoryDatabaseManager.getInstance(getContext())
+                    .getArrayPointOf(LaboratoryDatabaseManager.FLASK_MAP_VERTICAL_TABLE_NAME);
         }
     }
 
@@ -77,7 +77,7 @@ public class Flask extends LaboratoryHolderInstrument {
 
     @Override
     public String getTableName() {
-        return DatabaseManager.FLASK_MAP_HORIZONTAL_TABLE_NAME;
+        return LaboratoryDatabaseManager.FLASK_MAP_HORIZONTAL_TABLE_NAME;
     }
 
     @Override
