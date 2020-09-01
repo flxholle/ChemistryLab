@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">Chemistry Lab</string>
+    <string name="app_name" translatable="false">ChemistryLab</string>
     <string name="tools">Tools</string>
     <string name="liquid">Liquid</string>
     <string name="solid">Solid</string>
