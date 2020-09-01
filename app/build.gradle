@@ -46,4 +46,7 @@ dependencies {
 
     //pdf viewer
     implementation 'com.github.TalbotGooday:AndroidPdfViewer:3.1.0-beta.3'
+
+    //Advanced WebView
+    implementation 'com.github.delight-im:Android-AdvancedWebView:v3.2.1'
 }

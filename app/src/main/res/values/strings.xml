@@ -40,6 +40,8 @@
     <string name="chapter_ten">Electrochemistry</string>
     <string name="chapter_eleven">Appendix</string>
     <string name="credits">Credits</string>
+    <string name="download_succeeded">Download succeeded!</string>
+    <string name="download_failed">Download failed!</string>
 
     <string name="Hydrogen">Hydrogen</string>
     <string name="Helium">Helium</string>

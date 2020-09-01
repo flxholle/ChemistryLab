@@ -1,25 +1,28 @@
 package com.chemistry.admin.chemistrylab.fragment;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
 
 import com.chemistry.admin.chemistrylab.R;
 import com.chemistry.admin.chemistrylab.adapter.ListHintAdapter;
 
 import java.util.Locale;
+
+import im.delight.android.webview.AdvancedWebView;
 
 /**
  * Created by Admin on 10/13/2016.
@@ -30,7 +33,7 @@ public class SearchFragment extends Fragment implements View.OnClickListener, Te
     private ListView listHint;
     private ListHintAdapter adapter;
     private Button mButton;
-    private WebView webView;
+    private AdvancedWebView webView;
     private ProgressBar loadingBar;
     private ImageButton buttonSearch;
 
@@ -47,24 +50,47 @@ public class SearchFragment extends Fragment implements View.OnClickListener, Te
         buttonSearch.setOnClickListener(this);
 
         webView = rootView.findViewById(R.id.web_view);
-        WebViewClient webViewClient = new WebViewClient() {
+        webView.setMixedContentAllowed(true);
+        webView.setDesktopMode(false);
+        AdvancedWebView.Listener listener = new AdvancedWebView.Listener() {
             @Override
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                webView.loadUrl(url);
-                return true;
+            public void onPageStarted(String url, Bitmap favicon) {
+                loadingBar.setVisibility(View.VISIBLE);
+                listHint.setVisibility(View.INVISIBLE);
+                buttonSearch.setVisibility(View.INVISIBLE);
             }
 
             @Override
-            public void onPageFinished(WebView view, String url) {
-                super.onPageFinished(view, url);
-                if(webView.getVisibility() == View.INVISIBLE) {
+            public void onPageFinished(String url) {
+                if (webView.getVisibility() == View.INVISIBLE) {
                     webView.setVisibility(View.VISIBLE);
                 }
                 loadingBar.setVisibility(View.INVISIBLE);
                 buttonSearch.setVisibility(View.VISIBLE);
             }
+
+            @Override
+            public void onPageError(int errorCode, String description, String failingUrl) {
+
+            }
+
+            @Override
+            public void onDownloadRequested(String url, String suggestedFilename, String mimeType, long contentLength, String contentDisposition, String userAgent) {
+                if (AdvancedWebView.handleDownload(requireContext(), url, suggestedFilename)) {
+                    // download successfully handled
+                    Toast.makeText(requireContext(), R.string.download_succeeded, Toast.LENGTH_LONG).show();
+                } else {
+                    // download couldn't be handled because user has disabled download manager app on the device
+                    Toast.makeText(requireContext(), R.string.download_failed, Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onExternalPageRequest(String url) {
+
+            }
         };
-        webView.setWebViewClient(webViewClient);
+        webView.setListener(requireActivity(), listener);
 
         loadingBar = rootView.findViewById(R.id.loading_bar);
 
@@ -88,9 +114,6 @@ public class SearchFragment extends Fragment implements View.OnClickListener, Te
     public void onClick(View v) {
         if (v.getId() == R.id.btn_search) {
             adapter.clearListItems();
-            listHint.setVisibility(View.INVISIBLE);
-            v.setVisibility(View.INVISIBLE);
-            loadingBar.setVisibility(View.VISIBLE);
             String content = searchBar.getText().toString().toLowerCase(Locale.getDefault());
             String languageCode = Locale.getDefault().getLanguage();
             webView.loadUrl("https://" + languageCode + ".wikipedia.org/wiki/" + content);

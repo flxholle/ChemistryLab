@@ -5,8 +5,6 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
-import androidx.fragment.app.Fragment;
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.DragEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -20,6 +18,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import com.chemistry.admin.chemistrylab.R;
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.LaboratoryInstrument;
@@ -472,5 +473,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         closeMenuFragment();
         YoYo.with(Techniques.FadeOutUp).duration(500).delay(12000).withListener(equationAnimatorListener).playOn(equationsView);
         equationsView.setText(equation);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        super.onActivityResult(requestCode, resultCode, intent);
+        if (currentFragment != null && currentFragment instanceof SearchFragment) {
+            currentFragment.onActivityResult(requestCode, resultCode, intent);
+        }
     }
 }
