@@ -10,6 +10,7 @@ import android.view.DragEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+import com.chemistry.admin.chemistrylab.R;
 import com.chemistry.admin.chemistrylab.activity.MainActivity;
 import com.chemistry.admin.chemistrylab.customview.DragItemShadowBuilder;
 import com.chemistry.admin.chemistrylab.observer.OnItemDetachListener;
@@ -18,7 +19,7 @@ import com.chemistry.admin.chemistrylab.observer.OnItemDetachListener;
  * Created by Admin on 8/22/2016.
  */
 public abstract class LaboratoryInstrument extends View implements View.OnDragListener, View.OnLongClickListener, View.OnClickListener {
-    public static final int STROKE_WIDTH = 3;
+    public final int STROKE_WIDTH;
     public static final int INSTRUMENT_PATH_COLOR = Color.BLACK;
     private static final String TAG = "LaboratoryInstrument";
     protected int widthView, heightView;
@@ -27,13 +28,19 @@ public abstract class LaboratoryInstrument extends View implements View.OnDragLi
 
     public LaboratoryInstrument(Context context, int widthView, int heightView) {
         super(context);
+        STROKE_WIDTH = getStrokeWidth(context);
         setLayoutParams(new RelativeLayout.LayoutParams(widthView, heightView));
         initViews();
     }
 
     public LaboratoryInstrument(Context context){
         super(context);
+        STROKE_WIDTH = getStrokeWidth(context);
         initViews();
+    }
+
+    public static int getStrokeWidth(Context context){
+        return context.getResources().getDimensionPixelOffset(R.dimen.stroke_width);
     }
 
     private void initViews() {

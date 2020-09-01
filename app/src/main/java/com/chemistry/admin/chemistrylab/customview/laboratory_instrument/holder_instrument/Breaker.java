@@ -14,10 +14,8 @@ import com.chemistry.admin.chemistrylab.database.DatabaseManager;
  * Created by Admin on 8/22/2016.
  */
 public class Breaker extends LaboratoryHolderInstrument {
-    public static final int CONTAINED_SPACE_WIDTH = 200;
-    public static final int CONTAINED_SPACE_HEIGHT = 300;
-    public static final int BREAKER_STANDARD_WIDTH = CONTAINED_SPACE_WIDTH + 10 + 2 * STROKE_WIDTH;
-    public static final int BREAKER_STANDARD_HEIGHT = CONTAINED_SPACE_HEIGHT + 2 * STROKE_WIDTH;
+    public final int BREAKER_STANDARD_WIDTH;
+    public final int BREAKER_STANDARD_HEIGHT;
     private static final String TAG = "Breaker";
     public final String NAME = getContext().getString(R.string.breaker);
     private static Point[] arrPoint;
@@ -25,6 +23,16 @@ public class Breaker extends LaboratoryHolderInstrument {
 
     public Breaker(Context context, int widthView, int heightView) {
         super(context, widthView, heightView);
+        BREAKER_STANDARD_HEIGHT = getBreakerStandardHeight(context);
+        BREAKER_STANDARD_WIDTH = getBreakerStandardWidth(context);
+    }
+
+    public static int getBreakerStandardWidth(Context context) {
+        return context.getResources().getDimensionPixelOffset(R.dimen.contained_space_width) + context.getResources().getDimensionPixelOffset(R.dimen.ten_dp) + 2 * getStrokeWidth(context);
+    }
+
+    public static int getBreakerStandardHeight(Context context) {
+        return context.getResources().getDimensionPixelOffset(R.dimen.contained_space_height) + 2 * getStrokeWidth(context);
     }
 
     @Override
@@ -81,12 +89,12 @@ public class Breaker extends LaboratoryHolderInstrument {
 
     @Override
     public int getContainedSpaceHeight() {
-        return CONTAINED_SPACE_HEIGHT;
+        return getResources().getDimensionPixelOffset(R.dimen.contained_space_height);
     }
 
     @Override
     public int getContainedSpaceWidth() {
-        return CONTAINED_SPACE_WIDTH;
+        return getResources().getDimensionPixelOffset(R.dimen.contained_space_width);
     }
 
     @Override

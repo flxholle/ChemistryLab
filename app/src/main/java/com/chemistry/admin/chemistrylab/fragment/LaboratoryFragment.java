@@ -91,23 +91,23 @@ public class LaboratoryFragment extends Fragment implements View.OnClickListener
         List<LaboratoryInstrument> listEquipments = new ArrayList<>();
         Context context = getActivity();
         listEquipments.add(new Breaker(context,
-                Breaker.BREAKER_STANDARD_WIDTH,
-                Breaker.BREAKER_STANDARD_HEIGHT));
+                Breaker.getBreakerStandardWidth(context),
+                Breaker.getBreakerStandardHeight(context)));
         listEquipments.add(new GasBottle(context,
-                GasBottle.GAS_BOTTLE_STANDARD_WIDTH,
-                GasBottle.GAS_BOTTLE_STANDARD_HEIGHT));
+                GasBottle.getGasBottleStandardWidth(context),
+                GasBottle.getGasBottleStandardHeight(context)));
         listEquipments.add(new Jar(context,
-                Jar.JAR_STANDARD_WIDTH,
-                Jar.JAR_STANDARD_HEIGHT));
+                Jar.getJarStandardWidth(context),
+                Jar.getJarStandardHeight(context)));
         listEquipments.add(new Flask(context,
-                Flask.FLASK_STANDARD_WIDTH,
-                Flask.FLASK_STANDARD_HEIGHT));
+                Flask.getFlaskStandardWidth(context),
+                Flask.getFlaskStandardHeight(context)));
         listEquipments.add(new TestTube(context,
-                TestTube.TEST_TUBE_STANDARD_WIDTH,
-                TestTube.TEST_TUBE_STANDARD_HEIGHT));
+                TestTube.getTestTubetStandardWidth(context),
+                TestTube.getTestTubeStandardHeight(context)));
         listEquipments.add(new Trough(context,
-                Trough.TROUGH_STANDARD_WIDTH,
-                Trough.TROUGH_STANDARD_HEIGHT));
+                Trough.getTroughStandardWidth(context),
+                Trough.getTroughStandardHeight(context)));
         listEquipments.add(new Tripod(context));
         listEquipments.add(new AlcoholBurner(context));
         return listEquipments;

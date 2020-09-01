@@ -13,10 +13,8 @@ import com.chemistry.admin.chemistrylab.database.DatabaseManager;
  * Created by Admin on 9/6/2016.
  */
 public class TestTube extends LaboratoryHolderInstrument {
-    public static final int CONTAINED_SPACE_WIDTH = 50;
-    public static final int CONTAINED_SPACE_HEIGHT = 300;
-    public static final int TEST_TUBE_STANDARD_WIDTH = CONTAINED_SPACE_WIDTH + 2 * STROKE_WIDTH;
-    public static final int TEST_TUBE_STANDARD_HEIGHT = CONTAINED_SPACE_HEIGHT + 2 * STROKE_WIDTH;
+    public final int TEST_TUBE_STANDARD_WIDTH;
+    public final int TEST_TUBE_STANDARD_HEIGHT;
     private static final String TAG = "TestTube";
     public final String NAME = getContext().getString(R.string.test_tube);
     private static Point[] arrPoint;
@@ -24,6 +22,16 @@ public class TestTube extends LaboratoryHolderInstrument {
 
     public TestTube(Context context, int widthView, int heightView) {
         super(context, widthView, heightView);
+        TEST_TUBE_STANDARD_WIDTH = getTestTubetStandardWidth(context);
+        TEST_TUBE_STANDARD_HEIGHT = getTestTubeStandardHeight(context);
+    }
+
+    public static int getTestTubetStandardWidth(Context context) {
+        return context.getResources().getDimensionPixelOffset(R.dimen.contained_space_width_test_tube) + 2 * getStrokeWidth(context);
+    }
+
+    public static int getTestTubeStandardHeight(Context context) {
+        return context.getResources().getDimensionPixelOffset(R.dimen.contained_space_height) + 2 * getStrokeWidth(context);
     }
 
     @Override
@@ -57,12 +65,12 @@ public class TestTube extends LaboratoryHolderInstrument {
 
     @Override
     public int getContainedSpaceHeight() {
-        return CONTAINED_SPACE_HEIGHT;
+        return getResources().getDimensionPixelOffset(R.dimen.contained_space_height);
     }
 
     @Override
     public int getContainedSpaceWidth() {
-        return CONTAINED_SPACE_WIDTH;
+        return getResources().getDimensionPixelOffset(R.dimen.contained_space_width_test_tube);
     }
 
     @Override

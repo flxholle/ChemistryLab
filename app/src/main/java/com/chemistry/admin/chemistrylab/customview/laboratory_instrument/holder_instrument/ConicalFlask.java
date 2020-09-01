@@ -6,17 +6,14 @@ import android.graphics.Point;
 import android.text.SpannableString;
 
 import com.chemistry.admin.chemistrylab.R;
-import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.LaboratoryInstrument;
 import com.chemistry.admin.chemistrylab.database.DatabaseManager;
 
 /**
  * Created by Admin on 9/7/2016.
  */
 public class ConicalFlask extends LaboratoryHolderInstrument {
-    public static final int CONTAINED_SPACE_WIDTH = 200;
-    public static final int CONTAINED_SPACE_HEIGHT = 300;
-    public static final int CONICAL_FLASK_STANDARD_WIDTH = CONTAINED_SPACE_WIDTH + 2 * LaboratoryInstrument.STROKE_WIDTH;
-    public static final int CONICAL_FLASK_STANDARD_HEIGHT = CONTAINED_SPACE_HEIGHT + 2 * LaboratoryInstrument.STROKE_WIDTH;
+    public final int CONICAL_FLASK_STANDARD_WIDTH;
+    public final int CONICAL_FLASK_STANDARD_HEIGHT;
     private static final String TAG = "ConicalFlask";
     public final String NAME = getContext().getString(R.string.conical_flask);
     private static Point[] arrPoint;
@@ -24,6 +21,16 @@ public class ConicalFlask extends LaboratoryHolderInstrument {
 
     public ConicalFlask(Context context, int widthView, int heightView) {
         super(context, widthView, heightView);
+        CONICAL_FLASK_STANDARD_WIDTH = getConicalFlaskStandardWidth(context);
+        CONICAL_FLASK_STANDARD_HEIGHT = getConicalFlaskStandardHeight(context);
+    }
+
+    public static int getConicalFlaskStandardWidth(Context context) {
+        return context.getResources().getDimensionPixelOffset(R.dimen.contained_space_width) + 2 * getStrokeWidth(context);
+    }
+
+    public static int getConicalFlaskStandardHeight(Context context) {
+        return context.getResources().getDimensionPixelOffset(R.dimen.contained_space_height) + 2 * getStrokeWidth(context);
     }
 
     @Override
@@ -57,12 +64,12 @@ public class ConicalFlask extends LaboratoryHolderInstrument {
 
     @Override
     public int getContainedSpaceHeight() {
-        return CONTAINED_SPACE_HEIGHT;
+        return getResources().getDimensionPixelOffset(R.dimen.contained_space_height);
     }
 
     @Override
     public int getContainedSpaceWidth() {
-        return CONTAINED_SPACE_WIDTH;
+        return getResources().getDimensionPixelOffset(R.dimen.contained_space_width);
     }
 
     @Override

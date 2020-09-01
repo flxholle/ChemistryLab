@@ -17,4 +17,10 @@
     <dimen name="bounds">33dp</dimen>
     <dimen name="preview_tip_width">300dp</dimen>
     <dimen name="tool_tip_width">300dp</dimen>
+    <dimen name="stroke_width">3dp</dimen>
+    <dimen name="contained_space_width">70dp</dimen>
+    <dimen name="contained_space_height">105dp</dimen>
+    <dimen name="contained_space_width_trough">105dp</dimen>
+    <dimen name="contained_space_width_test_tube">18dp</dimen>
+    <dimen name="ten_dp">10dp</dimen>
 </resources>

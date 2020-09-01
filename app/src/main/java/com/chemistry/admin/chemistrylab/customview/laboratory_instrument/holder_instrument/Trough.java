@@ -7,17 +7,14 @@ import android.graphics.RectF;
 import android.text.SpannableString;
 
 import com.chemistry.admin.chemistrylab.R;
-import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.LaboratoryInstrument;
 import com.chemistry.admin.chemistrylab.database.DatabaseManager;
 
 /**
  * Created by Admin on 9/7/2016.
  */
 public class Trough extends LaboratoryHolderInstrument {
-    public static final int CONTAINED_SPACE_WIDTH = 400;
-    public static final int CONTAINED_SPACE_HEIGHT = 200;
-    public static final int TROUGH_STANDARD_WIDTH = CONTAINED_SPACE_WIDTH + 2 * LaboratoryInstrument.STROKE_WIDTH;
-    public static final int TROUGH_STANDARD_HEIGHT = CONTAINED_SPACE_HEIGHT + 2 * LaboratoryInstrument.STROKE_WIDTH;
+    public final int TROUGH_STANDARD_WIDTH;
+    public final int TROUGH_STANDARD_HEIGHT;
     private static final String TAG = "Trough";
     public final String NAME = getContext().getString(R.string.trough);
     private static Point[] arrPoint;
@@ -25,6 +22,16 @@ public class Trough extends LaboratoryHolderInstrument {
 
     public Trough(Context context, int widthView, int heightView) {
         super(context, widthView, heightView);
+        TROUGH_STANDARD_WIDTH = getTroughStandardWidth(context);
+        TROUGH_STANDARD_HEIGHT = getTroughStandardHeight(context);
+    }
+
+    public static int getTroughStandardWidth(Context context) {
+        return context.getResources().getDimensionPixelOffset(R.dimen.contained_space_width_trough) + 2 * getStrokeWidth(context);
+    }
+
+    public static int getTroughStandardHeight(Context context) {
+        return context.getResources().getDimensionPixelOffset(R.dimen.contained_space_height) + 2 * getStrokeWidth(context);
     }
 
     @Override
@@ -67,12 +74,12 @@ public class Trough extends LaboratoryHolderInstrument {
 
     @Override
     public int getContainedSpaceHeight() {
-        return CONTAINED_SPACE_HEIGHT;
+        return getResources().getDimensionPixelOffset(R.dimen.contained_space_height);
     }
 
     @Override
     public int getContainedSpaceWidth() {
-        return CONTAINED_SPACE_WIDTH;
+        return getResources().getDimensionPixelOffset(R.dimen.contained_space_width_trough);
     }
 
     @Override

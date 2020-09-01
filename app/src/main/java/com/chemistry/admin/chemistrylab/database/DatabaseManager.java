@@ -460,7 +460,7 @@ public class DatabaseManager {
                     cursor.getDouble(densityColumnIndex),
                     cursor.getDouble(weightOrVolumeIndex));
             liquid.setTip(new ItemTip(context, liquid));
-            Breaker breaker = new Breaker(context, Breaker.BREAKER_STANDARD_WIDTH, Breaker.BREAKER_STANDARD_HEIGHT);
+            Breaker breaker = new Breaker(context, Breaker.getBreakerStandardWidth(context), Breaker.getBreakerStandardHeight(context));
             breaker.addSubstance(liquid);
             breaker.invalidate();
             listResult.add(breaker);
@@ -492,7 +492,7 @@ public class DatabaseManager {
                     cursor.getDouble(densityColumnIndex),
                     cursor.getDouble(weightOrVolumeIndex));
             solid.setTip(new ItemTip(context, solid));
-            Jar jar = new Jar(context, Jar.JAR_STANDARD_WIDTH, Jar.JAR_STANDARD_HEIGHT);
+            Jar jar = new Jar(context, Jar.getJarStandardWidth(context), Jar.getJarStandardHeight(context));
             jar.addSubstance(solid);
             jar.invalidate();
             listResult.add(jar);
@@ -524,7 +524,7 @@ public class DatabaseManager {
                     cursor.getDouble(densityColumnIndex),
                     cursor.getDouble(weightOrVolumeIndex));
             gas.setTip(new ItemTip(context, gas));
-            GasBottle gasBottle = new GasBottle(context, GasBottle.GAS_BOTTLE_STANDARD_WIDTH, GasBottle.GAS_BOTTLE_STANDARD_HEIGHT);
+            GasBottle gasBottle = new GasBottle(context, GasBottle.getGasBottleStandardWidth(context), GasBottle.getGasBottleStandardHeight(context));
             gasBottle.addSubstance(gas);
             gasBottle.invalidate();
             listResult.add(gasBottle);

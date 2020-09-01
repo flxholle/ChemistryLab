@@ -11,17 +11,14 @@ import android.text.SpannableString;
 import com.chemistry.admin.chemistrylab.R;
 import com.chemistry.admin.chemistrylab.chemical.BaseSubstanceManager;
 import com.chemistry.admin.chemistrylab.chemical.gas.Gas;
-import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.LaboratoryInstrument;
 import com.chemistry.admin.chemistrylab.database.DatabaseManager;
 
 /**
  * Created by Admin on 8/23/2016.
  */
 public class GasBottle extends LaboratoryHolderInstrument {
-    public static final int CONTAINED_SPACE_WIDTH = 200;
-    public static final int CONTAINED_SPACE_HEIGHT = 300;
-    public static final int GAS_BOTTLE_STANDARD_WIDTH = CONTAINED_SPACE_WIDTH + 2 * LaboratoryInstrument.STROKE_WIDTH;
-    public static final int GAS_BOTTLE_STANDARD_HEIGHT = CONTAINED_SPACE_HEIGHT + 10 + 2 * LaboratoryInstrument.STROKE_WIDTH;
+    public final int GAS_BOTTLE_STANDARD_WIDTH;
+    public final int GAS_BOTTLE_STANDARD_HEIGHT;
     private static final String TAG = "GasBottle";
     public final String NAME = getContext().getString(R.string.gas_bottle);
     private static Point[] arrPoint;
@@ -29,7 +26,17 @@ public class GasBottle extends LaboratoryHolderInstrument {
 
     public GasBottle(Context context, int widthView, int heightView) {
         super(context, widthView, heightView);
+        GAS_BOTTLE_STANDARD_HEIGHT = getGasBottleStandardHeight(context);
+        GAS_BOTTLE_STANDARD_WIDTH = getGasBottleStandardWidth(context);
         createGasPath(GAS_BOTTLE_STANDARD_WIDTH - 2 * STROKE_WIDTH, GAS_BOTTLE_STANDARD_HEIGHT - 2 * STROKE_WIDTH);
+    }
+
+    public static int getGasBottleStandardWidth(Context context) {
+        return context.getResources().getDimensionPixelOffset(R.dimen.contained_space_width) + 2 * getStrokeWidth(context);
+    }
+
+    public static int getGasBottleStandardHeight(Context context) {
+        return context.getResources().getDimensionPixelOffset(R.dimen.contained_space_height) + context.getResources().getDimensionPixelOffset(R.dimen.ten_dp) + 2 * getStrokeWidth(context);
     }
 
     @Override
@@ -148,12 +155,12 @@ public class GasBottle extends LaboratoryHolderInstrument {
 
     @Override
     public int getContainedSpaceHeight() {
-        return CONTAINED_SPACE_HEIGHT;
+        return getResources().getDimensionPixelOffset(R.dimen.contained_space_height);
     }
 
     @Override
     public int getContainedSpaceWidth() {
-        return CONTAINED_SPACE_WIDTH;
+        return getResources().getDimensionPixelOffset(R.dimen.contained_space_width);
     }
 
     @Override
