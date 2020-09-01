@@ -149,31 +149,10 @@
     <string name="Lawrencium">Lawrencium</string>
 
     <!--    Substances-->
-    <string name="H2">Hydrogen</string>
-    <string name="O2">Oxygen</string>
-    <string name="Cl2">Chlorine</string>
-    <string name="N2">Nitrogen</string>
     <string name="CO2">Carbon Dioxide</string>
     <string name="SO2">Sulfur Dioxide</string>
     <string name="NO2">Nitrogen Dioxide</string>
     <string name="H2S">Hydrogen Sulfide</string>
-    <string name="Na">Sodium</string>
-    <string name="K">Potassium</string>
-    <string name="Mg">Magnesium</string>
-    <string name="Ca">Calcium</string>
-    <string name="Ba">Barium</string>
-    <string name="Cr">Chromium</string>
-    <string name="Fe">Iron</string>
-    <string name="Pt">Platinum</string>
-    <string name="Cu">Copper</string>
-    <string name="Ag">Silver</string>
-    <string name="Au">Gold</string>
-    <string name="Zn">Zinc</string>
-    <string name="Al">Aluminum</string>
-    <string name="C">Carbon</string>
-    <string name="P">Phosphorus</string>
-    <string name="S">Sulfur</string>
-    <string name="I2">Iodine</string>
     <string name="Fe_OH_2">Iron(II) Hydroxide</string>
     <string name="Fe_OH_3">Iron(III) Hydroxide</string>
     <string name="Mg_OH_2">Magnesium Hydroxide</string>
@@ -188,7 +167,6 @@
     <string name="HCl">Hydrochloric Acid</string>
     <string name="H2SO4">Sulfuric Acid</string>
     <string name="HNO3">Nitric Acid</string>
-    <string name="Br2">Bromine</string>
     <string name="H2O">Water</string>
     <string name="FeCl2">Iron(II) Chloride</string>
     <string name="FeCl3">Iron(III) Chloride</string>

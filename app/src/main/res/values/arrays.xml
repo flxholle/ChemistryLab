@@ -307,31 +307,31 @@
     </string-array>
 
     <string-array name="substance_names">
-        <item>@string/H2</item>
-        <item>@string/O2</item>
-        <item>@string/Cl2</item>
-        <item>@string/N2</item>
+        <item>@string/Hydrogen</item>
+        <item>@string/Oxygen</item>
+        <item>@string/Chlorine</item>
+        <item>@string/Nitrogen</item>
         <item>@string/CO2</item>
         <item>@string/SO2</item>
         <item>@string/NO2</item>
         <item>@string/H2S</item>
-        <item>@string/Na</item>
-        <item>@string/K</item>
-        <item>@string/Mg</item>
-        <item>@string/Ca</item>
-        <item>@string/Ba</item>
-        <item>@string/Cr</item>
-        <item>@string/Fe</item>
-        <item>@string/Pt</item>
-        <item>@string/Cu</item>
-        <item>@string/Ag</item>
-        <item>@string/Au</item>
-        <item>@string/Zn</item>
-        <item>@string/Al</item>
-        <item>@string/C</item>
-        <item>@string/P</item>
-        <item>@string/S</item>
-        <item>@string/I2</item>
+        <item>@string/Sodium</item>
+        <item>@string/Potassium</item>
+        <item>@string/Magnesium</item>
+        <item>@string/Calcium</item>
+        <item>@string/Barium</item>
+        <item>@string/Chromium</item>
+        <item>@string/Iron</item>
+        <item>@string/Platinum</item>
+        <item>@string/Copper</item>
+        <item>@string/Silver</item>
+        <item>@string/Gold</item>
+        <item>@string/Zinc</item>
+        <item>@string/Aluminum</item>
+        <item>@string/Carbon</item>
+        <item>@string/Phosphorus</item>
+        <item>@string/Sulfur</item>
+        <item>@string/Iodine</item>
         <item>@string/Fe_OH_2</item>
         <item>@string/Fe_OH_3</item>
         <item>@string/Mg_OH_2</item>
@@ -348,7 +348,7 @@
         <item>@string/HCl</item>
         <item>@string/H2SO4</item>
         <item>@string/HNO3</item>
-        <item>@string/Br2</item>
+        <item>@string/Bromine</item>
         <item>@string/H2O</item>
         <item>@string/FeCl2</item>
         <item>@string/FeCl3</item>
