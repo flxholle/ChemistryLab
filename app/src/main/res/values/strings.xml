@@ -207,7 +207,6 @@
     <string name="Ag2SO4">Silver Sulfate</string>
     <string name="NaNO3">Sodium Nitrate</string>
     <string name="KNO3">Potassium Nitrate</string>
-    <string name="KN_O3">Potassium Nitrate</string>
     <string name="Ba_NO3_2">Barium Nitrate</string>
     <string name="Ca_NO3_2">Calcium Nitrate</string>
     <string name="Mg_NO3_2">Magnesium Nitrate</string>
@@ -216,7 +215,6 @@
     <string name="Fe_NO3_2">Iron(II) Nitrate</string>
     <string name="Fe_NO3_3">Iron(III) Nitrate</string>
     <string name="Cu_NO3_2">Copper Nitrate</string>
-    <string name="CuNO3_2">Copper Nitrate</string>
     <string name="AgNO3">Silver Nitrate</string>
     <string name="KOH">Potassium Hydroxide</string>
 </resources>
