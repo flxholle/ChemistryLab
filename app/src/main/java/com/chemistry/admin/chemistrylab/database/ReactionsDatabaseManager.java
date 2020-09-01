@@ -4,10 +4,10 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Point;
 import android.os.Environment;
 import android.util.Log;
 
+import com.chemistry.admin.chemistrylab.R;
 import com.chemistry.admin.chemistrylab.chemical.Substance;
 import com.chemistry.admin.chemistrylab.chemical.gas.Gas;
 import com.chemistry.admin.chemistrylab.chemical.liquid.Liquid;
@@ -36,7 +36,7 @@ public class ReactionsDatabaseManager {
     private static final String APP_DATA_PATH = Environment.getDataDirectory().getPath() + "/data/com.chemistry.admin.chemistrylab/";
 
     private static final String DATABASE_FOLDER_NAME = "database";
-    private static final String DATABASE_NAME = "chemistry-database";
+    private static final String DATABASE_NAME = "reactions";
     private static final String DATABASE_DATA_PATH = Environment.getDataDirectory().getPath() + "/data/com.chemistry.admin.chemistrylab/" + DATABASE_FOLDER_NAME + "/" + DATABASE_NAME;
 
     public static final String SETTINGS = "settings";
@@ -73,6 +73,9 @@ public class ReactionsDatabaseManager {
     private SQLiteDatabase database;
     public static ReactionsDatabaseManager instance;
 
+    private final String[] elementSymbols, elementNames;
+    private final String[] substanceSymbols, substanceNames;
+
     public static ReactionsDatabaseManager getInstance(Context context) {
         if (instance == null) {
             instance = new ReactionsDatabaseManager(context);
@@ -83,6 +86,10 @@ public class ReactionsDatabaseManager {
 
     private ReactionsDatabaseManager(Context context) {
         this.context = context;
+        elementSymbols = context.getResources().getStringArray(R.array.element_symbols);
+        elementNames = context.getResources().getStringArray(R.array.element_names);
+        substanceSymbols = context.getResources().getStringArray(R.array.substance_symbols);
+        substanceNames = context.getResources().getStringArray(R.array.substance_names);
         copyDataToInternalStorage(DATABASE_FOLDER_NAME, DATABASE_NAME);
     }
 
@@ -206,7 +213,7 @@ public class ReactionsDatabaseManager {
 
         switch (state) {
             case "solid": {
-                result = new Solid(cursor.getString(cursor.getColumnIndex(KEY_NAME)),
+                result = new Solid(getSubstanceToSymbol(symbol, cursor.getString(cursor.getColumnIndex(KEY_NAME))),
                         symbol,
                         cursor.getString(cursor.getColumnIndex(KEY_COLOR)),
                         cursor.getDouble(cursor.getColumnIndex(KEY_M)),
@@ -216,7 +223,7 @@ public class ReactionsDatabaseManager {
             break;
 
             case "liquid": {
-                result = new Liquid(cursor.getString(cursor.getColumnIndex(KEY_NAME)),
+                result = new Liquid(getSubstanceToSymbol(symbol, cursor.getString(cursor.getColumnIndex(KEY_NAME))),
                         symbol,
                         cursor.getString(cursor.getColumnIndex(KEY_COLOR)),
                         cursor.getDouble(cursor.getColumnIndex(KEY_M)),
@@ -226,7 +233,7 @@ public class ReactionsDatabaseManager {
             break;
 
             case "gas": {
-                result = new Gas(cursor.getString(cursor.getColumnIndex(KEY_NAME)),
+                result = new Gas(getSubstanceToSymbol(symbol, cursor.getString(cursor.getColumnIndex(KEY_NAME))),
                         symbol,
                         cursor.getString(cursor.getColumnIndex(KEY_COLOR)),
                         cursor.getDouble(cursor.getColumnIndex(KEY_M)),
@@ -263,7 +270,7 @@ public class ReactionsDatabaseManager {
             String state = cursor.getString(columnStateIndex);
             switch (state) {
                 case "solid": {
-                    result.add(new Solid(cursor.getString(columnNameIndex),
+                    result.add(new Solid(getSubstanceToSymbol(cursor.getString(columnSymbolIndex), cursor.getString(columnNameIndex)),
                             cursor.getString(columnSymbolIndex),
                             cursor.getString(columnColorIndex),
                             cursor.getDouble(columnMIndex),
@@ -273,7 +280,7 @@ public class ReactionsDatabaseManager {
                 break;
 
                 case "liquid": {
-                    result.add(new Liquid(cursor.getString(columnNameIndex),
+                    result.add(new Liquid(getSubstanceToSymbol(cursor.getString(columnSymbolIndex), cursor.getString(columnNameIndex)),
                             cursor.getString(columnSymbolIndex),
                             cursor.getString(columnColorIndex),
                             cursor.getDouble(columnMIndex),
@@ -283,7 +290,7 @@ public class ReactionsDatabaseManager {
                 break;
 
                 case "gas": {
-                    result.add(new Gas(cursor.getString(columnNameIndex),
+                    result.add(new Gas(getSubstanceToSymbol(cursor.getString(columnSymbolIndex), cursor.getString(columnNameIndex)),
                             cursor.getString(columnSymbolIndex),
                             cursor.getString(columnColorIndex),
                             cursor.getDouble(columnMIndex),
@@ -323,8 +330,11 @@ public class ReactionsDatabaseManager {
         Cursor cursor = database.rawQuery("SELECT * FROM " + ELEMENTS_TABLE_NAME + " WHERE " + KEY_SYMBOL + " = '" + symbol + "'", null);
         cursor.moveToFirst();
         PeriodicTableFragment.ElementItem result =
-                new PeriodicTableFragment.ElementItem(cursor.getString(cursor.getColumnIndex(KEY_NAME)),
+                new PeriodicTableFragment.ElementItem(getElementToSymbol(cursor.getString(cursor.getColumnIndex(KEY_SYMBOL)), cursor.getString(cursor.getColumnIndex(KEY_NAME))),
                         cursor.getString(cursor.getColumnIndex(KEY_SYMBOL)),
+                        cursor.getInt(cursor.getColumnIndex(KEY_BOILING)),
+                        cursor.getInt(cursor.getColumnIndex(KEY_MELTING)),
+                        cursor.getInt(cursor.getColumnIndex(KEY_GROUPS)),
                         cursor.getDouble(cursor.getColumnIndex(KEY_MASS)),
                         cursor.getInt(cursor.getColumnIndex(KEY_ATOMIC_NUMBER)),
                         cursor.getString(cursor.getColumnIndex(KEY_ELECTRONIC_CONFIG)),
@@ -364,7 +374,7 @@ public class ReactionsDatabaseManager {
         int densityColumnIndex = cursor.getColumnIndex(KEY_DENSITY);
         int weightOrVolumeIndex = cursor.getColumnIndex(KEY_WEIGHT_OR_VOLUME);
         while (!cursor.isAfterLast()) {
-            Liquid liquid = new Liquid(cursor.getString(nameColumnIndex),
+            Liquid liquid = new Liquid(getSubstanceToSymbol(cursor.getString(symbolColumnIndex), cursor.getString(nameColumnIndex)),
                     cursor.getString(symbolColumnIndex),
                     cursor.getString(colorColumnIndex),
                     cursor.getDouble(MColumnIndex),
@@ -396,7 +406,7 @@ public class ReactionsDatabaseManager {
         int densityColumnIndex = cursor.getColumnIndex(KEY_DENSITY);
         int weightOrVolumeIndex = cursor.getColumnIndex(KEY_WEIGHT_OR_VOLUME);
         while (!cursor.isAfterLast()) {
-            Solid solid = new Solid(cursor.getString(nameColumnIndex),
+            Solid solid = new Solid(getSubstanceToSymbol(cursor.getString(symbolColumnIndex), cursor.getString(nameColumnIndex)),
                     cursor.getString(symbolColumnIndex),
                     cursor.getString(colorColumnIndex),
                     cursor.getDouble(MColumnIndex),
@@ -428,7 +438,7 @@ public class ReactionsDatabaseManager {
         int densityColumnIndex = cursor.getColumnIndex(KEY_DENSITY);
         int weightOrVolumeIndex = cursor.getColumnIndex(KEY_WEIGHT_OR_VOLUME);
         while (!cursor.isAfterLast()) {
-            Gas gas = new Gas(cursor.getString(nameColumnIndex),
+            Gas gas = new Gas(getSubstanceToSymbol(cursor.getString(symbolColumnIndex), cursor.getString(nameColumnIndex)),
                     cursor.getString(symbolColumnIndex),
                     cursor.getString(colorColumnIndex),
                     cursor.getDouble(MColumnIndex),
@@ -444,5 +454,35 @@ public class ReactionsDatabaseManager {
         closeDatabase();
         cursor.close();
         return listResult;
+    }
+
+    private String getSubstanceToSymbol(String symbol, String defaultName) {
+        return getSubstanceToSymbol(symbol, defaultName, true);
+    }
+
+    private String getSubstanceToSymbol(String symbol, String defaultName, boolean checkElements) {
+        for (int i = 0; i < substanceSymbols.length; i++) {
+            if (substanceSymbols[i].equalsIgnoreCase(symbol))
+                return substanceNames[i];
+        }
+        if (checkElements)
+            return getElementToSymbol(symbol, defaultName, false);
+        else
+            return defaultName;
+    }
+
+    private String getElementToSymbol(String symbol, String defaultName) {
+        return getElementToSymbol(symbol, defaultName, true);
+    }
+
+    private String getElementToSymbol(String symbol, String defaultName, boolean checkSubstances) {
+        for (int i = 0; i < elementSymbols.length; i++) {
+            if (elementSymbols[i].equalsIgnoreCase(symbol))
+                return elementNames[i];
+        }
+        if (checkSubstances)
+            return getSubstanceToSymbol(symbol, defaultName, false);
+        else
+            return defaultName;
     }
 }

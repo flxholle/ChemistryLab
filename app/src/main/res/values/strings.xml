@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name" translatable="false">ChemistryLab</string>
     <string name="tools">Tools</string>
     <string name="liquid">Liquid</string>
@@ -28,21 +28,22 @@
     <string name="fire">Fire</string>
     <string name="tripod">Tripod</string>
     <string name="alcohol_burner">Alcohol Burner</string>
-    <string name="chapter_one">Essential Ideas &amp; Atoms, Molecules, and Ions</string>
-    <string name="chapter_two">Stoichiometry of Chemical Reactions</string>
-    <string name="chapter_three">Thermochemistry</string>
-    <string name="chapter_four">Chemical Bonding and Molecular Geometry</string>
-    <string name="chapter_five">Gases</string>
-    <string name="chapter_six">Liquids and Solids</string>
-    <string name="chapter_seven">Solutions and Colloids</string>
-    <string name="chapter_eight">Kinetics</string>
-    <string name="chapter_nine">Acid-Base Equilibria</string>
-    <string name="chapter_ten">Electrochemistry</string>
-    <string name="chapter_eleven">Appendix</string>
+    <string name="chapter_one" tools:ignore="MissingTranslation">Essential Ideas &amp; Atoms, Molecules, and Ions</string>
+    <string name="chapter_two" tools:ignore="MissingTranslation">Stoichiometry of Chemical Reactions</string>
+    <string name="chapter_three" tools:ignore="MissingTranslation">Thermochemistry</string>
+    <string name="chapter_four" tools:ignore="MissingTranslation">Chemical Bonding and Molecular Geometry</string>
+    <string name="chapter_five" tools:ignore="MissingTranslation">Gases</string>
+    <string name="chapter_six" tools:ignore="MissingTranslation">Liquids and Solids</string>
+    <string name="chapter_seven" tools:ignore="MissingTranslation">Solutions and Colloids</string>
+    <string name="chapter_eight" tools:ignore="MissingTranslation">Kinetics</string>
+    <string name="chapter_nine" tools:ignore="MissingTranslation">Acid-Base Equilibria</string>
+    <string name="chapter_ten" tools:ignore="MissingTranslation">Electrochemistry</string>
+    <string name="chapter_eleven" tools:ignore="MissingTranslation">Appendix</string>
     <string name="credits">Credits</string>
     <string name="download_succeeded">Download succeeded!</string>
     <string name="download_failed">Download failed!</string>
 
+    <!--    Periodic Table-->
     <string name="Hydrogen">Hydrogen</string>
     <string name="Helium">Helium</string>
     <string name="Lithium">Lithium</string>
@@ -146,4 +147,98 @@
     <string name="Mendelevium">Mendelevium</string>
     <string name="Nobelium">Nobelium</string>
     <string name="Lawrencium">Lawrencium</string>
+
+    <!--    Substances-->
+    <string name="H2">Hydrogen</string>
+    <string name="O2">Oxygen</string>
+    <string name="Cl2">Chlorine</string>
+    <string name="N2">Nitrogen</string>
+    <string name="CO2">Carbon Dioxide</string>
+    <string name="SO2">Sulfur Dioxide</string>
+    <string name="NO2">Nitrogen Dioxide</string>
+    <string name="H2S">Hydrogen Sulfide</string>
+    <string name="Na">Sodium</string>
+    <string name="K">Potassium</string>
+    <string name="Mg">Magnesium</string>
+    <string name="Ca">Calcium</string>
+    <string name="Ba">Barium</string>
+    <string name="Cr">Chromium</string>
+    <string name="Fe">Iron</string>
+    <string name="Pt">Platinum</string>
+    <string name="Cu">Copper</string>
+    <string name="Ag">Silver</string>
+    <string name="Au">Gold</string>
+    <string name="Zn">Zinc</string>
+    <string name="Al">Aluminum</string>
+    <string name="C">Carbon</string>
+    <string name="P">Phosphorus</string>
+    <string name="S">Sulfur</string>
+    <string name="I2">Iodine</string>
+    <string name="Fe_OH_2">Iron(II) Hydroxide</string>
+    <string name="Fe_OH_3">Iron(III) Hydroxide</string>
+    <string name="Mg_OH_2">Magnesium Hydroxide</string>
+    <string name="Cr_OH_2">Chromium(II) Hydroxide</string>
+    <string name="Cr_OH_3">Chromium(III) Hydroxide</string>
+    <string name="Cu_OH_2">Copper(II) Hydroxide</string>
+    <string name="Zn_OH_2">Zinc Hydroxide</string>
+    <string name="Al_OH_3">Aluminum Hydroxide</string>
+    <string name="NaOH">Sodium Hydroxide</string>
+    <string name="Ca_OH_2">Calcium Hydroxide</string>
+    <string name="Ba_OH_2">Barium Hydroxide</string>
+    <string name="HCl">Hydrochloric Acid</string>
+    <string name="H2SO4">Sulfuric Acid</string>
+    <string name="HNO3">Nitric Acid</string>
+    <string name="Br2">Bromine</string>
+    <string name="H2O">Water</string>
+    <string name="FeCl2">Iron(II) Chloride</string>
+    <string name="FeCl3">Iron(III) Chloride</string>
+    <string name="MgCl2">Magnesium Chloride</string>
+    <string name="NaCl">Sodium Chloride</string>
+    <string name="CaCl2">Calcium Chloride</string>
+    <string name="KCl">Potassium Chloride</string>
+    <string name="BaCl2">Barium Chloride</string>
+    <string name="AlCl3">Aluminium Chloride</string>
+    <string name="ZnCl2">Zinc Chloride</string>
+    <string name="FeO">Iron(II) Oxide</string>
+    <string name="Fe2O3">Iron(III) Oxide</string>
+    <string name="Na2O">Sodium Oxide</string>
+    <string name="K2O">Potassium Oxide</string>
+    <string name="BaO">Barium Oxide</string>
+    <string name="CaO">Calcium Oxide</string>
+    <string name="MgO">Magnesium Oxide</string>
+    <string name="Al2O3">Aluminium Oxide</string>
+    <string name="ZnO">Zinc Oxide</string>
+    <string name="CuO">Copper Oxide</string>
+    <string name="Ag2O">Silver Oxide</string>
+    <string name="KO2">Potassium Dioxide</string>
+    <string name="Na2O2">Sodium Peroxide</string>
+    <string name="NO">Nitric Oxide</string>
+    <string name="NH3">Ammonia</string>
+    <string name="CuCl2">Copper(II) chloride</string>
+    <string name="AgCl">Silver Chloride</string>
+    <string name="K2SO4">Potassium Sulfate</string>
+    <string name="Na2SO4">Sodium Sulfate</string>
+    <string name="BaSO4">Barium Sulfate</string>
+    <string name="CaSO4">Calcium Sulfate</string>
+    <string name="MgSO4">Magnesium Sulfate</string>
+    <string name="Al2_SO4_3">Aluminum Sulfate</string>
+    <string name="ZnSO4">Zinc Sulfate</string>
+    <string name="FeSO4">Iron(II) Sulfate</string>
+    <string name="Fe2_SO4_3">Iron(III) Sulfate</string>
+    <string name="CuSO4">Copper Sulfate</string>
+    <string name="Ag2SO4">Silver Sulfate</string>
+    <string name="NaNO3">Sodium Nitrate</string>
+    <string name="KNO3">Potassium Nitrate</string>
+    <string name="KN_O3">Potassium Nitrate</string>
+    <string name="Ba_NO3_2">Barium Nitrate</string>
+    <string name="Ca_NO3_2">Calcium Nitrate</string>
+    <string name="Mg_NO3_2">Magnesium Nitrate</string>
+    <string name="Al_NO3_3">Aluminum Nitrate</string>
+    <string name="Zn_NO3_2">Zinc Nitrate</string>
+    <string name="Fe_NO3_2">Iron(II) Nitrate</string>
+    <string name="Fe_NO3_3">Iron(III) Nitrate</string>
+    <string name="Cu_NO3_2">Copper Nitrate</string>
+    <string name="CuNO3_2">Copper Nitrate</string>
+    <string name="AgNO3">Silver Nitrate</string>
+    <string name="KOH">Potassium Hydroxide</string>
 </resources>

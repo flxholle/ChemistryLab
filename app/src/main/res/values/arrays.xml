@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="element_names">
+    <string-array name="element_symbols">
         <item>H</item>
         <item>He</item>
         <item>Li</item>
@@ -106,7 +106,7 @@
         <item>Lr</item>
     </string-array>
 
-    <string-array name="element_names_values">
+    <string-array name="element_names">
         <item>@string/Hydrogen</item>
         <item>@string/Helium</item>
         <item>@string/Lithium</item>
@@ -212,4 +212,190 @@
         <item>@string/Lawrencium</item>
     </string-array>
 
+
+    <string-array name="substance_symbols">
+        <item>H2</item>
+        <item>O2</item>
+        <item>Cl2</item>
+        <item>N2</item>
+        <item>CO2</item>
+        <item>SO2</item>
+        <item>NO2</item>
+        <item>H2S</item>
+        <item>Na</item>
+        <item>K</item>
+        <item>Mg</item>
+        <item>Ca</item>
+        <item>Ba</item>
+        <item>Cr</item>
+        <item>Fe</item>
+        <item>Pt</item>
+        <item>Cu</item>
+        <item>Ag</item>
+        <item>Au</item>
+        <item>Zn</item>
+        <item>Al</item>
+        <item>C</item>
+        <item>P</item>
+        <item>S</item>
+        <item>I2</item>
+        <item>Fe(OH)2</item>
+        <item>Fe(OH)3</item>
+        <item>Mg(OH)2</item>
+        <item>NaOH</item>
+        <item>KOH</item>
+        <item>Ca(OH)2</item>
+        <item>Ba(OH)2</item>
+        <item>Cr(OH)2</item>
+        <item>Cr(OH)3</item>
+        <item>Cu(OH)2</item>
+        <item>Zn(OH)2</item>
+        <item>Al(OH)3</item>
+        <item>NaCl</item>
+        <item>HCl</item>
+        <item>H2SO4</item>
+        <item>HNO3</item>
+        <item>Br2</item>
+        <item>H2O</item>
+        <item>FeCl2</item>
+        <item>FeCl3</item>
+        <item>MgCl2</item>
+        <item>CaCl2</item>
+        <item>KCl</item>
+        <item>BaCl2</item>
+        <item>AlCl3</item>
+        <item>ZnCl2</item>
+        <item>FeO</item>
+        <item>Fe2O3</item>
+        <item>Na2O</item>
+        <item>K2O</item>
+        <item>BaO</item>
+        <item>CaO</item>
+        <item>MgO</item>
+        <item>Al2O3</item>
+        <item>ZnO</item>
+        <item>CuO</item>
+        <item>Ag2O</item>
+        <item>KO2</item>
+        <item>Na2O2</item>
+        <item>NO</item>
+        <item>NH3</item>
+        <item>CuCl2</item>
+        <item>AgCl</item>
+        <item>K2SO4</item>
+        <item>Na2SO4</item>
+        <item>BaSO4</item>
+        <item>CaSO4</item>
+        <item>MgSO4</item>
+        <item>Al2(SO4)3</item>
+        <item>ZnSO4</item>
+        <item>FeSO4</item>
+        <item>Fe2(SO4)3</item>
+        <item>CuSO4</item>
+        <item>Ag2SO4</item>
+        <item>NaNO3</item>
+        <item>KNO3</item>
+        <item>Ba(NO3)2</item>
+        <item>Ca(NO3)2</item>
+        <item>Mg(NO3)2</item>
+        <item>Al(NO3)3</item>
+        <item>Zn(NO3)2</item>
+        <item>Fe(NO3)2</item>
+        <item>Fe(NO3)3</item>
+        <item>Cu(NO3)2</item>
+        <item>AgNO3</item>
+    </string-array>
+
+    <string-array name="substance_names">
+        <item>@string/H2</item>
+        <item>@string/O2</item>
+        <item>@string/Cl2</item>
+        <item>@string/N2</item>
+        <item>@string/CO2</item>
+        <item>@string/SO2</item>
+        <item>@string/NO2</item>
+        <item>@string/H2S</item>
+        <item>@string/Na</item>
+        <item>@string/K</item>
+        <item>@string/Mg</item>
+        <item>@string/Ca</item>
+        <item>@string/Ba</item>
+        <item>@string/Cr</item>
+        <item>@string/Fe</item>
+        <item>@string/Pt</item>
+        <item>@string/Cu</item>
+        <item>@string/Ag</item>
+        <item>@string/Au</item>
+        <item>@string/Zn</item>
+        <item>@string/Al</item>
+        <item>@string/C</item>
+        <item>@string/P</item>
+        <item>@string/S</item>
+        <item>@string/I2</item>
+        <item>@string/Fe_OH_2</item>
+        <item>@string/Fe_OH_3</item>
+        <item>@string/Mg_OH_2</item>
+        <item>@string/NaOH</item>
+        <item>@string/KOH</item>
+        <item>@string/Ca_OH_2</item>
+        <item>@string/Ba_OH_2</item>
+        <item>@string/Cr_OH_2</item>
+        <item>@string/Cr_OH_3</item>
+        <item>@string/Cu_OH_2</item>
+        <item>@string/Zn_OH_2</item>
+        <item>@string/Al_OH_3</item>
+        <item>@string/NaCl</item>
+        <item>@string/HCl</item>
+        <item>@string/H2SO4</item>
+        <item>@string/HNO3</item>
+        <item>@string/Br2</item>
+        <item>@string/H2O</item>
+        <item>@string/FeCl2</item>
+        <item>@string/FeCl3</item>
+        <item>@string/MgCl2</item>
+        <item>@string/CaCl2</item>
+        <item>@string/KCl</item>
+        <item>@string/BaCl2</item>
+        <item>@string/AlCl3</item>
+        <item>@string/ZnCl2</item>
+        <item>@string/FeO</item>
+        <item>@string/Fe2O3</item>
+        <item>@string/Na2O</item>
+        <item>@string/K2O</item>
+        <item>@string/BaO</item>
+        <item>@string/CaO</item>
+        <item>@string/MgO</item>
+        <item>@string/Al2O3</item>
+        <item>@string/ZnO</item>
+        <item>@string/CuO</item>
+        <item>@string/Ag2O</item>
+        <item>@string/KO2</item>
+        <item>@string/Na2O2</item>
+        <item>@string/NO</item>
+        <item>@string/NH3</item>
+        <item>@string/CuCl2</item>
+        <item>@string/AgCl</item>
+        <item>@string/K2SO4</item>
+        <item>@string/Na2SO4</item>
+        <item>@string/BaSO4</item>
+        <item>@string/CaSO4</item>
+        <item>@string/MgSO4</item>
+        <item>@string/Al2_SO4_3</item>
+        <item>@string/ZnSO4</item>
+        <item>@string/FeSO4</item>
+        <item>@string/Fe2_SO4_3</item>
+        <item>@string/CuSO4</item>
+        <item>@string/Ag2SO4</item>
+        <item>@string/NaNO3</item>
+        <item>@string/KNO3</item>
+        <item>@string/Ba_NO3_2</item>
+        <item>@string/Ca_NO3_2</item>
+        <item>@string/Mg_NO3_2</item>
+        <item>@string/Al_NO3_3</item>
+        <item>@string/Zn_NO3_2</item>
+        <item>@string/Fe_NO3_2</item>
+        <item>@string/Fe_NO3_3</item>
+        <item>@string/Cu_NO3_2</item>
+        <item>@string/AgNO3</item>
+    </string-array>
 </resources>
