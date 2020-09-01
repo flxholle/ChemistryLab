@@ -23,6 +23,7 @@ import com.chemistry.admin.chemistrylab.adapter.LectureAdapter;
 
 public class LectureFragment extends Fragment implements AdapterView.OnItemClickListener {
     public static final String KEY_PDF_PATH = "KEY_PDF_PATH";
+    public static final String LITERATURE_DOWNLOAD_LINK = "https://github.com/asdoi/ChemistryLab/raw/reduce_size/literature/";
 
     private static final String credits = "Chemistry 2e\n" +
             "\n" +
