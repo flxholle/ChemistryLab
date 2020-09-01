@@ -46,6 +46,8 @@ public class SolidManager extends BaseSubstanceManager {
             Solid aSolid = getSubstance(i);
             paint.setColor(aSolid.getColor());
             endIndex = startIndex - ((int) aSolid.getHeight(context));
+            if (endIndex < 0)
+                endIndex = 0;
             for (int j = startIndex; j > endIndex; j--) {
                 Point line = holderArrPoint[j];
                 canvas.drawLine(line.x, j, line.y, j, paint);
