@@ -44,7 +44,7 @@ public abstract class BaseSubstanceManager implements ContainerCallBack {
     public Substance addSubstance(Substance substance) {
         if (listSubstances.contains(substance)) {
             Substance substanceAdded = listSubstances.get(listSubstances.indexOf(substance));
-            substanceAdded.addAmount(substance.getMole());
+            substanceAdded.addAmount(context, substance.getMole());
             substanceAdded.getTip().update();
             return substanceAdded;
         }
@@ -109,8 +109,8 @@ public abstract class BaseSubstanceManager implements ContainerCallBack {
     public abstract BaseSubstanceManager getSuitableSubstanceManager(LaboratoryHolderInstrument holder);
 
     public List<Substance> takeSubstanceByHeightAndWidth(double height, double width) {
-        double volumeTaken = PixelConverter.calculateVolumeByHeight(height, width);
-        double heightConverted = PixelConverter.calculateHeightByVolume(volumeTaken, this.width);
+        double volumeTaken = PixelConverter.calculateVolumeByHeight(context, height, width);
+        double heightConverted = PixelConverter.calculateHeightByVolume(context, volumeTaken, this.width);
 
         return takeSubstanceByHeight(heightConverted);
     }
@@ -129,8 +129,8 @@ public abstract class BaseSubstanceManager implements ContainerCallBack {
     public Substance removeSubstance(int index) {
         Substance removedSubstance = listSubstances.remove(index);
         removedSubstance.getTip().destroy();
-        removedSubstance.setManager(null);
-        this.currentHeight -= removedSubstance.getHeight();
+        removedSubstance.setManager(context, null);
+        this.currentHeight -= removedSubstance.getHeight(context);
         return removedSubstance;
     }
 
@@ -141,8 +141,8 @@ public abstract class BaseSubstanceManager implements ContainerCallBack {
             if(listSubstances.get(i) == substance){
                 removedSubstance = listSubstances.remove(i);
                 removedSubstance.getTip().destroy();
-                removedSubstance.setManager(null);
-                this.currentHeight -= removedSubstance.getHeight();
+                removedSubstance.setManager(context, null);
+                this.currentHeight -= removedSubstance.getHeight(context);
                 break;
             }
         }

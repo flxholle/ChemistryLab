@@ -1,5 +1,7 @@
 package com.chemistry.admin.chemistrylab.chemical.liquid;
 
+import android.content.Context;
+
 import com.chemistry.admin.chemistrylab.chemical.Substance;
 
 /**
@@ -26,8 +28,8 @@ public class Liquid extends Substance {
     }
 
     @Override
-    public Liquid split(double mole) {
-        return (Liquid) super.split(mole);
+    public Liquid split(Context context, double mole) {
+        return (Liquid) super.split(context, mole);
     }
 
     /**
@@ -45,8 +47,8 @@ public class Liquid extends Substance {
         return liquid;
     }
 
-    @Override
-    public String toString() {
-        return super.toString() + " volume: " + getVolume() + " height: " + getHeight();
+//    @Override
+    public String toString(Context context) {
+        return super.toString() + " volume: " + getVolume() + " height: " + getHeight(context);
     }
 }

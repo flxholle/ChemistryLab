@@ -34,7 +34,7 @@ public class GasManager extends BaseSubstanceManager {
     public Gas addSubstance(Substance substance) {
         Gas result = (Gas) super.addSubstance(substance);
         if(result == substance){
-            result.setManager(this);
+            result.setManager(context, this);
         }
         return result;
     }

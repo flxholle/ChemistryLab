@@ -30,8 +30,8 @@ public class LiquidManager extends BaseSubstanceManager {
         Liquid result = (Liquid) super.addSubstance(liquid);
         if (result == liquid) {
             result.setWidth(width);
-            result.setManager(this);
-            result.calculateMaxMoleInHolder(maxHeight, width);
+            result.setManager(context, this);
+            result.calculateMaxMoleInHolder(context, maxHeight, width);
             holder.checkReaction(result);
         }
         return result;
@@ -73,7 +73,7 @@ public class LiquidManager extends BaseSubstanceManager {
         int size = listSubstances.size();
         for (int i = size - 1; i >= 0; i--) {
             Liquid aLiquid = getSubstance(i);
-            result.add(aLiquid.split(aLiquid.getMole() * ratio));
+            result.add(aLiquid.split(context, aLiquid.getMole() * ratio));
             aLiquid.getTip().update();
         }
         return result;

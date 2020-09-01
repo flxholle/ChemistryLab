@@ -43,7 +43,7 @@ public class BoilingAnimation implements BaseAnimation {
             listReactionSubstances.add(new ReactionSubstance(substance, moleReducingPerLoop));
             Solid solidVersionOfThisSubstance = (Solid) DatabaseManager.getInstance(context).getSubstanceBySymbolAndState(substance.getSymbol(), "solid");
             if (solidVersionOfThisSubstance != null) {
-                solidVersionOfThisSubstance.reduceAmount(solidVersionOfThisSubstance.getMole());
+                solidVersionOfThisSubstance.reduceAmount(context, solidVersionOfThisSubstance.getMole());
                 solidVersionOfThisSubstance = solidManager.addSubstance(solidVersionOfThisSubstance);
                 listReactionSubstances.add(new ReactionSubstance(solidVersionOfThisSubstance, -moleReducingPerLoop));
             }
@@ -68,7 +68,7 @@ public class BoilingAnimation implements BaseAnimation {
             return false;
         }
         for (ReactionSubstance aReactionSubstance : listReactionSubstances) {
-            aReactionSubstance.doReaction();
+            aReactionSubstance.doReaction(holder.getContext());
         }
         return true;
     }

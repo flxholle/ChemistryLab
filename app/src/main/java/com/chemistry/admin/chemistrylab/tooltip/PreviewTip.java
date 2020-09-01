@@ -68,9 +68,9 @@ public class PreviewTip extends RelativeLayout implements SeekBar.OnSeekBarChang
     public void onStopTrackingTouch(SeekBar seekBar) {
         double moleChanged = (seekBar.getProgress() + 1) * 1.0 / 100 - baseSubstance.getMole();
         if(moleChanged > 0){
-            baseSubstance.addAmount(moleChanged);
+            baseSubstance.addAmount(getContext(), moleChanged);
         }else {
-            baseSubstance.reduceAmount(-moleChanged);
+            baseSubstance.reduceAmount(getContext(), -moleChanged);
         }
         baseSubstance.getTip().update();
         DatabaseManager.getInstance(getContext()).updateWeightOrVolumeOf(baseSubstance);

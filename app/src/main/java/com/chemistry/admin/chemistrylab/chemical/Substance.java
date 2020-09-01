@@ -1,5 +1,6 @@
 package com.chemistry.admin.chemistrylab.chemical;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.text.SpannableString;
 
@@ -38,10 +39,10 @@ public abstract class Substance implements Serializable {
         this.color = Color.parseColor(colorHex);
     }
 
-    public void setManager(ContainerCallBack manager) {
+    public void setManager(Context context, ContainerCallBack manager) {
         this.manager = manager;
         if(manager != null){
-            manager.onHeightChange(this, getHeight());
+            manager.onHeightChange(this, getHeight(context));
         }
     }
 
@@ -83,8 +84,8 @@ public abstract class Substance implements Serializable {
         return (this.symbol.equals(temp.getSymbol())) && (this.state.equals(temp.getState()));
     }
 
-    public void calculateMaxMoleInHolder(double holderHeight, double holderWidth) {
-        this.maxMoleInHolder = getMole(PixelConverter.calculateVolumeByHeight(holderHeight, holderWidth));
+    public void calculateMaxMoleInHolder(Context context, double holderHeight, double holderWidth) {
+        this.maxMoleInHolder = getMole(PixelConverter.calculateVolumeByHeight(context, holderHeight, holderWidth));
     }
 
     public double getMaxMoleInHolder() {
@@ -110,12 +111,12 @@ public abstract class Substance implements Serializable {
      * @param mole the amount of mole want to split
      * @return the substance result after splitting
      */
-    public Substance split(double mole){
+    public Substance split(Context context, double mole){
         if(mole <= 0){
             return null;
         }
         Substance result = getClone();
-        result.mole = reduceAmount(mole);
+        result.mole = reduceAmount(context, mole);
         result.tip.update();
         return result;
     }
@@ -125,17 +126,17 @@ public abstract class Substance implements Serializable {
      * @param mole the amount of mole want to add
      * @return the amount of mole left which can't be added because the container of the liquid is full
      */
-    public double addAmount(double mole){
+    public double addAmount(Context context, double mole){
         if(manager == null){
             this.mole += mole;
             return 0;
         }
         double availableHeightOfHolder = manager.getAvailableHeight();
         double volumeAccepted = getVolume(mole);
-        double heightIncrement = PixelConverter.calculateHeightByVolume(volumeAccepted, width);
+        double heightIncrement = PixelConverter.calculateHeightByVolume(context, volumeAccepted, width);
         double moleAccepted;
         if (availableHeightOfHolder < heightIncrement) {
-            moleAccepted = getMole(PixelConverter.calculateVolumeByHeight(availableHeightOfHolder, width));
+            moleAccepted = getMole(PixelConverter.calculateVolumeByHeight(context, availableHeightOfHolder, width));
             heightIncrement = availableHeightOfHolder;
         } else {
             moleAccepted = mole;
@@ -151,11 +152,11 @@ public abstract class Substance implements Serializable {
      * @param mole the amount of mole want to reduce
      * @return the amount of mole lost
      */
-    public double reduceAmount(double mole){
+    public double reduceAmount(Context context, double mole){
         double moleLost = Math.min(mole, this.mole);
         this.mole -= moleLost;
         if(manager != null) {
-            manager.onHeightChange(this, -PixelConverter.calculateHeightByVolume(getVolume(moleLost), width));
+            manager.onHeightChange(this, -PixelConverter.calculateHeightByVolume(context, getVolume(moleLost), width));
         }
         return moleLost;
     }
@@ -199,8 +200,8 @@ public abstract class Substance implements Serializable {
      * Get the current height of the substance
      * @return the current height of the substance
      */
-    public double getHeight() {
-        return PixelConverter.calculateHeightByVolume(getVolume(this.mole), width);
+    public double getHeight(Context context) {
+        return PixelConverter.calculateHeightByVolume(context, getVolume(this.mole), width);
     }
 
     /**

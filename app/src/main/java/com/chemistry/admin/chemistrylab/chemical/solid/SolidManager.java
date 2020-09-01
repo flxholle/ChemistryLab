@@ -30,8 +30,8 @@ public class SolidManager extends BaseSubstanceManager {
         Solid result = (Solid) super.addSubstance(solid);
         if (result == solid) {
             result.setWidth(width);
-            result.calculateMaxMoleInHolder(maxHeight, width);
-            result.setManager(this);
+            result.calculateMaxMoleInHolder(context, maxHeight, width);
+            result.setManager(context, this);
             holder.checkReaction(result);
         }
         return result;
@@ -45,7 +45,7 @@ public class SolidManager extends BaseSubstanceManager {
         for (int i = 0; i < listSubstances.size(); i++) {
             Solid aSolid = getSubstance(i);
             paint.setColor(aSolid.getColor());
-            endIndex = startIndex - ((int) aSolid.getHeight());
+            endIndex = startIndex - ((int) aSolid.getHeight(context));
             for (int j = startIndex; j > endIndex; j--) {
                 Point line = holderArrPoint[j];
                 canvas.drawLine(line.x, j, line.y, j, paint);
@@ -73,12 +73,12 @@ public class SolidManager extends BaseSubstanceManager {
         int lastSubstanceIndex = listSubstances.size() - 1;
         while (height > 0){
             Solid solid = getSubstance(lastSubstanceIndex);
-            double solidHeight = solid.getHeight();
+            double solidHeight = solid.getHeight(context);
             if(height >= solidHeight){
                 result.add(removeSubstance(lastSubstanceIndex));
             }else {
                 double ratio = height / solidHeight;
-                result.add(solid.split(solid.getMole() * ratio));
+                result.add(solid.split(context, solid.getMole() * ratio));
                 solid.getTip().update();
             }
             height -= solidHeight;
@@ -104,7 +104,7 @@ public class SolidManager extends BaseSubstanceManager {
         double result = maxHeight;
         for (int i = 0; i < listSubstances.size(); i++) {
             Substance temp = listSubstances.get(i);
-            result -= temp.getHeight();
+            result -= temp.getHeight(context);
             if (temp == substance) {
                 return result;
             }
