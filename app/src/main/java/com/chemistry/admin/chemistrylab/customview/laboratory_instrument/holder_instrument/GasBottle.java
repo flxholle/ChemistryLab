@@ -11,7 +11,7 @@ import android.text.SpannableString;
 import com.chemistry.admin.chemistrylab.R;
 import com.chemistry.admin.chemistrylab.chemical.BaseSubstanceManager;
 import com.chemistry.admin.chemistrylab.chemical.gas.Gas;
-import com.chemistry.admin.chemistrylab.database.DatabaseManager;
+import com.chemistry.admin.chemistrylab.database.LaboratoryDatabaseManager;
 
 /**
  * Created by Admin on 8/23/2016.
@@ -96,9 +96,9 @@ public class GasBottle extends LaboratoryHolderInstrument {
             instrumentPath.lineTo((spaceWidth - bottleNeckWidth) / 2 + bottleNeckWidth,
                     stopperHeight);
 
-//          DatabaseManager.getInstance(getContext()).insertToDataBase(DatabaseManager.GAS_BOTTLE_MAP_VERTICAL_TABLE_NAME,PointAnalyzer.analyzePointVertical(instrumentPath));
-            arrPoint = DatabaseManager.getInstance(getContext())
-                    .getArrayPointOf(DatabaseManager.GAS_BOTTLE_MAP_VERTICAL_TABLE_NAME);
+//          LaboratoryDatabaseManager.getInstance(getContext()).insertToDataBase(LaboratoryDatabaseManager.GAS_BOTTLE_MAP_VERTICAL_TABLE_NAME,PointAnalyzer.analyzePointVertical(instrumentPath));
+            arrPoint = LaboratoryDatabaseManager.getInstance(getContext())
+                    .getArrayPointOf(LaboratoryDatabaseManager.GAS_BOTTLE_MAP_VERTICAL_TABLE_NAME);
 
             instrumentPath.addRect(new RectF((spaceWidth - stopperWidth) / 2,
                             0,
@@ -165,7 +165,7 @@ public class GasBottle extends LaboratoryHolderInstrument {
 
     @Override
     public String getTableName() {
-        return DatabaseManager.GAS_BOTTLE_MAP_HORIZONTAL_TABLE_NAME;
+        return LaboratoryDatabaseManager.GAS_BOTTLE_MAP_HORIZONTAL_TABLE_NAME;
     }
 
     @Override

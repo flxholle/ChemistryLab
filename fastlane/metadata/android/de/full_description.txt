@@ -1,0 +1,8 @@
+Eine Simulation eines Chemie Labors
+Dies ist eine verbesserte Version der App <a href="https://github.com/thanhtung100397/ChemistryLab">ChemistryLab</a> von <a href="https://github.com/thanhtung100397">Trần Thanh Tùng</a>.
+Die Funktionsweise wurde nicht verändert, lediglich die graphische Oberfläche wurde angepasst.
+Veränderungen:
+ - Übersetzung der App ins Englische (& Möglichkeit der Übersetzung in weitere Sprachen)
+ - Englische Literatur hinzugefügt
+ - Nutzung von AndroidX, RTL-Support & Neuerer Bibliotheken
+ - Bugfixes

@@ -15,7 +15,6 @@
     <dimen name="chemical_font_height">32dp</dimen>
 
     <dimen name="divider_width">1dp</dimen>
-    <dimen name="list_hint_height">80dp</dimen>
 
     <dimen name="bound">35dp</dimen>
     <dimen name="bounds">33dp</dimen>
@@ -24,7 +23,7 @@
     <dimen name="tool_tip_width">200dp</dimen>
     <dimen name="element_tool_tip_size">160dp</dimen>
 
-    <dimen name="stroke_width">3dp</dimen>
+    <dimen name="stroke_width">2dp</dimen>
     <dimen name="contained_space_width">50dp</dimen>
     <dimen name="contained_space_height">75dp</dimen>
     <dimen name="contained_space_width_trough">105dp</dimen>

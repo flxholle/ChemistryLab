@@ -1,9 +1,20 @@
 # ChemistryLab
-Virtual Chemistry Lab android app<br/>
-APK: https://drive.google.com/open?id=0B3j_vw_l37PjYzRnaTNxUmtZakU
+A chemical laboratory simulation app for Android  
+This is a fork of <a href="https://github.com/thanhtung100397/ChemistryLab">ChemistryLab</a> by <a href="https://github.com/thanhtung100397">Trần Thanh Tùng</a>.  
+The functionality has not changed, only the user interface.
 
-![alt text](https://drive.google.com/uc?id=1paG6i4HcmQq70JHG4xek-IOIMzfU2XM1)
-![alt text](https://drive.google.com/uc?id=1lNnDuON5obHVYmYeiiWXlEHWvrvF8tpt)
-![alt text](https://drive.google.com/uc?id=1mVhLFONE-NjFj0wxTYxC3Ojl0M6_XL9U)
-![alt text](https://drive.google.com/uc?id=1IhonbUY5LvjpjMQJhYNC9JdqYX9cERR0)
-![alt text](https://drive.google.com/uc?id=1OqyrZAKyiEZIAbmE7vDD2aEd2dOe3jeB)
+### <a href="https://github.com/asdoi/ChemistryLab/blob/master/CHEMISTRY.md">Currently available chemical reactions here</a>
+
+### Changes:
+ - Translated app to English (& added support for other languages)
+ - Added English literature
+ - Migrated to AndroidX, RTL-Support & Upgraded Libraries
+ - App does now support different screen dpis
+ - Bugfixes
+
+### Screenshots:
+<img src="https://github.com/asdoi/ChemistryLab/raw/master/fastlane/metadata/android/en/images/phoneScreenshots/1.png" width="60%">
+<img src="https://github.com/asdoi/ChemistryLab/raw/master/fastlane/metadata/android/en/images/phoneScreenshots/2.png" width="60%">
+<img src="https://github.com/asdoi/ChemistryLab/raw/master/fastlane/metadata/android/en/images/phoneScreenshots/3.png" width="60%">
+<img src="https://github.com/asdoi/ChemistryLab/raw/master/fastlane/metadata/android/en/images/phoneScreenshots/4.png" width="60%">
+<img src="https://github.com/asdoi/ChemistryLab/raw/master/fastlane/metadata/android/en/images/phoneScreenshots/5.png" width="60%">

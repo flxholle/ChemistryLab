@@ -1,26 +1,25 @@
 package com.chemistry.admin.chemistrylab.fragment;
 
 import android.os.Bundle;
-
-import androidx.appcompat.app.AlertDialog;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
+
 import com.chemistry.admin.chemistrylab.R;
-import com.chemistry.admin.chemistrylab.activity.DocumentActivity;
 import com.chemistry.admin.chemistrylab.adapter.LectureAdapter;
 
 /**
  * Created by Admin on 10/19/2016.
  */
 
-public class LectureFragment extends Fragment implements AdapterView.OnItemClickListener {
+public class LectureFragmentMain extends Fragment implements AdapterView.OnItemClickListener {
     public static final String KEY_PDF_PATH = "KEY_PDF_PATH";
+    public static final String LITERATURE_DOWNLOAD_LINK = "https://github.com/asdoi/ChemistryLab/raw/reduce_size/literature/";
 
     private static final String credits = "Chemistry 2e\n" +
             "\n" +
@@ -96,17 +95,6 @@ public class LectureFragment extends Fragment implements AdapterView.OnItemClick
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        String path = ((LectureAdapter)parent.getAdapter()).getItem(position).getPath();
-        Bundle sendBundle = new Bundle();
-        sendBundle.putString(KEY_PDF_PATH, path);
-        LectureContentViewFragment lectureContentViewFragment = new LectureContentViewFragment();
-        lectureContentViewFragment.setArguments(sendBundle);
-        DocumentActivity documentActivity = (DocumentActivity) getActivity();
-        documentActivity.getSupportFragmentManager().beginTransaction()
-                .hide(this)
-                .add(R.id.ll_main,lectureContentViewFragment)
-                .show(lectureContentViewFragment).addToBackStack("BACK_TO_LECTURE_LIST")
-                .commit();
-//        ((DocumentActivity)getActivity()).showFragment(lectureContentViewFragment);
+
     }
 }

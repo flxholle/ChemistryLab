@@ -8,7 +8,7 @@ import android.text.SpannableString;
 
 import com.chemistry.admin.chemistrylab.R;
 import com.chemistry.admin.chemistrylab.chemical.liquid.Liquid;
-import com.chemistry.admin.chemistrylab.database.DatabaseManager;
+import com.chemistry.admin.chemistrylab.database.LaboratoryDatabaseManager;
 
 /**
  * Created by Admin on 8/22/2016.
@@ -68,9 +68,9 @@ public class Breaker extends LaboratoryHolderInstrument {
                     90, -90);
             instrumentPath.lineTo(spaceWidth, 0);
 
-//            DatabaseManager.getInstance(getContext()).insertToDataBase(DatabaseManager.BREAKER_MAP_VERTICAL_TABLE_NAME,PointAnalyzer.analyzePointVertical(instrumentPath));
-            arrPoint = DatabaseManager.getInstance(getContext())
-                    .getArrayPointOf(DatabaseManager.BREAKER_MAP_VERTICAL_TABLE_NAME);
+//            LaboratoryDatabaseManager.getInstance(getContext()).insertToDataBase(LaboratoryDatabaseManager.BREAKER_MAP_VERTICAL_TABLE_NAME,PointAnalyzer.analyzePointVertical(instrumentPath));
+            arrPoint = LaboratoryDatabaseManager.getInstance(getContext())
+                    .getArrayPointOf(LaboratoryDatabaseManager.BREAKER_MAP_VERTICAL_TABLE_NAME);
         }
     }
 
@@ -99,7 +99,7 @@ public class Breaker extends LaboratoryHolderInstrument {
 
     @Override
     public String getTableName() {
-        return DatabaseManager.BREAKER_MAP_HORIZONTAL_TABLE_NAME;
+        return LaboratoryDatabaseManager.BREAKER_MAP_HORIZONTAL_TABLE_NAME;
     }
 
     @Override

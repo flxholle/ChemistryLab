@@ -9,7 +9,8 @@ import com.chemistry.admin.chemistrylab.chemical.reaction.ReactionSubstance;
 import com.chemistry.admin.chemistrylab.chemical.solid.Solid;
 import com.chemistry.admin.chemistrylab.chemical.solid.SolidManager;
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.holder_instrument.LaboratoryHolderInstrument;
-import com.chemistry.admin.chemistrylab.database.DatabaseManager;
+import com.chemistry.admin.chemistrylab.database.LaboratoryDatabaseManager;
+import com.chemistry.admin.chemistrylab.database.ReactionsDatabaseManager;
 import com.chemistry.admin.chemistrylab.effect_and_animation.BaseAnimation;
 import com.chemistry.admin.chemistrylab.tooltip.ItemTip;
 
@@ -41,7 +42,7 @@ public class BoilingAnimation implements BaseAnimation {
         for (int i = liquidCount - 1; i >= 0; i--) {
             Substance substance = listLiquids.get(i);
             listReactionSubstances.add(new ReactionSubstance(substance, moleReducingPerLoop));
-            Solid solidVersionOfThisSubstance = (Solid) DatabaseManager.getInstance(context).getSubstanceBySymbolAndState(substance.getSymbol(), "solid");
+            Solid solidVersionOfThisSubstance = (Solid) ReactionsDatabaseManager.getInstance(context).getSubstanceBySymbolAndState(substance.getSymbol(), "solid");
             if (solidVersionOfThisSubstance != null) {
                 solidVersionOfThisSubstance.reduceAmount(context, solidVersionOfThisSubstance.getMole());
                 solidVersionOfThisSubstance = solidManager.addSubstance(solidVersionOfThisSubstance);

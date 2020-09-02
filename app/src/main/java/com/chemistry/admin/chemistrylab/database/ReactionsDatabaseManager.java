@@ -4,16 +4,16 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Point;
 import android.os.Environment;
 import android.util.Log;
 
+import com.chemistry.admin.chemistrylab.R;
+import com.chemistry.admin.chemistrylab.chemical.Substance;
 import com.chemistry.admin.chemistrylab.chemical.gas.Gas;
 import com.chemistry.admin.chemistrylab.chemical.liquid.Liquid;
 import com.chemistry.admin.chemistrylab.chemical.reaction.ReactionEquation;
 import com.chemistry.admin.chemistrylab.chemical.reaction.ReactionSubstance;
 import com.chemistry.admin.chemistrylab.chemical.solid.Solid;
-import com.chemistry.admin.chemistrylab.chemical.Substance;
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.holder_instrument.Breaker;
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.holder_instrument.GasBottle;
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.holder_instrument.Jar;
@@ -31,12 +31,12 @@ import java.util.List;
 /**
  * Created by Admin on 8/10/2016.
  */
-public class DatabaseManager {
-    public static final String TAG = "DatabaseManager";
+public class ReactionsDatabaseManager {
+    public static final String TAG = "ReactionsDatabase";
     private static final String APP_DATA_PATH = Environment.getDataDirectory().getPath() + "/data/com.chemistry.admin.chemistrylab/";
 
     private static final String DATABASE_FOLDER_NAME = "database";
-    private static final String DATABASE_NAME = "chemistry-database";
+    private static final String DATABASE_NAME = "reactions.db";
     private static final String DATABASE_DATA_PATH = Environment.getDataDirectory().getPath() + "/data/com.chemistry.admin.chemistrylab/" + DATABASE_FOLDER_NAME + "/" + DATABASE_NAME;
 
     public static final String SETTINGS = "settings";
@@ -69,39 +69,27 @@ public class DatabaseManager {
     public static final String KEY_ELECTRONIC_CONFIG = "electronicConfig";
     public static final String KEY_OXIDATION_STATES = "oxidationStates";
 
-    public static final String BREAKER_MAP_VERTICAL_TABLE_NAME = "breaker_map_vertical";
-    public static final String BREAKER_MAP_HORIZONTAL_TABLE_NAME = "breaker_map_horizontal";
-    public static final String JAR_MAP_VERTICAL_TABLE_NAME = "jar_map_vertical";
-    public static final String JAR_MAP_HORIZONTAL_TABLE_NAME = "jar_map_horizontal";
-    public static final String GAS_BOTTLE_MAP_VERTICAL_TABLE_NAME = "gas_bottle_map_vertical";
-    public static final String GAS_BOTTLE_MAP_HORIZONTAL_TABLE_NAME = "gas_bottle_map_horizontal";
-    public static final String FLASK_MAP_VERTICAL_TABLE_NAME = "flask_map_vertical";
-    public static final String FLASK_MAP_HORIZONTAL_TABLE_NAME = "flask_map_horizontal";
-    public static final String TEST_TUBE_MAP_VERTICAL_TABLE_NAME = "test_tube_map_vertical";
-    public static final String TEST_TUBE_MAP_HORIZONTAL_TABLE_NAME = "test_tube_map_horizontal";
-    public static final String TROUGH_MAP_VERTICAL_TABLE_NAME = "trough_map_vertical";
-    public static final String TROUGH_MAP_HORIZONTAL_TABLE_NAME = "trough_map_horizontal";
-    public static final String CONICAL_FLASK_MAP_VERTICAL_TABLE_NAME = "conical_flask_map_vertical";
-    public static final String CONICAL_FLASK_MAP_HORIZONTAL_TABLE_NAME = "conical_flask_map_horizontal";
-    public static final String KEY_X = "x";
-    public static final String KEY_X_START = "xStart";
-    public static final String KEY_X_END = "xEnd";
-    public static final String KEY_Y = "y";
-
     private final Context context;
     private SQLiteDatabase database;
-    public static DatabaseManager instance;
+    public static ReactionsDatabaseManager instance;
 
-    public static DatabaseManager getInstance(Context context) {
+    private final String[] elementSymbols, elementNames;
+    private final String[] substanceSymbols, substanceNames;
+
+    public static ReactionsDatabaseManager getInstance(Context context) {
         if (instance == null) {
-            instance = new DatabaseManager(context);
+            instance = new ReactionsDatabaseManager(context);
             return instance;
         }
         return instance;
     }
 
-    private DatabaseManager(Context context) {
+    private ReactionsDatabaseManager(Context context) {
         this.context = context;
+        elementSymbols = context.getResources().getStringArray(R.array.element_symbols);
+        elementNames = context.getResources().getStringArray(R.array.element_names);
+        substanceSymbols = context.getResources().getStringArray(R.array.substance_symbols);
+        substanceNames = context.getResources().getStringArray(R.array.substance_names);
         copyDataToInternalStorage(DATABASE_FOLDER_NAME, DATABASE_NAME);
     }
 
@@ -225,7 +213,7 @@ public class DatabaseManager {
 
         switch (state) {
             case "solid": {
-                result = new Solid(cursor.getString(cursor.getColumnIndex(KEY_NAME)),
+                result = new Solid(getSubstanceToSymbol(symbol, cursor.getString(cursor.getColumnIndex(KEY_NAME))),
                         symbol,
                         cursor.getString(cursor.getColumnIndex(KEY_COLOR)),
                         cursor.getDouble(cursor.getColumnIndex(KEY_M)),
@@ -235,7 +223,7 @@ public class DatabaseManager {
             break;
 
             case "liquid": {
-                result = new Liquid(cursor.getString(cursor.getColumnIndex(KEY_NAME)),
+                result = new Liquid(getSubstanceToSymbol(symbol, cursor.getString(cursor.getColumnIndex(KEY_NAME))),
                         symbol,
                         cursor.getString(cursor.getColumnIndex(KEY_COLOR)),
                         cursor.getDouble(cursor.getColumnIndex(KEY_M)),
@@ -245,7 +233,7 @@ public class DatabaseManager {
             break;
 
             case "gas": {
-                result = new Gas(cursor.getString(cursor.getColumnIndex(KEY_NAME)),
+                result = new Gas(getSubstanceToSymbol(symbol, cursor.getString(cursor.getColumnIndex(KEY_NAME))),
                         symbol,
                         cursor.getString(cursor.getColumnIndex(KEY_COLOR)),
                         cursor.getDouble(cursor.getColumnIndex(KEY_M)),
@@ -261,39 +249,6 @@ public class DatabaseManager {
         cursor.close();
         closeDatabase();
         result.setTip(new ItemTip(context, result));
-        return result;
-    }
-
-    public Point[] getArrayPointOf(String tableName) {
-        openDatabase();
-        Cursor cursor = database.rawQuery("SELECT * FROM " + tableName, null);
-        Point[] result = new Point[cursor.getCount()];
-        int i = 0;
-        cursor.moveToFirst();
-        int xStartColumnIndex = cursor.getColumnIndex(KEY_X_START);
-        int xEndColumnIndex = cursor.getColumnIndex(KEY_X_END);
-        while (!cursor.isAfterLast()) {
-            result[i++] = new Point(cursor.getInt(xStartColumnIndex),
-                    cursor.getInt(xEndColumnIndex));
-            cursor.moveToNext();
-        }
-        cursor.close();
-        closeDatabase();
-        return result;
-    }
-
-    public int getYByX(String mapHorizontalTableName, int x) {
-        openDatabase();
-        Cursor cursor = database.rawQuery("SELECT * FROM " + mapHorizontalTableName +
-                " WHERE " + KEY_X + " = " + x, null);
-        if (cursor.getCount() != 1) {
-            Log.e(TAG, "method getYByX(): database data error, value: " + x);
-            return -1;
-        }
-        cursor.moveToFirst();
-        int result = cursor.getInt(cursor.getColumnIndex(KEY_Y));
-        cursor.close();
-        closeDatabase();
         return result;
     }
 
@@ -315,7 +270,7 @@ public class DatabaseManager {
             String state = cursor.getString(columnStateIndex);
             switch (state) {
                 case "solid": {
-                    result.add(new Solid(cursor.getString(columnNameIndex),
+                    result.add(new Solid(getSubstanceToSymbol(cursor.getString(columnSymbolIndex), cursor.getString(columnNameIndex)),
                             cursor.getString(columnSymbolIndex),
                             cursor.getString(columnColorIndex),
                             cursor.getDouble(columnMIndex),
@@ -325,7 +280,7 @@ public class DatabaseManager {
                 break;
 
                 case "liquid": {
-                    result.add(new Liquid(cursor.getString(columnNameIndex),
+                    result.add(new Liquid(getSubstanceToSymbol(cursor.getString(columnSymbolIndex), cursor.getString(columnNameIndex)),
                             cursor.getString(columnSymbolIndex),
                             cursor.getString(columnColorIndex),
                             cursor.getDouble(columnMIndex),
@@ -335,7 +290,7 @@ public class DatabaseManager {
                 break;
 
                 case "gas": {
-                    result.add(new Gas(cursor.getString(columnNameIndex),
+                    result.add(new Gas(getSubstanceToSymbol(cursor.getString(columnSymbolIndex), cursor.getString(columnNameIndex)),
                             cursor.getString(columnSymbolIndex),
                             cursor.getString(columnColorIndex),
                             cursor.getDouble(columnMIndex),
@@ -375,8 +330,11 @@ public class DatabaseManager {
         Cursor cursor = database.rawQuery("SELECT * FROM " + ELEMENTS_TABLE_NAME + " WHERE " + KEY_SYMBOL + " = '" + symbol + "'", null);
         cursor.moveToFirst();
         PeriodicTableFragment.ElementItem result =
-                new PeriodicTableFragment.ElementItem(cursor.getString(cursor.getColumnIndex(KEY_NAME)),
+                new PeriodicTableFragment.ElementItem(getElementToSymbol(cursor.getString(cursor.getColumnIndex(KEY_SYMBOL)), cursor.getString(cursor.getColumnIndex(KEY_NAME))),
                         cursor.getString(cursor.getColumnIndex(KEY_SYMBOL)),
+                        cursor.getInt(cursor.getColumnIndex(KEY_BOILING)),
+                        cursor.getInt(cursor.getColumnIndex(KEY_MELTING)),
+                        cursor.getInt(cursor.getColumnIndex(KEY_GROUPS)),
                         cursor.getDouble(cursor.getColumnIndex(KEY_MASS)),
                         cursor.getInt(cursor.getColumnIndex(KEY_ATOMIC_NUMBER)),
                         cursor.getString(cursor.getColumnIndex(KEY_ELECTRONIC_CONFIG)),
@@ -402,43 +360,6 @@ public class DatabaseManager {
         closeDatabase();
     }
 
-//    public int[] getXByY(String mapVerticalTableName, int y) {
-//        openDatabase();
-//        Cursor cursor = database.rawQuery("SELECT * FROM " + mapVerticalTableName + " WHERE " + KEY_Y + " = " + y, null);
-//        if (cursor.getCount() != 1) {
-//            Log.e(TAG, "method getXByY(): database data error");
-//            return null;
-//        }
-//        cursor.moveToFirst();
-//        int result[] = new int[2];
-//        int xColumnIndex = cursor.getColumnIndex(KEY_X);
-//        result[0] = cursor.getInt(xColumnIndex);
-//        cursor.moveToNext();
-//        result[1] = cursor.getInt(xColumnIndex);
-//        cursor.close();
-//        closeDatabase();
-//        return result;
-//    }
-//
-//    public void insertToDataBase(String tableName, Point point[]) {
-//        openDatabase();
-//        for (Point aPoint : point) {
-////            database.execSQL("INSERT INTO " + tableName + " (" + KEY_X + ", " + KEY_Y + ") VALUES (" + aPoint.x + ", " + aPoint.y + ")", null);
-//            ContentValues value = new ContentValues();
-////            value.put(KEY_X,aPoint.x);
-////            value.put(KEY_Y,aPoint.y);
-//            value.put("xStart", aPoint.x);
-//            value.put("xEnd", aPoint.y);
-//            database.insert(tableName, null, value);
-////            if (result != -1) {
-////                Log.i(TAG, "Insert completed");
-////            } else {
-////                Log.i(TAG, "Insert error");
-////            }
-//        }
-//        closeDatabase();
-//    }
-
     public List<Breaker> getAllLiquidPreview() {
         openDatabase();
         List<Breaker> listResult = new ArrayList<>();
@@ -453,7 +374,7 @@ public class DatabaseManager {
         int densityColumnIndex = cursor.getColumnIndex(KEY_DENSITY);
         int weightOrVolumeIndex = cursor.getColumnIndex(KEY_WEIGHT_OR_VOLUME);
         while (!cursor.isAfterLast()) {
-            Liquid liquid = new Liquid(cursor.getString(nameColumnIndex),
+            Liquid liquid = new Liquid(getSubstanceToSymbol(cursor.getString(symbolColumnIndex), cursor.getString(nameColumnIndex)),
                     cursor.getString(symbolColumnIndex),
                     cursor.getString(colorColumnIndex),
                     cursor.getDouble(MColumnIndex),
@@ -485,7 +406,7 @@ public class DatabaseManager {
         int densityColumnIndex = cursor.getColumnIndex(KEY_DENSITY);
         int weightOrVolumeIndex = cursor.getColumnIndex(KEY_WEIGHT_OR_VOLUME);
         while (!cursor.isAfterLast()) {
-            Solid solid = new Solid(cursor.getString(nameColumnIndex),
+            Solid solid = new Solid(getSubstanceToSymbol(cursor.getString(symbolColumnIndex), cursor.getString(nameColumnIndex)),
                     cursor.getString(symbolColumnIndex),
                     cursor.getString(colorColumnIndex),
                     cursor.getDouble(MColumnIndex),
@@ -517,7 +438,7 @@ public class DatabaseManager {
         int densityColumnIndex = cursor.getColumnIndex(KEY_DENSITY);
         int weightOrVolumeIndex = cursor.getColumnIndex(KEY_WEIGHT_OR_VOLUME);
         while (!cursor.isAfterLast()) {
-            Gas gas = new Gas(cursor.getString(nameColumnIndex),
+            Gas gas = new Gas(getSubstanceToSymbol(cursor.getString(symbolColumnIndex), cursor.getString(nameColumnIndex)),
                     cursor.getString(symbolColumnIndex),
                     cursor.getString(colorColumnIndex),
                     cursor.getDouble(MColumnIndex),
@@ -533,5 +454,35 @@ public class DatabaseManager {
         closeDatabase();
         cursor.close();
         return listResult;
+    }
+
+    private String getSubstanceToSymbol(String symbol, String defaultName) {
+        return getSubstanceToSymbol(symbol, defaultName, true);
+    }
+
+    private String getSubstanceToSymbol(String symbol, String defaultName, boolean checkElements) {
+        for (int i = 0; i < substanceSymbols.length; i++) {
+            if (substanceSymbols[i].equalsIgnoreCase(symbol))
+                return substanceNames[i];
+        }
+        if (checkElements)
+            return getElementToSymbol(symbol, defaultName, false);
+        else
+            return defaultName;
+    }
+
+    private String getElementToSymbol(String symbol, String defaultName) {
+        return getElementToSymbol(symbol, defaultName, true);
+    }
+
+    private String getElementToSymbol(String symbol, String defaultName, boolean checkSubstances) {
+        for (int i = 0; i < elementSymbols.length; i++) {
+            if (elementSymbols[i].equalsIgnoreCase(symbol))
+                return elementNames[i];
+        }
+        if (checkSubstances)
+            return getSubstanceToSymbol(symbol, defaultName, false);
+        else
+            return defaultName;
     }
 }

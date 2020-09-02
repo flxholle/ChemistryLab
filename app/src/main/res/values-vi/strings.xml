@@ -143,4 +143,6 @@
     <string name="Mendelevium">Mendelevium</string>
     <string name="Nobelium">Nobelium</string>
     <string name="Lawrencium">Lawrencium</string>
+    <string name="download_succeeded">Tải xuống thành công!</string>
+    <string name="download_failed">Tải xuống không thành công!</string>
 </resources>

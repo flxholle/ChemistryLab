@@ -9,7 +9,8 @@ import android.widget.TextView;
 import com.chemistry.admin.chemistrylab.R;
 import com.chemistry.admin.chemistrylab.adapter.ListSubstancesPreviewAdapter;
 import com.chemistry.admin.chemistrylab.chemical.Substance;
-import com.chemistry.admin.chemistrylab.database.DatabaseManager;
+import com.chemistry.admin.chemistrylab.database.LaboratoryDatabaseManager;
+import com.chemistry.admin.chemistrylab.database.ReactionsDatabaseManager;
 
 /**
  * Created by Admin on 10/12/2016.
@@ -73,7 +74,7 @@ public class PreviewTip extends RelativeLayout implements SeekBar.OnSeekBarChang
             baseSubstance.reduceAmount(getContext(), -moleChanged);
         }
         baseSubstance.getTip().update();
-        DatabaseManager.getInstance(getContext()).updateWeightOrVolumeOf(baseSubstance);
+        ReactionsDatabaseManager.getInstance(getContext()).updateWeightOrVolumeOf(baseSubstance);
         adapter.notifyDataSetChanged();
     }
 }

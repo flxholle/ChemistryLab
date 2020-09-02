@@ -10,7 +10,7 @@ import com.chemistry.admin.chemistrylab.chemical.Substance;
 import com.chemistry.admin.chemistrylab.chemical.liquid.LiquidManager;
 import com.chemistry.admin.chemistrylab.chemical.solid.Solid;
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.holder_instrument.LaboratoryHolderInstrument;
-import com.chemistry.admin.chemistrylab.database.DatabaseManager;
+import com.chemistry.admin.chemistrylab.database.LaboratoryDatabaseManager;
 import com.chemistry.admin.chemistrylab.effect_and_animation.BaseAnimation;
 
 import java.util.ArrayList;
@@ -98,7 +98,7 @@ public class BubbleAnimation implements BaseAnimation {
         int xBubble = random.nextInt(surfaceLine.y - context.getResources().getDimensionPixelOffset(R.dimen.bubble_size) - surfaceLine.x) + surfaceLine.x;
         int yBubble = solid.getYTop();
         int yEnd;
-        int yBubbleMax = DatabaseManager.getInstance(context).getYByX(holderTableName, xBubble);
+        int yBubbleMax = LaboratoryDatabaseManager.getInstance(context).getYByX(holderTableName, xBubble);
         int holderEmptyHeight = (int) liquidManager.getEmptyHeight();
         yEnd = Math.max(yBubbleMax, holderEmptyHeight);
         int speed = random.nextInt(BUBBLE_SPEED_MAX) + BUBBLE_SPEED_MIN;

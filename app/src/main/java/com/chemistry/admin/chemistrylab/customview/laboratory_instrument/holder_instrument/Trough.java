@@ -7,7 +7,7 @@ import android.graphics.RectF;
 import android.text.SpannableString;
 
 import com.chemistry.admin.chemistrylab.R;
-import com.chemistry.admin.chemistrylab.database.DatabaseManager;
+import com.chemistry.admin.chemistrylab.database.LaboratoryDatabaseManager;
 
 /**
  * Created by Admin on 9/7/2016.
@@ -58,9 +58,9 @@ public class Trough extends LaboratoryHolderInstrument {
                                 90, -90);
             instrumentPath.lineTo(spaceWidth, 0);
 
-//          DatabaseManager.getInstance(getContext()).insertToDataBase(DatabaseManager.BREAKER_MAP_VERTICAL_TABLE_NAME,PointAnalyzer.analyzePointVertical(instrumentPath));
-            arrPoint = DatabaseManager.getInstance(getContext())
-                    .getArrayPointOf(DatabaseManager.TROUGH_MAP_VERTICAL_TABLE_NAME);
+//          LaboratoryDatabaseManager.getInstance(getContext()).insertToDataBase(LaboratoryDatabaseManager.BREAKER_MAP_VERTICAL_TABLE_NAME,PointAnalyzer.analyzePointVertical(instrumentPath));
+            arrPoint = LaboratoryDatabaseManager.getInstance(getContext())
+                    .getArrayPointOf(LaboratoryDatabaseManager.TROUGH_MAP_VERTICAL_TABLE_NAME);
         }
     }
 
@@ -84,7 +84,7 @@ public class Trough extends LaboratoryHolderInstrument {
 
     @Override
     public String getTableName() {
-        return DatabaseManager.TROUGH_MAP_HORIZONTAL_TABLE_NAME;
+        return LaboratoryDatabaseManager.TROUGH_MAP_HORIZONTAL_TABLE_NAME;
     }
 
     @Override
