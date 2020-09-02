@@ -21,7 +21,7 @@ public class LectureContentViewFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.lecture_content_view_fragment, container, false);
         Bundle receiverBundle = getArguments();
         PDFView pdfView = rootView.findViewById(R.id.pdf_view);
-        pdfView.fromAsset(receiverBundle.getString(LectureFragment.KEY_PDF_PATH))
+        pdfView.fromAsset(receiverBundle.getString(LectureFragmentMain.KEY_PDF_PATH))
                 .defaultPage(1)
                 .enableSwipe(true)
                 .enableDoubletap(true)
