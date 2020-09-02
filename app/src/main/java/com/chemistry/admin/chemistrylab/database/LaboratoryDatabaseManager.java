@@ -1,24 +1,12 @@
 package com.chemistry.admin.chemistrylab.database;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Point;
 import android.os.Environment;
+import android.util.DisplayMetrics;
 import android.util.Log;
-
-import com.chemistry.admin.chemistrylab.chemical.gas.Gas;
-import com.chemistry.admin.chemistrylab.chemical.liquid.Liquid;
-import com.chemistry.admin.chemistrylab.chemical.reaction.ReactionEquation;
-import com.chemistry.admin.chemistrylab.chemical.reaction.ReactionSubstance;
-import com.chemistry.admin.chemistrylab.chemical.solid.Solid;
-import com.chemistry.admin.chemistrylab.chemical.Substance;
-import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.holder_instrument.Breaker;
-import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.holder_instrument.GasBottle;
-import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.holder_instrument.Jar;
-import com.chemistry.admin.chemistrylab.fragment.PeriodicTableFragment;
-import com.chemistry.admin.chemistrylab.tooltip.ItemTip;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -26,7 +14,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Admin on 8/10/2016.
@@ -111,6 +98,7 @@ public class LaboratoryDatabaseManager {
         }
     }
 
+    //Length of Array is Width of Instrument IN PX!
     public Point[] getArrayPointOf(String tableName) {
         openDatabase();
         Cursor cursor = database.rawQuery("SELECT * FROM " + tableName, null);
@@ -126,7 +114,25 @@ public class LaboratoryDatabaseManager {
         }
         cursor.close();
         closeDatabase();
-        return result;
+        return convertArrayPointResolution(result);
+    }
+
+    private Point[] convertArrayPointResolution(Point[] points) {
+        int lengthDp = points.length;
+        int lenthPx = (int) convertDpToPixel(lengthDp);
+        float factor = ((float) lenthPx) / lengthDp;
+        int factorInt = Math.round(factor);
+        ArrayList<Point> pointsPx = new ArrayList<>();
+        for (int i = 1; i <= lengthDp; i++) {
+            for (int j = 0; j < factorInt; j++) {
+                pointsPx.add(points[i - 1]);
+            }
+        }
+        int pointsPxSize = pointsPx.size();
+        for (int i = pointsPxSize; i >= lenthPx; i--) {
+            pointsPx.remove(lenthPx);
+        }
+        return pointsPx.toArray(new Point[]{});
     }
 
     public int getYByX(String mapHorizontalTableName, int x) {
@@ -179,4 +185,34 @@ public class LaboratoryDatabaseManager {
 //        }
 //        closeDatabase();
 //    }
+
+    private float convertDpToPixel(float dp) {
+        return convertDpToPixel(dp, context);
+    }
+
+    private float convertPixelsToDp(float px) {
+        return convertPixelsToDp(px, context);
+    }
+
+    /**
+     * This method converts dp unit to equivalent pixels, depending on device density.
+     *
+     * @param dp      A value in dp (density independent pixels) unit. Which we need to convert into pixels
+     * @param context Context to get resources and device specific display metrics
+     * @return A float value to represent px equivalent to dp depending on device density
+     */
+    public static float convertDpToPixel(float dp, Context context) {
+        return dp * ((float) context.getResources().getDisplayMetrics().densityDpi / DisplayMetrics.DENSITY_DEFAULT);
+    }
+
+    /**
+     * This method converts device specific pixels to density independent pixels.
+     *
+     * @param px      A value in px (pixels) unit. Which we need to convert into db
+     * @param context Context to get resources and device specific display metrics
+     * @return A float value to represent dp equivalent to px value
+     */
+    public static float convertPixelsToDp(float px, Context context) {
+        return px / ((float) context.getResources().getDisplayMetrics().densityDpi / DisplayMetrics.DENSITY_DEFAULT);
+    }
 }
