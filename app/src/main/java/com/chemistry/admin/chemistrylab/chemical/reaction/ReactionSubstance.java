@@ -1,5 +1,7 @@
 package com.chemistry.admin.chemistrylab.chemical.reaction;
 
+import android.content.Context;
+
 import com.chemistry.admin.chemistrylab.chemical.Substance;
 
 /**
@@ -44,11 +46,11 @@ public class ReactionSubstance {
         return substance.getMole() / balanceIndex;
     }
 
-    public void doReaction() {
+    public void doReaction(Context context) {
         if (moleChangingPerLoop > 0) {
-            substance.addAmount(moleChangingPerLoop);
+            substance.addAmount(context, moleChangingPerLoop);
         } else {
-            substance.reduceAmount(-moleChangingPerLoop);
+            substance.reduceAmount(context, -moleChangingPerLoop);
         }
     }
 

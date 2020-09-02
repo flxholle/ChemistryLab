@@ -32,4 +32,6 @@
     <dimen name="ten_dp">10dp</dimen>
     <dimen name="bubble_size">5dp</dimen>
     <dimen name="instrument_preview_size">60dp</dimen>
+
+    <dimen name="pixel_square_per_ml">30dp</dimen>
 </resources>

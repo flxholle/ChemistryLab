@@ -1,5 +1,7 @@
 package com.chemistry.admin.chemistrylab.chemical.gas;
 
+import android.content.Context;
+
 import com.chemistry.admin.chemistrylab.chemical.Substance;
 
 /**
@@ -23,17 +25,17 @@ public class Gas extends Substance {
     }
 
     @Override
-    public Gas split(double mole) {
-        return (Gas) super.split(mole);
+    public Gas split(Context context, double mole) {
+        return (Gas) super.split(context, mole);
     }
 
     @Override
-    public void calculateMaxMoleInHolder(double holderHeight, double holderWidth) {
+    public void calculateMaxMoleInHolder(Context context, double holderHeight, double holderWidth) {
         this.maxMoleInHolder = 15.0;
     }
 
     @Override
-    public double addAmount(double mole) {
+    public double addAmount(Context context, double mole) {
         if (manager == null) {
             this.mole += mole;
             return 0;
@@ -47,7 +49,7 @@ public class Gas extends Substance {
     }
 
     @Override
-    public double reduceAmount(double mole) {
+    public double reduceAmount(Context context, double mole) {
         double moleLost;
         if (mole > this.mole) {
             moleLost = mole - this.mole;
@@ -71,7 +73,7 @@ public class Gas extends Substance {
     }
 
     @Override
-    public double getHeight() {
+    public double getHeight(Context context) {
         return 0;
     }
 

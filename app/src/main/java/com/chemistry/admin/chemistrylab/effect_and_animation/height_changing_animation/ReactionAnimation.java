@@ -1,7 +1,7 @@
 package com.chemistry.admin.chemistrylab.effect_and_animation.height_changing_animation;
 
-import com.chemistry.admin.chemistrylab.chemical.reaction.ReactionEquation;
 import com.chemistry.admin.chemistrylab.chemical.Substance;
+import com.chemistry.admin.chemistrylab.chemical.reaction.ReactionEquation;
 import com.chemistry.admin.chemistrylab.chemical.reaction.ReactionSubstance;
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.holder_instrument.LaboratoryHolderInstrument;
 import com.chemistry.admin.chemistrylab.effect_and_animation.BaseAnimation;
@@ -36,7 +36,7 @@ public class ReactionAnimation implements BaseAnimation {
             return false;
         }
         for (ReactionSubstance aReactionSubstance : listReactionSubstances) {
-            aReactionSubstance.doReaction();
+            aReactionSubstance.doReaction(holder.getContext());
         }
         return true;
     }
@@ -52,7 +52,7 @@ public class ReactionAnimation implements BaseAnimation {
 
     @Override
     public void onStop() {
-        baseSubstance.reduceAmount(baseSubstance.getMole());
+        baseSubstance.reduceAmount(holder.getContext(), baseSubstance.getMole());
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.chemistry.admin.chemistrylab.chemical.solid;
 
+import android.content.Context;
 import android.graphics.Point;
 
 import com.chemistry.admin.chemistrylab.chemical.Substance;
@@ -38,17 +39,17 @@ public class Solid extends Substance {
      * @return the solid result after splitting
      */
     @Override
-    public Solid split(double mole) {
-        return (Solid) super.split(mole);
+    public Solid split(Context context, double mole) {
+        return (Solid) super.split(context, mole);
     }
 
     public double getMole(double weight) {
         return weight / M;
     }
 
-    @Override
-    public String toString() {
-        return super.toString() + " weight: " + getWeight() + " height: " + getHeight();
+//    @Override
+    public String toString(Context context) {
+        return super.toString() + " weight: " + getWeight() + " height: " + getHeight(context);
     }
 
     public Point getSurfaceLine() {
