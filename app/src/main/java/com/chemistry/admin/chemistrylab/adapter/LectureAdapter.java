@@ -23,7 +23,7 @@ public class LectureAdapter extends BaseAdapter {
     private final LayoutInflater inflater;
     private final Context context;
 
-    public LectureAdapter(Context context){
+    public LectureAdapter(Context context) {
         this.context = context;
         inflater = LayoutInflater.from(context);
         initListLecture();
