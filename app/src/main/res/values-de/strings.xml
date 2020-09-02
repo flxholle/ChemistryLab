@@ -152,8 +152,8 @@
     <string name="SO2">Schwefeldioxid</string>
     <string name="NO2">Stickstoffdioxid</string>
     <string name="H2S">Wasserstoffdioxid</string>
-    <string name="Fe_OH_2">Eisen(II)-oxid</string>
-    <string name="Fe_OH_3">Eisen(III)-oxid</string>
+    <string name="Fe_OH_2">Eisen(II)-hydroxid</string>
+    <string name="Fe_OH_3">Eisen(III)-hydroxid</string>
     <string name="Mg_OH_2">Magnesiumhydroxid</string>
     <string name="Cr_OH_2">Chrom(II)-hydroxid</string>
     <string name="Cr_OH_3">Chrom(III)-hydroxid</string>
