@@ -13,7 +13,7 @@ import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 /**
  * Created by Admin on 8/10/2016.
@@ -117,21 +117,24 @@ public class LaboratoryDatabaseManager {
         return convertArrayPointResolution(result);
     }
 
+    //TODO optimize
     private Point[] convertArrayPointResolution(Point[] points) {
         int lengthDp = points.length;
-        int lenthPx = (int) convertDpToPixel(lengthDp);
-        float factor = ((float) lenthPx) / lengthDp;
-        int factorInt = Math.round(factor);
-        ArrayList<Point> pointsPx = new ArrayList<>();
+        int lengthPx = (int) convertDpToPixel(lengthDp);
+        int factorInt = Math.round(convertDpToPixel(lengthDp) / lengthDp);
+
+        LinkedList<Point> pointsPx = new LinkedList<>();
         for (int i = 1; i <= lengthDp; i++) {
             for (int j = 0; j < factorInt; j++) {
                 pointsPx.add(points[i - 1]);
             }
         }
+
         int pointsPxSize = pointsPx.size();
-        for (int i = pointsPxSize; i >= lenthPx; i--) {
-            pointsPx.remove(lenthPx);
+        for (int i = 0; i < (pointsPxSize - lengthPx); i++) {
+            pointsPx.removeLast();
         }
+
         return pointsPx.toArray(new Point[]{});
     }
 
