@@ -36,7 +36,7 @@ public class LaboratoryDatabaseManager {
     private static final String APP_DATA_PATH = Environment.getDataDirectory().getPath() + "/data/com.chemistry.admin.chemistrylab/";
 
     private static final String DATABASE_FOLDER_NAME = "database";
-    private static final String DATABASE_NAME = "laboratory";
+    private static final String DATABASE_NAME = "laboratory.db";
     private static final String DATABASE_DATA_PATH = Environment.getDataDirectory().getPath() + "/data/com.chemistry.admin.chemistrylab/" + DATABASE_FOLDER_NAME + "/" + DATABASE_NAME;
 
     public static final String BREAKER_MAP_VERTICAL_TABLE_NAME = "breaker_map_vertical";

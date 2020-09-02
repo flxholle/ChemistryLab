@@ -36,7 +36,7 @@ public class ReactionsDatabaseManager {
     private static final String APP_DATA_PATH = Environment.getDataDirectory().getPath() + "/data/com.chemistry.admin.chemistrylab/";
 
     private static final String DATABASE_FOLDER_NAME = "database";
-    private static final String DATABASE_NAME = "reactions";
+    private static final String DATABASE_NAME = "reactions.db";
     private static final String DATABASE_DATA_PATH = Environment.getDataDirectory().getPath() + "/data/com.chemistry.admin.chemistrylab/" + DATABASE_FOLDER_NAME + "/" + DATABASE_NAME;
 
     public static final String SETTINGS = "settings";
