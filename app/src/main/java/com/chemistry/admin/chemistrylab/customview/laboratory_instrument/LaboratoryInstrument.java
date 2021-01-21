@@ -18,7 +18,7 @@ import com.chemistry.admin.chemistrylab.observer.OnItemDetachListener;
  * Created by Admin on 8/22/2016.
  */
 public abstract class LaboratoryInstrument extends View implements View.OnDragListener, View.OnLongClickListener, View.OnClickListener {
-    public static final int STROKE_WIDTH = 3;
+    public static final int STROKE_WIDTH = 4;
     public static final int INSTRUMENT_PATH_COLOR = Color.BLACK;
     private static final String TAG = "LaboratoryInstrument";
     protected int widthView, heightView;
