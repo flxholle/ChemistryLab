@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ChemistryLab.iml" filepath="$PROJECT_DIR$/ChemistryLab.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HorizontalListView/ChemistryLab-HorizontalListView.iml" filepath="$PROJECT_DIR$/.idea/modules/HorizontalListView/ChemistryLab-HorizontalListView.iml" group="ChemistryLab/HorizontalListView" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ChemistryLab-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ChemistryLab-app.iml" group="ChemistryLab/app" />
-      <module fileurl="file://$PROJECT_DIR$/HorizontalListView/HorizontalListView.iml" filepath="$PROJECT_DIR$/HorizontalListView/HorizontalListView.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/StudioProjects-ChemistryLab.iml" filepath="$PROJECT_DIR$/.idea/modules/StudioProjects-ChemistryLab.iml" group="ChemistryLab" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ChemistryLab.iml" filepath="$PROJECT_DIR$/.idea/modules/ChemistryLab.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HorizontalListView/ChemistryLab.HorizontalListView.iml" filepath="$PROJECT_DIR$/.idea/modules/HorizontalListView/ChemistryLab.HorizontalListView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ChemistryLab.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ChemistryLab.app.iml" />
     </modules>
   </component>
 </project>
