@@ -7,14 +7,17 @@ import android.graphics.RectF;
 import android.text.SpannableString;
 
 import com.chemistry.admin.chemistrylab.R;
+import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.LaboratoryInstrument;
 import com.chemistry.admin.chemistrylab.database.LaboratoryDatabaseManager;
 
 /**
  * Created by Admin on 9/6/2016.
  */
 public class Flask extends LaboratoryHolderInstrument {
-    public final int FLASK_STANDARD_WIDTH;
-    public final int FLASK_STANDARD_HEIGHT;
+    public static final int CONTAINED_SPACE_WIDTH = 200;
+    public static final int CONTAINED_SPACE_HEIGHT = 300;
+    public static final int FLASK_STANDARD_WIDTH = CONTAINED_SPACE_WIDTH + 2 * LaboratoryInstrument.STROKE_WIDTH;
+    public static final int FLASK_STANDARD_HEIGHT = CONTAINED_SPACE_HEIGHT + 2 * LaboratoryInstrument.STROKE_WIDTH;
     private static final String TAG = "Flask";
     public final String NAME = getContext().getString(R.string.flask);
     private static Point[] arrPoint;
@@ -22,16 +25,6 @@ public class Flask extends LaboratoryHolderInstrument {
 
     public Flask(Context context, int widthView, int heightView) {
         super(context, widthView, heightView);
-        FLASK_STANDARD_WIDTH = getFlaskStandardWidth(context);
-        FLASK_STANDARD_HEIGHT = getFlaskStandardHeight(context);
-    }
-
-    public static int getFlaskStandardWidth(Context context) {
-        return context.getResources().getDimensionPixelOffset(R.dimen.contained_space_width) + 2 * getStrokeWidth(context);
-    }
-
-    public static int getFlaskStandardHeight(Context context) {
-        return context.getResources().getDimensionPixelOffset(R.dimen.contained_space_height) + 2 * getStrokeWidth(context);
     }
 
     @Override
@@ -67,12 +60,12 @@ public class Flask extends LaboratoryHolderInstrument {
 
     @Override
     public int getContainedSpaceHeight() {
-        return getResources().getDimensionPixelOffset(R.dimen.contained_space_height);
+        return CONTAINED_SPACE_HEIGHT;
     }
 
     @Override
     public int getContainedSpaceWidth() {
-        return getResources().getDimensionPixelOffset(R.dimen.contained_space_width);
+        return CONTAINED_SPACE_WIDTH;
     }
 
     @Override

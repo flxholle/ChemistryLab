@@ -6,7 +6,6 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +13,8 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+
+import androidx.fragment.app.Fragment;
 
 import com.chemistry.admin.chemistrylab.R;
 import com.chemistry.admin.chemistrylab.activity.MainActivity;
@@ -28,7 +29,6 @@ import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.holder_
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.holder_instrument.TestTube;
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.holder_instrument.Trough;
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.support_instrument.Tripod;
-import com.chemistry.admin.chemistrylab.database.LaboratoryDatabaseManager;
 import com.chemistry.admin.chemistrylab.database.ReactionsDatabaseManager;
 import com.chemistry.admin.chemistrylab.tooltip.PreviewTip;
 import com.daimajia.androidanimations.library.Techniques;
@@ -92,23 +92,23 @@ public class LaboratoryFragment extends Fragment implements View.OnClickListener
         List<LaboratoryInstrument> listEquipments = new ArrayList<>();
         Context context = getActivity();
         listEquipments.add(new Breaker(context,
-                Breaker.getBreakerStandardWidth(context),
-                Breaker.getBreakerStandardHeight(context)));
+                Breaker.BREAKER_STANDARD_WIDTH,
+                Breaker.BREAKER_STANDARD_HEIGHT));
         listEquipments.add(new GasBottle(context,
-                GasBottle.getGasBottleStandardWidth(context),
-                GasBottle.getGasBottleStandardHeight(context)));
+                GasBottle.GAS_BOTTLE_STANDARD_WIDTH,
+                GasBottle.GAS_BOTTLE_STANDARD_HEIGHT));
         listEquipments.add(new Jar(context,
-                Jar.getJarStandardWidth(context),
-                Jar.getJarStandardHeight(context)));
+                Jar.JAR_STANDARD_WIDTH,
+                Jar.JAR_STANDARD_HEIGHT));
         listEquipments.add(new Flask(context,
-                Flask.getFlaskStandardWidth(context),
-                Flask.getFlaskStandardHeight(context)));
+                Flask.FLASK_STANDARD_WIDTH,
+                Flask.FLASK_STANDARD_HEIGHT));
         listEquipments.add(new TestTube(context,
-                TestTube.getTestTubetStandardWidth(context),
-                TestTube.getTestTubeStandardHeight(context)));
+                TestTube.TEST_TUBE_STANDARD_WIDTH,
+                TestTube.TEST_TUBE_STANDARD_HEIGHT));
         listEquipments.add(new Trough(context,
-                Trough.getTroughStandardWidth(context),
-                Trough.getTroughStandardHeight(context)));
+                Trough.TROUGH_STANDARD_WIDTH,
+                Trough.TROUGH_STANDARD_HEIGHT));
         listEquipments.add(new Tripod(context));
         listEquipments.add(new AlcoholBurner(context));
         return listEquipments;
