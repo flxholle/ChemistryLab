@@ -80,6 +80,12 @@ public class PeriodicTableFragment extends Fragment implements EasyDialog.OnEasy
             }
         }
 
+        int easyDialogDirection = EasyDialog.DIRECTION_Y;
+        boolean changeValues = (easyDialogOrient == EasyDialog.GRAVITY_TOP || easyDialogOrient == EasyDialog.GRAVITY_LEFT);
+        if (easyDialogOrient == EasyDialog.GRAVITY_LEFT || easyDialogOrient == EasyDialog.GRAVITY_RIGHT) {
+            easyDialogDirection = EasyDialog.DIRECTION_X;
+        }
+
         new EasyDialog(context)
                 .setLayout(toolTip.getRootView())
                 .setLocationByAttachedView(v)
@@ -88,7 +94,7 @@ public class PeriodicTableFragment extends Fragment implements EasyDialog.OnEasy
                 .setBackgroundColor(Color.WHITE)
                 .setOnEasyDialogDismissed(this)
                 .setAnimationAlphaShow(400, 0.3f, 1.0f)
-                .setAnimationTranslationShow(EasyDialog.DIRECTION_Y, 300, -100, 0)
+                .setAnimationTranslationShow(easyDialogDirection, 300, changeValues ? 100 : -100, 0)
                 .setAnimationAlphaDismiss(300, 1.0f, 0.0f)
                 .show();
     }
