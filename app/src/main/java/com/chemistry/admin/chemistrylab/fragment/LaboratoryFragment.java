@@ -246,7 +246,11 @@ public class LaboratoryFragment extends Fragment implements View.OnClickListener
                     .setGravity(EasyDialog.GRAVITY_BOTTOM)
                     .setTouchOutsideDismiss(true)
                     .setMatchParent(false)
-                    .setBackgroundColor(Color.WHITE);
+                    .setBackgroundColor(Color.WHITE)
+                    .setAnimationAlphaShow(400, 0.3f, 1.0f)
+                    .setAnimationTranslationShow(EasyDialog.DIRECTION_Y, 300, -100, 0)
+                    .setAnimationAlphaDismiss(300, 1.0f, 0.0f);
+            ;
             toolTip.setOnEasyDialogDismissed(this);
             toolTip.show();
         }
