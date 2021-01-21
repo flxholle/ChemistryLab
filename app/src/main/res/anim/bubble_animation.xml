@@ -8,5 +8,4 @@
     android:pivotY="50%"
     android:duration="300"
     android:repeatCount="infinite"
-    android:repeatMode="reverse">
-</scale>
+    android:repeatMode="reverse"></scale>

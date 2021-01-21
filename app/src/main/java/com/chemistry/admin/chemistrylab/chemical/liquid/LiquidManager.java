@@ -67,7 +67,7 @@ public class LiquidManager extends BaseSubstanceManager {
 
     @Override
     protected List<Substance> takeSubstanceByHeight(double height) {
-        if(height >= this.currentHeight){
+        if (height >= this.currentHeight) {
             return clearAllSubstances();
         }
         List<Substance> result = new ArrayList<>(listSubstances.size());

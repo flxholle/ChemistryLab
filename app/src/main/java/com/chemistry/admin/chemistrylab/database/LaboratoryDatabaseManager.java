@@ -1,6 +1,5 @@
 package com.chemistry.admin.chemistrylab.database;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -8,25 +7,11 @@ import android.graphics.Point;
 import android.os.Environment;
 import android.util.Log;
 
-import com.chemistry.admin.chemistrylab.chemical.gas.Gas;
-import com.chemistry.admin.chemistrylab.chemical.liquid.Liquid;
-import com.chemistry.admin.chemistrylab.chemical.reaction.ReactionEquation;
-import com.chemistry.admin.chemistrylab.chemical.reaction.ReactionSubstance;
-import com.chemistry.admin.chemistrylab.chemical.solid.Solid;
-import com.chemistry.admin.chemistrylab.chemical.Substance;
-import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.holder_instrument.Breaker;
-import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.holder_instrument.GasBottle;
-import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.holder_instrument.Jar;
-import com.chemistry.admin.chemistrylab.fragment.PeriodicTableFragment;
-import com.chemistry.admin.chemistrylab.tooltip.ItemTip;
-
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Admin on 8/10/2016.

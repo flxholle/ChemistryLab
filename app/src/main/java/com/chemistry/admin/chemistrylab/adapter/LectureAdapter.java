@@ -81,23 +81,23 @@ public class LectureAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
-        if(convertView == null){
+        if (convertView == null) {
             convertView = inflater.inflate(R.layout.item_lecture, parent, false);
             viewHolder = new ViewHolder();
             viewHolder.textLectureTitle = convertView.findViewById(R.id.txt_lecture_title);
             convertView.setTag(viewHolder);
-        }else {
+        } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
         viewHolder.textLectureTitle.setText(listItemLecture.get(position).getTitle());
         return convertView;
     }
 
-    private static class ViewHolder{
+    private static class ViewHolder {
         TextView textLectureTitle;
     }
 
-    public static class ItemLecture{
+    public static class ItemLecture {
         private final String path;
         private final String title;
 

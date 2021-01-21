@@ -1,8 +1,9 @@
 package com.chemistry.admin.chemistrylab.activity;
 
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import com.chemistry.admin.chemistrylab.R;
 import com.chemistry.admin.chemistrylab.fragment.CategoryFragment;
@@ -33,9 +34,9 @@ public class DocumentActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction()
                 .hide(categoryFragment)
                 .setCustomAnimations(android.R.animator.fade_in,
-                                    android.R.animator.fade_out,
-                                    android.R.animator.fade_in,
-                                    android.R.animator.fade_out)
+                        android.R.animator.fade_out,
+                        android.R.animator.fade_in,
+                        android.R.animator.fade_out)
                 .add(R.id.ll_main, fragment).addToBackStack("BACK_TO_CATEGORY")
                 .show(fragment)
                 .commit();

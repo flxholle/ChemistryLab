@@ -1,7 +1,7 @@
 package com.chemistry.admin.chemistrylab.effect_and_animation.height_changing_animation;
 
-import com.chemistry.admin.chemistrylab.chemical.reaction.ReactionEquation;
 import com.chemistry.admin.chemistrylab.chemical.Substance;
+import com.chemistry.admin.chemistrylab.chemical.reaction.ReactionEquation;
 import com.chemistry.admin.chemistrylab.chemical.reaction.ReactionSubstance;
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.holder_instrument.LaboratoryHolderInstrument;
 import com.chemistry.admin.chemistrylab.effect_and_animation.BaseAnimation;

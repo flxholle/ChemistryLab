@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.SystemClock;
 
-import com.chemistry.admin.chemistrylab.database.LaboratoryDatabaseManager;
 import com.chemistry.admin.chemistrylab.database.ReactionsDatabaseManager;
 import com.chemistry.admin.chemistrylab.effect_and_animation.BaseAnimation;
 
@@ -48,7 +47,7 @@ public class HeightChangingAnimationManager {
             while (animationCount > 0) {
                 for (int i = animationCount - 1; i >= 0; i--) {
                     BaseAnimation animation = listAnimations.get(i);
-                    if(animation.isPaused()){
+                    if (animation.isPaused()) {
                         continue;
                     }
                     if (!animation.run()) {

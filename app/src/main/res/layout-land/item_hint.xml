@@ -13,6 +13,6 @@
         android:layout_height="match_parent"
         android:textSize="@dimen/chemical_font"
         android:gravity="center"
-        android:textColor="@android:color/white"/>
+        android:textColor="@android:color/white" />
 
 </LinearLayout>

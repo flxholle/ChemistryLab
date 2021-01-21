@@ -82,7 +82,7 @@ public class BubbleAnimation implements BaseAnimation {
     public void drawBubble(Canvas canvas) {
         for (int i = listBubble.size() - 1; i >= 0; i--) {
             Bubble bubble = listBubble.get(i);
-            if(bubble != null) {
+            if (bubble != null) {
                 bubble.drawBubble(canvas);
             }
         }
@@ -102,7 +102,7 @@ public class BubbleAnimation implements BaseAnimation {
         int holderEmptyHeight = (int) liquidManager.getEmptyHeight();
         yEnd = Math.max(yBubbleMax, holderEmptyHeight);
         int speed = random.nextInt(BUBBLE_SPEED_MAX) + BUBBLE_SPEED_MIN;
-        boolean isSmall =  random.nextInt(2) == 0;
+        boolean isSmall = random.nextInt(2) == 0;
         Bubble bubble = new Bubble(xBubble, yBubble, yBubbleMax, speed, isSmall);
         bubble.setYEnd(yEnd);
         listBubble.add(bubble);

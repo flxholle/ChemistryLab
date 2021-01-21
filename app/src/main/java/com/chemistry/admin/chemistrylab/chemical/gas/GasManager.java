@@ -33,7 +33,7 @@ public class GasManager extends BaseSubstanceManager {
     @Override
     public Gas addSubstance(Substance substance) {
         Gas result = (Gas) super.addSubstance(substance);
-        if(result == substance){
+        if (result == substance) {
             result.setManager(this);
         }
         return result;

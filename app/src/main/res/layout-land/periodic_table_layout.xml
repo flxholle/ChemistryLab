@@ -219,7 +219,7 @@
         android:layout_columnSpan="1"
         android:layout_rowSpan="1"
         android:background="@drawable/box_violet"
-        android:text="Ca"/>
+        android:text="Ca" />
 
     <Button
         android:id="@+id/btn_Sc"
@@ -489,7 +489,7 @@
         android:layout_columnSpan="1"
         android:layout_rowSpan="1"
         android:background="@drawable/box_orange"
-        android:text="Ag"/>
+        android:text="Ag" />
 
     <Button
         android:id="@+id/btn_Cd"
@@ -729,7 +729,7 @@
         android:layout_columnSpan="1"
         android:layout_rowSpan="1"
         android:background="@drawable/box_blue"
-        android:text="At"/>
+        android:text="At" />
 
     <Button
         android:id="@+id/btn_Rn"
@@ -780,7 +780,7 @@
         android:layout_gravity="end"
         android:layout_rowSpan="1"
         android:background="@drawable/box_violet"
-        android:text="Ce"/>
+        android:text="Ce" />
 
     <Button
         android:id="@+id/btn_Pr"
@@ -790,7 +790,7 @@
         android:layout_columnSpan="1"
         android:layout_rowSpan="1"
         android:background="@drawable/box_violet"
-        android:text="Pr"/>
+        android:text="Pr" />
 
     <Button
         android:id="@+id/btn_Nd"
@@ -820,7 +820,7 @@
         android:layout_columnSpan="1"
         android:layout_rowSpan="1"
         android:background="@drawable/box_violet"
-        android:text="Sm"/>
+        android:text="Sm" />
 
     <Button
         android:id="@+id/btn_Eu"
@@ -840,7 +840,7 @@
         android:layout_columnSpan="1"
         android:layout_rowSpan="1"
         android:background="@drawable/box_violet"
-        android:text="Gd"/>
+        android:text="Gd" />
 
     <Button
         android:id="@+id/btn_Tb"
@@ -850,7 +850,7 @@
         android:layout_columnSpan="1"
         android:layout_rowSpan="1"
         android:background="@drawable/box_violet"
-        android:text="Tb"/>
+        android:text="Tb" />
 
     <Button
         android:id="@+id/btn_Dy"
@@ -900,7 +900,7 @@
         android:layout_columnSpan="1"
         android:layout_rowSpan="1"
         android:background="@drawable/box_violet"
-        android:text="Yb"/>
+        android:text="Yb" />
 
     <Button
         android:id="@+id/btn_Lu"
@@ -921,7 +921,7 @@
         android:layout_rowSpan="1"
         android:background="@drawable/box_pink"
         android:text="Th"
-        android:layout_gravity="end"/>
+        android:layout_gravity="end" />
 
     <Button
         android:id="@+id/btn_Pa"
@@ -951,7 +951,7 @@
         android:layout_columnSpan="1"
         android:layout_rowSpan="1"
         android:background="@drawable/box_pink"
-        android:text="Np"/>
+        android:text="Np" />
 
     <Button
         android:id="@+id/btn_Pu"
@@ -1001,7 +1001,7 @@
         android:layout_columnSpan="1"
         android:layout_rowSpan="1"
         android:background="@drawable/box_pink"
-        android:text="Cf"/>
+        android:text="Cf" />
 
     <Button
         android:id="@+id/btn_Es"
@@ -1041,7 +1041,7 @@
         android:layout_columnSpan="1"
         android:layout_rowSpan="1"
         android:background="@drawable/box_pink"
-        android:text="No"/>
+        android:text="No" />
 
     <Button
         android:id="@+id/btn_Lr"

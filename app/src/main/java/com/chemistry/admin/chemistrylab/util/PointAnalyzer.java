@@ -56,7 +56,7 @@ public class PointAnalyzer {
             endPoint[0] = Math.round(endPoint[0]);
             endPoint[1] = Math.round(endPoint[1]);
             if (endPoint[0] != xStartPoint) {
-                if(endPoint[0] - xStartPoint != 1){
+                if (endPoint[0] - xStartPoint != 1) {
                     listPoint.add(new Point((int) (endPoint[0] - 1), (int) endPoint[1]));
                     Log.e(TAG, "x = " + (endPoint[0] - 1) + " y = " + endPoint[1]);
                 }

@@ -20,13 +20,13 @@ public class SparkAnimation {
 
     public void start() {
         ParticleSystem particleSystem = new ParticleSystem((MainActivity) holder.getContext(),
-                                                            NUMBER_OF_PARTICLES,
-                                                            PARTICLE_DRAWABLE_ID,
-                                                            PARTICLE_LIVE_TIME);
+                NUMBER_OF_PARTICLES,
+                PARTICLE_DRAWABLE_ID,
+                PARTICLE_LIVE_TIME);
         particleSystem.setSpeedModuleAndAngleRange(0.0f, 0.4f, 225, 315)
                 .setRotationSpeed(360)
                 .setAcceleration(-0.0005f, 270)
-                .setScaleRange(0.5f,1.3f)
+                .setScaleRange(0.5f, 1.3f)
                 .emit(holder, 10, 5000);
     }
 

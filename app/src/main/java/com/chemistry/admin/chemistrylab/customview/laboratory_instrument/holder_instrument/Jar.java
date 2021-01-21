@@ -49,25 +49,25 @@ public class Jar extends LaboratoryHolderInstrument {
             instrumentPath.moveTo((spaceWidth - bottleNeckWidth) / 2, 0);
             instrumentPath.lineTo((spaceWidth - bottleNeckWidth) / 2, bottleNeckHeight);
             instrumentPath.arcTo(new RectF(0,
-                                            bottleNeckHeight,
-                                            (spaceWidth - bottleNeckWidth) / 2 * 2,
-                                            bottleNeckHeight + (spaceWidth - bottleNeckWidth) / 2 * 2),
-                                270, -90);
+                            bottleNeckHeight,
+                            (spaceWidth - bottleNeckWidth) / 2 * 2,
+                            bottleNeckHeight + (spaceWidth - bottleNeckWidth) / 2 * 2),
+                    270, -90);
             instrumentPath.arcTo(new RectF(0,
-                                            spaceHeight - roundBottomCornerDiameter,
-                                            0 + roundBottomCornerDiameter,
-                                            spaceHeight - roundBottomCornerDiameter + roundBottomCornerDiameter),
-                                180, -90);
+                            spaceHeight - roundBottomCornerDiameter,
+                            0 + roundBottomCornerDiameter,
+                            spaceHeight - roundBottomCornerDiameter + roundBottomCornerDiameter),
+                    180, -90);
             instrumentPath.arcTo(new RectF(spaceWidth - roundBottomCornerDiameter,
-                                            spaceHeight - roundBottomCornerDiameter,
-                                            spaceWidth - roundBottomCornerDiameter + roundBottomCornerDiameter,
-                                            spaceHeight - roundBottomCornerDiameter + roundBottomCornerDiameter),
-                                90, -90);
+                            spaceHeight - roundBottomCornerDiameter,
+                            spaceWidth - roundBottomCornerDiameter + roundBottomCornerDiameter,
+                            spaceHeight - roundBottomCornerDiameter + roundBottomCornerDiameter),
+                    90, -90);
             instrumentPath.arcTo(new RectF(bottleNeckWidth,
-                                            bottleNeckHeight,
-                                            (spaceWidth - bottleNeckWidth) / 2 * 2 + bottleNeckWidth,
-                                            bottleNeckHeight + (spaceWidth - bottleNeckWidth) / 2 * 2),
-                                0, -90);
+                            bottleNeckHeight,
+                            (spaceWidth - bottleNeckWidth) / 2 * 2 + bottleNeckWidth,
+                            bottleNeckHeight + (spaceWidth - bottleNeckWidth) / 2 * 2),
+                    0, -90);
             instrumentPath.lineTo((spaceWidth - bottleNeckWidth) / 2 + bottleNeckWidth, 0);
 
 //          LaboratoryDatabaseManager.getInstance(getContext()).insertToDataBase(LaboratoryDatabaseManager.JAR_MAP_VERTICAL_TABLE_NAME,PointAnalyzer.analyzePointVertical(instrumentPath));

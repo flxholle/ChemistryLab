@@ -40,7 +40,7 @@ public class SymbolConverter {
         CharSequence convertString = "";
         for (String aPart : parts) {
             SpannableString temp = new SpannableString(aPart);
-            if(Character.isDigit(aPart.charAt(0))) {
+            if (Character.isDigit(aPart.charAt(0))) {
                 int length = aPart.length();
                 temp.setSpan(new SuperscriptSpan(), 2, length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
                 temp.setSpan(new RelativeSizeSpan(SUBSCRIPT_SPAN_SIZE), 2, length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);

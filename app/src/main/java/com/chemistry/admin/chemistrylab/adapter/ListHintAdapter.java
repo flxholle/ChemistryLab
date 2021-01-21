@@ -10,7 +10,6 @@ import android.widget.BaseAdapter;
 import com.chemistry.admin.chemistrylab.R;
 import com.chemistry.admin.chemistrylab.chemical.Substance;
 import com.chemistry.admin.chemistrylab.customview.ChemicalSymbolView;
-import com.chemistry.admin.chemistrylab.database.LaboratoryDatabaseManager;
 import com.chemistry.admin.chemistrylab.database.ReactionsDatabaseManager;
 
 import java.util.ArrayList;
@@ -25,22 +24,22 @@ public class ListHintAdapter extends BaseAdapter {
     private final Context context;
     private final List<Substance> listHints;
 
-    public ListHintAdapter(Context context){
+    public ListHintAdapter(Context context) {
         this.context = context;
         inflater = LayoutInflater.from(context);
         listHints = new ArrayList<>();
     }
 
-    public void search(String text){
+    public void search(String text) {
         listHints.clear();
-        if(text.isEmpty()){
+        if (text.isEmpty()) {
             return;
         }
         listHints.addAll(ReactionsDatabaseManager.getInstance(context).findSubstancesByName(text));
         notifyDataSetChanged();
     }
 
-    public void clearListItems(){
+    public void clearListItems() {
         listHints.clear();
         notifyDataSetChanged();
     }
@@ -63,21 +62,21 @@ public class ListHintAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup container) {
         ViewHolder viewHolder;
-        if(view == null){
+        if (view == null) {
             view = inflater.inflate(R.layout.item_hint, container, false);
             viewHolder = new ViewHolder();
             viewHolder.textSymbol = view.findViewById(R.id.txt_hint_content);
             view.setTag(viewHolder);
-        }else {
+        } else {
             viewHolder = (ViewHolder) view.getTag();
         }
         Substance substance = listHints.get(i);
-        CharSequence content = TextUtils.concat(substance.getName() +" - ", substance.getConvertSymbol());
+        CharSequence content = TextUtils.concat(substance.getName() + " - ", substance.getConvertSymbol());
         viewHolder.textSymbol.setSymbol(content);
         return view;
     }
 
-    private static class ViewHolder{
+    private static class ViewHolder {
         ChemicalSymbolView textSymbol;
     }
 }

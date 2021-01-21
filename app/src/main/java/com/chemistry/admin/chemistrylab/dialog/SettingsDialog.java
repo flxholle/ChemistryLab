@@ -12,7 +12,6 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.chemistry.admin.chemistrylab.R;
-import com.chemistry.admin.chemistrylab.database.LaboratoryDatabaseManager;
 import com.chemistry.admin.chemistrylab.database.ReactionsDatabaseManager;
 import com.chemistry.admin.chemistrylab.effect_and_animation.bubble_animation.BubbleAnimationManager;
 import com.chemistry.admin.chemistrylab.effect_and_animation.height_changing_animation.HeightChangingAnimationManager;

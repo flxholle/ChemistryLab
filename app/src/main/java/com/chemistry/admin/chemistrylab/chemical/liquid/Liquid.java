@@ -12,13 +12,12 @@ public class Liquid extends Substance {
     private static final String TAG = "liquid";
 
     /**
-     *
-     * @param name name of the liquid
-     * @param symbol the symbol of the liquid
+     * @param name     name of the liquid
+     * @param symbol   the symbol of the liquid
      * @param colorHex the color of the liquid
-     * @param M the M of the liquid (g/mole)
-     * @param density the density of the liquid (g/ml)
-     * @param volume the volume of the liquid (ml)
+     * @param M        the M of the liquid (g/mole)
+     * @param density  the density of the liquid (g/ml)
+     * @param volume   the volume of the liquid (ml)
      */
     public Liquid(String name, String symbol, String colorHex, double M, double density, double volume) {
         super(name, symbol, TAG, colorHex, M, density);
@@ -32,6 +31,7 @@ public class Liquid extends Substance {
 
     /**
      * Get alpha value of the liquid at current volume
+     *
      * @return
      */
     public int getAlpha() {

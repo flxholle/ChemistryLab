@@ -12,7 +12,7 @@ import com.chemistry.admin.chemistrylab.fragment.PeriodicTableFragment;
  * Created by Admin on 10/14/2016.
  */
 
-public class ElementToolTip{
+public class ElementToolTip {
     private View rootView;
     private TextView textAtomicMass;
     private TextView textAtomicNumber;
@@ -31,20 +31,20 @@ public class ElementToolTip{
         rootView = View.inflate(context, R.layout.item_element, null);
         rootView.setLayoutParams(new LinearLayout.LayoutParams(size, size));
         rootView.measure(size, size);
-        textAtomicMass  = rootView.findViewById(R.id.txt_atomic_mass);
-        textAtomicNumber  = rootView.findViewById(R.id.txt_atomic_number);
-        textName  = rootView.findViewById(R.id.txt_name);
-        textSymbol  = rootView.findViewById(R.id.txt_symbol);
-        textElectronicGravity  = rootView.findViewById(R.id.txt_electronic_gravity);
-        textElectronicConfig  = rootView.findViewById(R.id.txt_electron_config);
-        textOxidationStates  = rootView.findViewById(R.id.txt_oxidation_states);
+        textAtomicMass = rootView.findViewById(R.id.txt_atomic_mass);
+        textAtomicNumber = rootView.findViewById(R.id.txt_atomic_number);
+        textName = rootView.findViewById(R.id.txt_name);
+        textSymbol = rootView.findViewById(R.id.txt_symbol);
+        textElectronicGravity = rootView.findViewById(R.id.txt_electronic_gravity);
+        textElectronicConfig = rootView.findViewById(R.id.txt_electron_config);
+        textOxidationStates = rootView.findViewById(R.id.txt_oxidation_states);
     }
 
     public View getRootView() {
         return rootView;
     }
 
-    public void setData(PeriodicTableFragment.ElementItem item){
+    public void setData(PeriodicTableFragment.ElementItem item) {
         textAtomicMass.setText(String.valueOf(item.getAtomicMass()));
         textAtomicNumber.setText(String.valueOf(item.getAtomicNumber()));
         textName.setText(item.getName());

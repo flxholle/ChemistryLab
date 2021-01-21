@@ -9,10 +9,14 @@ import com.chemistry.admin.chemistrylab.chemical.Substance;
  */
 public interface ContainerCallBack {
     void onHeightChange(Substance substance, double valueChange);
+
     void onSubstanceRemoved(Substance substance);
 
     Point getSurfaceLine(Substance substance);
+
     double getYTop(Substance substance);
+
     double getAvailableHeight();
+
     boolean isClosedVessel();
 }

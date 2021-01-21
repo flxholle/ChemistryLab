@@ -29,17 +29,17 @@
     <string name="tripod">Dreifuß</string>
     <string name="alcohol_burner">Alkohol-Brenner</string>
 
-<!--    <string name="chapter_one">Grundlegende Überlegungen &amp; Atome, Moleküle und Ionen</string>-->
-<!--    <string name="chapter_two">Stöchiometrie chemischer Reaktionen</string>-->
-<!--    <string name="chapter_three">Thermochemie</string>-->
-<!--    <string name="chapter_four">Chemische Bindungen und Molekulargeometrie</string>-->
-<!--    <string name="chapter_five">Gase</string>-->
-<!--    <string name="chapter_six">Flüssigkeiten und Feststoffe</string>-->
-<!--    <string name="chapter_seven">Lösungen und Kolloide</string>-->
-<!--    <string name="chapter_eight">Kinetik</string>-->
-<!--    <string name="chapter_nine">Säure-Base-Gleichgewichte</string>-->
-<!--    <string name="chapter_ten">Elektrochemie</string>-->
-<!--    <string name="chapter_eleven">Tabellen</string>-->
+    <!--    <string name="chapter_one">Grundlegende Überlegungen &amp; Atome, Moleküle und Ionen</string>-->
+    <!--    <string name="chapter_two">Stöchiometrie chemischer Reaktionen</string>-->
+    <!--    <string name="chapter_three">Thermochemie</string>-->
+    <!--    <string name="chapter_four">Chemische Bindungen und Molekulargeometrie</string>-->
+    <!--    <string name="chapter_five">Gase</string>-->
+    <!--    <string name="chapter_six">Flüssigkeiten und Feststoffe</string>-->
+    <!--    <string name="chapter_seven">Lösungen und Kolloide</string>-->
+    <!--    <string name="chapter_eight">Kinetik</string>-->
+    <!--    <string name="chapter_nine">Säure-Base-Gleichgewichte</string>-->
+    <!--    <string name="chapter_ten">Elektrochemie</string>-->
+    <!--    <string name="chapter_eleven">Tabellen</string>-->
 
     <string name="credits">Quellen</string>
     <string name="download_succeeded">Download erfolgreich!</string>

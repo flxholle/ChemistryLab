@@ -37,8 +37,6 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcelable;
-import androidx.core.view.ViewCompat;
-import androidx.core.widget.EdgeEffectCompat;
 import android.util.AttributeSet;
 import android.view.GestureDetector;
 import android.view.HapticFeedbackConstants;
@@ -51,6 +49,9 @@ import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.Scroller;
 
+import androidx.core.view.ViewCompat;
+import androidx.core.widget.EdgeEffectCompat;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -58,71 +59,115 @@ import java.util.Queue;
 
 // @formatter:on
 public class HorizontalListView extends AdapterView<ListAdapter> {
-    /** Defines where to insert items into the ViewGroup, as defined in {@code ViewGroup #addViewInLayout(View, int, LayoutParams, boolean)} */
+    /**
+     * Defines where to insert items into the ViewGroup, as defined in {@code ViewGroup #addViewInLayout(View, int, LayoutParams, boolean)}
+     */
     private static final int INSERT_AT_END_OF_LIST = -1;
     private static final int INSERT_AT_START_OF_LIST = 0;
 
-    /** The velocity to use for overscroll absorption */
+    /**
+     * The velocity to use for overscroll absorption
+     */
     private static final float FLING_DEFAULT_ABSORB_VELOCITY = 30f;
 
-    /** The friction amount to use for the fling tracker */
+    /**
+     * The friction amount to use for the fling tracker
+     */
     private static final float FLING_FRICTION = 0.009f;
 
-    /** Used for tracking the state data necessary to restore the HorizontalListView to its previous state after a rotation occurs */
+    /**
+     * Used for tracking the state data necessary to restore the HorizontalListView to its previous state after a rotation occurs
+     */
     private static final String BUNDLE_ID_CURRENT_X = "BUNDLE_ID_CURRENT_X";
 
-    /** The bundle id of the parents state. Used to restore the parent's state after a rotation occurs */
+    /**
+     * The bundle id of the parents state. Used to restore the parent's state after a rotation occurs
+     */
     private static final String BUNDLE_ID_PARENT_STATE = "BUNDLE_ID_PARENT_STATE";
 
-    /** Tracks ongoing flings */
+    /**
+     * Tracks ongoing flings
+     */
     protected final Scroller mFlingTracker = new Scroller(getContext());
 
-    /** Used for detecting gestures within this view so they can be handled */
+    /**
+     * Used for detecting gestures within this view so they can be handled
+     */
     private final GestureDetector mGestureDetector;
 
-    /** This tracks the starting layout position of the leftmost view */
+    /**
+     * This tracks the starting layout position of the leftmost view
+     */
     private int mDisplayOffset;
 
-    /** Holds a reference to the adapter bound to this view */
+    /**
+     * Holds a reference to the adapter bound to this view
+     */
     protected ListAdapter mAdapter;
 
-    /** Holds a cache of recycled views to be reused as needed */
+    /**
+     * Holds a cache of recycled views to be reused as needed
+     */
     private final List<Queue<View>> mRemovedViewsCache = new ArrayList<>();
 
-    /** Flag used to mark when the adapters data has changed, so the view can be relaid out */
+    /**
+     * Flag used to mark when the adapters data has changed, so the view can be relaid out
+     */
     private boolean mDataChanged = false;
 
-    /** Temporary rectangle to be used for measurements */
+    /**
+     * Temporary rectangle to be used for measurements
+     */
     private final Rect mRect = new Rect();
 
-    /** Tracks the currently touched view, used to delegate touches to the view being touched */
+    /**
+     * Tracks the currently touched view, used to delegate touches to the view being touched
+     */
     private View mViewBeingTouched = null;
 
-    /** The width of the divider that will be used between list items */
+    /**
+     * The width of the divider that will be used between list items
+     */
     private int mDividerWidth = 0;
 
-    /** The drawable that will be used as the list divider */
+    /**
+     * The drawable that will be used as the list divider
+     */
     private Drawable mDivider = null;
 
-    /** The x position of the currently rendered view */
+    /**
+     * The x position of the currently rendered view
+     */
     protected int mCurrentX;
 
-    /** The x position of the next to be rendered view */
+    /**
+     * The x position of the next to be rendered view
+     */
     protected int mNextX;
 
-    /** Used to hold the scroll position to restore to post rotate */
+    /**
+     * Used to hold the scroll position to restore to post rotate
+     */
     private Integer mRestoreX = null;
 
-    /** Tracks the maximum possible X position, stays at max value until last item is laid out and it can be determined */
+    /**
+     * Tracks the maximum possible X position, stays at max value until last item is laid out and it can be determined
+     */
     private int mMaxX = Integer.MAX_VALUE;
 
-    /** The adapter index of the leftmost view currently visible */
+    /**
+     * The adapter index of the leftmost view currently visible
+     */
     private int mLeftViewAdapterIndex;
 
-    /** The adapter index of the rightmost view currently visible */
+    /**
+     * The adapter index of the rightmost view currently visible
+     */
     private int mRightViewAdapterIndex;
 
-    /** This tracks the currently selected accessibility item */
+    /**
+     * This tracks the currently selected accessibility item
+     */
     private int mCurrentlySelectedAdapterIndex;
 
     /**
@@ -160,13 +205,19 @@ public class HorizontalListView extends AdapterView<ListAdapter> {
      */
     private final EdgeEffectCompat mEdgeGlowRight;
 
-    /** The height measure spec for this view, used to help size children views */
+    /**
+     * The height measure spec for this view, used to help size children views
+     */
     private int mHeightMeasureSpec;
 
-    /** Used to track if a view touch should be blocked because it stopped a fling */
+    /**
+     * Used to track if a view touch should be blocked because it stopped a fling
+     */
     private boolean mBlockTouchAction = false;
 
-    /** Used to track if the parent vertically scrollable view has been told to DisallowInterceptTouchEvent */
+    /**
+     * Used to track if the parent vertically scrollable view has been told to DisallowInterceptTouchEvent
+     */
     private boolean mIsParentVerticiallyScrollableViewDisallowingInterceptTouchEvent = false;
 
     /**
@@ -192,7 +243,9 @@ public class HorizontalListView extends AdapterView<ListAdapter> {
         }
     }
 
-    /** Registers the gesture detector to receive gesture notifications for this view */
+    /**
+     * Registers the gesture detector to receive gesture notifications for this view
+     */
     private void bindGestureDetector() {
         // Generic touch listener that can be applied to any view that needs to process gestures
         final View.OnTouchListener gestureListenerHandler = new View.OnTouchListener() {
@@ -235,7 +288,7 @@ public class HorizontalListView extends AdapterView<ListAdapter> {
      * Parse the XML configuration for this widget
      *
      * @param context Context used for extracting attributes
-     * @param attrs The Attribute Set containing the ColumnView attributes
+     * @param attrs   The Attribute Set containing the ColumnView attributes
      */
     private void retrieveXmlConfiguration(Context context, AttributeSet attrs) {
         if (attrs != null) {
@@ -324,14 +377,18 @@ public class HorizontalListView extends AdapterView<ListAdapter> {
         setCurrentScrollState(OnScrollStateChangedListener.ScrollState.SCROLL_STATE_IDLE);
     }
 
-    /** Will re-initialize the HorizontalListView to remove all child views rendered and reset to initial configuration. */
+    /**
+     * Will re-initialize the HorizontalListView to remove all child views rendered and reset to initial configuration.
+     */
     private void reset() {
         initView();
         removeAllViewsInLayout();
         requestLayout();
     }
 
-    /** DataSetObserver used to capture adapter data change events */
+    /**
+     * DataSetObserver used to capture adapter data change events
+     */
     private final DataSetObserver mAdapterDataObserver = new DataSetObserver() {
         @Override
         public void onChanged() {
@@ -443,7 +500,9 @@ public class HorizontalListView extends AdapterView<ListAdapter> {
         return itemViewType < mRemovedViewsCache.size();
     }
 
-    /** Adds a child to this viewgroup and measures it so it renders the correct size */
+    /**
+     * Adds a child to this viewgroup and measures it so it renders the correct size
+     */
     private void addAndMeasureChild(final View child, int viewPos) {
         LayoutParams params = getLayoutParams(child);
         addViewInLayout(child, viewPos, params, true);
@@ -469,7 +528,9 @@ public class HorizontalListView extends AdapterView<ListAdapter> {
         child.measure(childWidthSpec, childHeightSpec);
     }
 
-    /** Gets a child's layout parameters, defaults if not available. */
+    /**
+     * Gets a child's layout parameters, defaults if not available.
+     */
     private ViewGroup.LayoutParams getLayoutParams(View child) {
         ViewGroup.LayoutParams layoutParams = child.getLayoutParams();
         if (layoutParams == null) {
@@ -597,7 +658,9 @@ public class HorizontalListView extends AdapterView<ListAdapter> {
         }
     }
 
-    /** Determines the current fling absorb velocity */
+    /**
+     * Determines the current fling absorb velocity
+     */
     private float determineFlingAbsorbVelocity() {
         // If the OS version is high enough get the real velocity */
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
@@ -610,7 +673,9 @@ public class HorizontalListView extends AdapterView<ListAdapter> {
         }
     }
 
-    /** Use to schedule a request layout via a runnable */
+    /**
+     * Use to schedule a request layout via a runnable
+     */
     private final Runnable mDelayedLayout = new Runnable() {
         @Override
         public void run() {
@@ -658,7 +723,9 @@ public class HorizontalListView extends AdapterView<ListAdapter> {
         return false;
     }
 
-    /** Adds children views to the left and right of the current views until the screen is full */
+    /**
+     * Adds children views to the left and right of the current views until the screen is full
+     */
     private void fillList(final int dx) {
         // Get the rightmost child and determine its right edge
         int edge = 0;
@@ -752,7 +819,9 @@ public class HorizontalListView extends AdapterView<ListAdapter> {
         }
     }
 
-    /** Loops through each child and positions them onto the screen */
+    /**
+     * Loops through each child and positions them onto the screen
+     */
     private void positionChildren(final int dx) {
         int childCount = getChildCount();
 
@@ -777,18 +846,23 @@ public class HorizontalListView extends AdapterView<ListAdapter> {
         }
     }
 
-    /** Gets the current child that is leftmost on the screen. */
+    /**
+     * Gets the current child that is leftmost on the screen.
+     */
     private View getLeftmostChild() {
         return getChildAt(0);
     }
 
-    /** Gets the current child that is rightmost on the screen. */
+    /**
+     * Gets the current child that is rightmost on the screen.
+     */
     private View getRightmostChild() {
         return getChildAt(getChildCount() - 1);
     }
 
     /**
      * Finds a child view that is contained within this view, given the adapter index.
+     *
      * @return View The child view, or or null if not found.
      */
     private View getChild(int adapterIndex) {
@@ -821,22 +895,30 @@ public class HorizontalListView extends AdapterView<ListAdapter> {
         return -1;
     }
 
-    /** Simple convenience method for determining if this index is the last index in the adapter */
+    /**
+     * Simple convenience method for determining if this index is the last index in the adapter
+     */
     private boolean isLastItemInAdapter(int index) {
         return index == mAdapter.getCount() - 1;
     }
 
-    /** Gets the height in px this view will be rendered. (padding removed) */
+    /**
+     * Gets the height in px this view will be rendered. (padding removed)
+     */
     private int getRenderHeight() {
         return getHeight() - getPaddingTop() - getPaddingBottom();
     }
 
-    /** Gets the width in px this view will be rendered. (padding removed) */
+    /**
+     * Gets the width in px this view will be rendered. (padding removed)
+     */
     private int getRenderWidth() {
         return getWidth() - getPaddingLeft() - getPaddingRight();
     }
 
-    /** Scroll to the provided offset */
+    /**
+     * Scroll to the provided offset
+     */
     public void scrollTo(int x) {
         mFlingTracker.startScroll(mNextX, 0, x - mNextX, 0);
         setCurrentScrollState(OnScrollStateChangedListener.ScrollState.SCROLL_STATE_FLING);
@@ -853,7 +935,9 @@ public class HorizontalListView extends AdapterView<ListAdapter> {
         return mRightViewAdapterIndex;
     }
 
-    /** Draws the overscroll edge glow effect on the left and right sides of the horizontal list */
+    /**
+     * Draws the overscroll edge glow effect on the left and right sides of the horizontal list
+     */
     private void drawEdgeGlow(Canvas canvas) {
         if (mEdgeGlowLeft != null && !mEdgeGlowLeft.isFinished() && isEdgeGlowEnabled()) {
             // The Edge glow is meant to come from the top of the screen, so rotate it to draw on the left side.
@@ -885,7 +969,9 @@ public class HorizontalListView extends AdapterView<ListAdapter> {
         }
     }
 
-    /** Draws the dividers that go in between the horizontal list view items */
+    /**
+     * Draws the dividers that go in between the horizontal list view items
+     */
     private void drawDividers(Canvas canvas) {
         final int count = getChildCount();
 
@@ -993,7 +1079,9 @@ public class HorizontalListView extends AdapterView<ListAdapter> {
         return true;
     }
 
-    /** If a view is currently pressed then unpress it */
+    /**
+     * If a view is currently pressed then unpress it
+     */
     private void unpressTouchedChild() {
         if (mViewBeingTouched != null) {
             // Set the view as not pressed
@@ -1101,7 +1189,9 @@ public class HorizontalListView extends AdapterView<ListAdapter> {
         return super.onTouchEvent(event);
     }
 
-    /** Release the EdgeGlow so it animates */
+    /**
+     * Release the EdgeGlow so it animates
+     */
     private void releaseEdgeGlow() {
         if (mEdgeGlowLeft != null) {
             mEdgeGlowLeft.onRelease();
@@ -1122,11 +1212,10 @@ public class HorizontalListView extends AdapterView<ListAdapter> {
      * This will only be called once to notify that the HorizontalListView is running low on data.
      * Calling notifyDataSetChanged on the adapter will allow this to be called again once low on data.
      *
-     * @param listener The listener to be notified when the number of array adapters items left to
-     * be shown is running low.
-     *
+     * @param listener                       The listener to be notified when the number of array adapters items left to
+     *                                       be shown is running low.
      * @param numberOfItemsLeftConsideredLow The number of array adapter items that have not yet
-     * been displayed that is considered too low.
+     *                                       been displayed that is considered too low.
      */
     public void setRunningOutOfDataListener(RunningOutOfDataListener listener, int numberOfItemsLeftConsideredLow) {
         mRunningOutOfDataListener = listener;
@@ -1137,7 +1226,9 @@ public class HorizontalListView extends AdapterView<ListAdapter> {
      * This listener is used to allow notification when the HorizontalListView is running low on data to display.
      */
     public interface RunningOutOfDataListener {
-        /** Called when the HorizontalListView is running out of data and has reached at least the provided threshold. */
+        /**
+         * Called when the HorizontalListView is running out of data and has reached at least the provided threshold.
+         */
         void onRunningOutOfData();
     }
 
@@ -1284,7 +1375,9 @@ public class HorizontalListView extends AdapterView<ListAdapter> {
             }
         }
 
-        /** Sets the friction for the provided scroller */
+        /**
+         * Sets the friction for the provided scroller
+         */
         public static void setFriction(Scroller scroller, float friction) {
             if (scroller != null) {
                 scroller.setFriction(friction);
@@ -1301,7 +1394,9 @@ public class HorizontalListView extends AdapterView<ListAdapter> {
             }
         }
 
-        /** Gets the velocity for the provided scroller */
+        /**
+         * Gets the velocity for the provided scroller
+         */
         public static float getCurrVelocity(Scroller scroller) {
             return scroller.getCurrVelocity();
         }

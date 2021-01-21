@@ -12,12 +12,12 @@
         android:textSize="@dimen/medium_font"
         android:text="@string/settings_title"
         android:textColor="@color/black"
-        android:padding="24dp"/>
+        android:padding="24dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="@dimen/divider_width"
-        android:background="@color/devider_color"/>
+        android:background="@color/devider_color" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -32,7 +32,7 @@
             android:layout_weight="1"
             android:padding="5dp"
             android:scaleType="centerInside"
-            app:srcCompat="@mipmap/ic_speed"/>
+            app:srcCompat="@mipmap/ic_speed" />
 
         <TextView
             android:layout_width="0dp"
@@ -40,13 +40,13 @@
             android:layout_weight="2"
             android:text="@string/speed"
             android:gravity="center_vertical"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black" />
 
         <SeekBar
             android:id="@+id/seek_bar_speed"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="5"/>
+            android:layout_weight="5" />
 
         <TextView
             android:id="@+id/txt_speed"
@@ -56,7 +56,7 @@
             android:textColor="@color/black"
             android:textSize="@dimen/medium_font"
             android:text="1.0"
-            android:gravity="center"/>
+            android:gravity="center" />
 
     </LinearLayout>
 
@@ -78,7 +78,7 @@
             android:layout_weight="1"
             android:padding="5dp"
             android:scaleType="centerInside"
-            app:srcCompat="@mipmap/ic_help"/>
+            app:srcCompat="@mipmap/ic_help" />
 
         <TextView
             android:layout_width="0dp"
@@ -87,7 +87,7 @@
             android:text="@string/help"
             android:gravity="center_vertical"
             android:textSize="@dimen/small_font"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black" />
 
     </LinearLayout>
 
@@ -108,7 +108,7 @@
             android:layout_weight="1"
             android:padding="5dp"
             android:scaleType="centerInside"
-            app:srcCompat="@mipmap/ic_about"/>
+            app:srcCompat="@mipmap/ic_about" />
 
         <TextView
             android:layout_width="0dp"
@@ -117,25 +117,23 @@
             android:text="@string/about"
             android:gravity="center_vertical"
             android:textSize="@dimen/small_font"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black" />
 
     </LinearLayout>
-    
-
 
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="@dimen/divider_width"
-        android:background="@color/devider_color"/>
-    
+        android:background="@color/devider_color" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="52dp"
         android:weightSum="4"
         android:gravity="end"
         android:padding="8dp">
-        
+
         <Button
             android:id="@+id/btn_cancel"
             android:layout_width="wrap_content"
@@ -143,7 +141,7 @@
             android:background="@drawable/button_setting_drawable"
             android:textColor="#1FA296"
             android:layout_gravity="center"
-            android:text="@string/cancel"/>
+            android:text="@string/cancel" />
 
         <Button
             android:id="@+id/btn_ok"
@@ -152,11 +150,8 @@
             android:background="@drawable/button_setting_drawable"
             android:textColor="#1FA296"
             android:text="@string/okay"
-            android:gravity="center"/>
+            android:gravity="center" />
     </LinearLayout>
-
-
-
 
 
 </LinearLayout>

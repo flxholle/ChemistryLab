@@ -14,7 +14,7 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         app:srcCompat="@mipmap/ic_book"
-        android:layout_marginEnd="15dp"/>
+        android:layout_marginEnd="15dp" />
 
     <TextView
         android:id="@+id/txt_lecture_title"

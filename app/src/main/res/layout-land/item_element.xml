@@ -36,7 +36,7 @@
         android:gravity="center"
         android:text="1,61"
         android:textColor="@android:color/white"
-        android:textSize="13sp"/>
+        android:textSize="13sp" />
 
     <TextView
         android:id="@+id/txt_symbol"
@@ -47,7 +47,7 @@
         android:gravity="center"
         android:text="Al"
         android:textColor="@color/white"
-        android:textSize="40sp"/>
+        android:textSize="40sp" />
 
     <TextView
         android:id="@+id/txt_name"
@@ -60,7 +60,7 @@
         android:textColor="@android:color/white"
         android:textStyle="bold"
         android:textSize="12sp"
-        android:layout_marginBottom="5dp"/>
+        android:layout_marginBottom="5dp" />
 
 
     <TextView
@@ -73,7 +73,7 @@
         android:text="[Ne]3s^23p^1"
         android:textColor="@android:color/white"
         android:textSize="12sp"
-        android:bufferType="spannable"/>
+        android:bufferType="spannable" />
 
 
     <TextView
@@ -85,7 +85,7 @@
         android:layout_marginTop="5dp"
         android:text="+1 +2 +4 -4 -5"
         android:textColor="@android:color/white"
-        android:textSize="12sp"/>
+        android:textSize="12sp" />
 
 
 </RelativeLayout>

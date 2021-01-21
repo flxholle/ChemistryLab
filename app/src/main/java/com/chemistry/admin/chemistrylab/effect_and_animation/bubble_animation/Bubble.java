@@ -22,9 +22,9 @@ public class Bubble {
         this.y = y;
         this.yMin = yMin;
         this.speed = speed;
-        if(isSmall){
+        if (isSmall) {
             bubble = smallBubbleImage;
-        }else {
+        } else {
             bubble = bigBubbleImage;
         }
     }
@@ -41,8 +41,8 @@ public class Bubble {
         return yMin;
     }
 
-    public boolean move(){
-        if(this.y >= yEnd) {
+    public boolean move() {
+        if (this.y >= yEnd) {
             this.y -= speed;
             return true;
         }

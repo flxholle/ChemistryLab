@@ -18,7 +18,7 @@
             android:textSize="@dimen/large_font"
             android:gravity="start"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="100dp"/>
+            android:layout_marginTop="100dp" />
 
     </RelativeLayout>
 
@@ -72,8 +72,7 @@
         android:id="@+id/rl_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/ln_button_menu">
-    </RelativeLayout>
+        android:layout_toEndOf="@id/ln_button_menu"></RelativeLayout>
 
     <ImageView
         android:id="@+id/img_remove"

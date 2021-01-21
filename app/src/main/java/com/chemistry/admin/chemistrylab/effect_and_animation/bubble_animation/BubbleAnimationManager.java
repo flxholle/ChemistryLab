@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.graphics.Canvas;
 
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.holder_instrument.LaboratoryHolderInstrument;
-import com.chemistry.admin.chemistrylab.database.LaboratoryDatabaseManager;
 import com.chemistry.admin.chemistrylab.database.ReactionsDatabaseManager;
 import com.chemistry.admin.chemistrylab.effect_and_animation.BaseAnimation;
 
@@ -57,7 +56,7 @@ public class BubbleAnimationManager {
             while (animationCount > 0) {
                 for (int i = animationCount - 1; i >= 0; i--) {
                     BaseAnimation animation = listAnimations.get(i);
-                    if(animation.isPaused()){
+                    if (animation.isPaused()) {
                         continue;
                     }
                     if (animation.run()) {

@@ -61,6 +61,6 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/item_size"
         android:background="@color/list_background"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
 </LinearLayout>

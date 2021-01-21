@@ -22,7 +22,7 @@
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true"
             app:srcCompat="@drawable/search_button"
-            android:scaleType="centerInside"/>
+            android:scaleType="centerInside" />
 
         <EditText
             android:id="@+id/edt_search_bar"
@@ -37,7 +37,7 @@
             android:hint="@string/search_hint"
             android:textStyle="italic"
             android:background="@drawable/search_bar_background"
-            android:inputType="text"/>
+            android:inputType="text" />
 
         <ProgressBar
             android:id="@+id/loading_bar"

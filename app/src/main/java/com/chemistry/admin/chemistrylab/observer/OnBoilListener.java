@@ -5,5 +5,6 @@ package com.chemistry.admin.chemistrylab.observer;
  */
 public interface OnBoilListener {
     void onBoil();
+
     void onStopBoiling();
 }

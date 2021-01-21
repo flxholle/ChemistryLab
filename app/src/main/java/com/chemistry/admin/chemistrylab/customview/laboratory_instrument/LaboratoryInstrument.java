@@ -31,13 +31,13 @@ public abstract class LaboratoryInstrument extends View implements View.OnDragLi
         initViews();
     }
 
-    public LaboratoryInstrument(Context context){
+    public LaboratoryInstrument(Context context) {
         super(context);
         initViews();
     }
 
     private void initViews() {
-        if(instrumentPaint == null) {
+        if (instrumentPaint == null) {
             instrumentPaint = new Paint();
             instrumentPaint.setAntiAlias(true);
             instrumentPaint.setColor(Color.BLACK);
@@ -83,7 +83,7 @@ public abstract class LaboratoryInstrument extends View implements View.OnDragLi
 
     @Override
     public boolean onDrag(View view, DragEvent dragEvent) {
-        if(dragEvent.getAction() == DragEvent.ACTION_DROP){
+        if (dragEvent.getAction() == DragEvent.ACTION_DROP) {
             LaboratoryInstrument dragItem = (LaboratoryInstrument) dragEvent.getLocalState();
             dragItem.setVisibility(VISIBLE);
         }
@@ -92,13 +92,13 @@ public abstract class LaboratoryInstrument extends View implements View.OnDragLi
 
     @Override
     public boolean onLongClick(View view) {
-        if(onItemDetachListener != null){
+        if (onItemDetachListener != null) {
             onItemDetachListener.onItemDetached((LaboratoryInstrument) view);
             onItemDetachListener = null;
         }
         DragItemShadowBuilder shadowBuilder = new DragItemShadowBuilder((LaboratoryInstrument) view);
         view.startDrag(null, shadowBuilder, view, View.DRAWING_CACHE_QUALITY_AUTO);
-        ((MainActivity)getContext()).setRemoveAreaVisibility(View.VISIBLE);
+        ((MainActivity) getContext()).setRemoveAreaVisibility(View.VISIBLE);
         view.setVisibility(View.INVISIBLE);
         return false;
     }

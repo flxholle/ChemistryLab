@@ -39,10 +39,10 @@ public class TestTube extends LaboratoryHolderInstrument {
             instrumentPath.moveTo(0, 0);
             instrumentPath.lineTo(0, spaceHeight - spaceWidth);
             instrumentPath.arcTo(new RectF(0,
-                                            spaceHeight - spaceWidth,
-                                            spaceWidth,
-                                            spaceHeight),
-                                180, -180);
+                            spaceHeight - spaceWidth,
+                            spaceWidth,
+                            spaceHeight),
+                    180, -180);
             instrumentPath.lineTo(spaceWidth, 0);
 
             arrPoint = LaboratoryDatabaseManager.getInstance(getContext())

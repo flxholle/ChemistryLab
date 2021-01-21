@@ -68,17 +68,17 @@ public class SolidManager extends BaseSubstanceManager {
 
     @Override
     protected List<Substance> takeSubstanceByHeight(double height) {
-        if(height >= this.currentHeight){
+        if (height >= this.currentHeight) {
             return clearAllSubstances();
         }
         List<Substance> result = new ArrayList<>(listSubstances.size());
         int lastSubstanceIndex = listSubstances.size() - 1;
-        while (height > 0){
+        while (height > 0) {
             Solid solid = getSubstance(lastSubstanceIndex);
             double solidHeight = solid.getHeight();
-            if(height >= solidHeight){
+            if (height >= solidHeight) {
                 result.add(removeSubstance(lastSubstanceIndex));
-            }else {
+            } else {
                 double ratio = height / solidHeight;
                 result.add(solid.split(solid.getMole() * ratio));
                 solid.getTip().update();

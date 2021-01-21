@@ -29,18 +29,18 @@ public class ItemTip extends RelativeLayout {
         View view = inflater.inflate(R.layout.item_information, this, false);
         TextView textSymbol = view.findViewById(R.id.txt_symbol);
         textSymbol.setText(substance.getConvertSymbol());
-        if(substance instanceof Solid){
+        if (substance instanceof Solid) {
             textSymbol.setTextColor(context.getResources().getColor(R.color.solid_tip_color));
-        }else if(substance instanceof Liquid){
+        } else if (substance instanceof Liquid) {
             textSymbol.setTextColor(context.getResources().getColor(R.color.liquid_tip_color));
-        }else {
+        } else {
             textSymbol.setTextColor(context.getResources().getColor(R.color.gas_tip_color));
         }
         textMole = view.findViewById(R.id.txt_mole);
         previousMoleValue = Math.round(substance.getMole() * 100) * 1.0 / 100;
-        if(previousMoleValue != 0) {
+        if (previousMoleValue != 0) {
             update();
-        }else {
+        } else {
             textMole.setText("0");
         }
         addView(view);
@@ -51,23 +51,23 @@ public class ItemTip extends RelativeLayout {
     }
 
     public void update() {
-        if(previousMoleValue == 0 && substance.getMole() == 0){
+        if (previousMoleValue == 0 && substance.getMole() == 0) {
             substance.removeFromContainer();
             return;
         }
         double moleRounded = Math.round(substance.getMole() * 100) * 1.0 / 100;
-        if(moleRounded > previousMoleValue){
+        if (moleRounded > previousMoleValue) {
             textMole.setTextColor(Color.GREEN);
-        }else if(moleRounded < previousMoleValue){
+        } else if (moleRounded < previousMoleValue) {
             textMole.setTextColor(Color.RED);
         }
         previousMoleValue = moleRounded;
         textMole.setText(String.valueOf(moleRounded));
     }
 
-    public void destroy(){
+    public void destroy() {
         LinearLayout containerView = (LinearLayout) getParent();
-        if(containerView != null) {
+        if (containerView != null) {
             containerView.removeView(this);
         }
     }

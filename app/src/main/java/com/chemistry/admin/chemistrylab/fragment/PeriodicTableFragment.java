@@ -71,11 +71,11 @@ public class PeriodicTableFragment extends Fragment implements EasyDialog.OnEasy
         int yView = (int) v.getY();
         easyDialogOrient = EasyDialog.GRAVITY_TOP;
         if (yView - heightDialog < 0) {
-            if(xView + widthDialog > fragmentWidth){
+            if (xView + widthDialog > fragmentWidth) {
                 easyDialogOrient = EasyDialog.GRAVITY_LEFT;
-            }else if(xView - widthDialog < 0){
+            } else if (xView - widthDialog < 0) {
                 easyDialogOrient = EasyDialog.GRAVITY_RIGHT;
-            }else {
+            } else {
                 easyDialogOrient = EasyDialog.GRAVITY_BOTTOM;
             }
         }

@@ -9,7 +9,6 @@ import com.chemistry.admin.chemistrylab.chemical.reaction.ReactionSubstance;
 import com.chemistry.admin.chemistrylab.chemical.solid.Solid;
 import com.chemistry.admin.chemistrylab.chemical.solid.SolidManager;
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.holder_instrument.LaboratoryHolderInstrument;
-import com.chemistry.admin.chemistrylab.database.LaboratoryDatabaseManager;
 import com.chemistry.admin.chemistrylab.database.ReactionsDatabaseManager;
 import com.chemistry.admin.chemistrylab.effect_and_animation.BaseAnimation;
 import com.chemistry.admin.chemistrylab.tooltip.ItemTip;

@@ -40,15 +40,15 @@ public class Trough extends LaboratoryHolderInstrument {
             instrumentPath.moveTo(0, 0);
             instrumentPath.lineTo(0, spaceHeight - roundBottomCornerDiameter);
             instrumentPath.arcTo(new RectF(0,
-                                            spaceHeight - roundBottomCornerDiameter,
-                                            roundBottomCornerDiameter,
-                                            spaceHeight - roundBottomCornerDiameter + roundBottomCornerDiameter),
-                                180, -90);
+                            spaceHeight - roundBottomCornerDiameter,
+                            roundBottomCornerDiameter,
+                            spaceHeight - roundBottomCornerDiameter + roundBottomCornerDiameter),
+                    180, -90);
             instrumentPath.arcTo(new RectF(spaceWidth - roundBottomCornerDiameter,
-                                            spaceHeight - roundBottomCornerDiameter,
-                                            spaceWidth - roundBottomCornerDiameter + roundBottomCornerDiameter,
-                                            spaceHeight - roundBottomCornerDiameter + roundBottomCornerDiameter),
-                                90, -90);
+                            spaceHeight - roundBottomCornerDiameter,
+                            spaceWidth - roundBottomCornerDiameter + roundBottomCornerDiameter,
+                            spaceHeight - roundBottomCornerDiameter + roundBottomCornerDiameter),
+                    90, -90);
             instrumentPath.lineTo(spaceWidth, 0);
 
 //          LaboratoryDatabaseManager.getInstance(getContext()).insertToDataBase(LaboratoryDatabaseManager.BREAKER_MAP_VERTICAL_TABLE_NAME,PointAnalyzer.analyzePointVertical(instrumentPath));

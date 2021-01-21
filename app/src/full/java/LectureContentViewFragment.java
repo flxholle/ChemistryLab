@@ -1,10 +1,11 @@
 package com.chemistry.admin.chemistrylab.fragment;
 
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.fragment.app.Fragment;
 
 import com.chemistry.admin.chemistrylab.R;
 import com.github.barteksc.pdfviewer.PDFView;

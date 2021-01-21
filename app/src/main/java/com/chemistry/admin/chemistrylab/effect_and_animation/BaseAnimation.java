@@ -7,8 +7,12 @@ import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.holder_
  */
 public interface BaseAnimation {
     boolean run();
+
     void updateUI();
+
     LaboratoryHolderInstrument getHolder();
+
     void onStop();
+
     boolean isPaused();
 }

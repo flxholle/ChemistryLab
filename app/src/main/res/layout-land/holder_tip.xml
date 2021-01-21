@@ -15,7 +15,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="@dimen/divider_width"
-        android:background="@color/devider_color"/>
+        android:background="@color/devider_color" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,7 +33,7 @@
             android:textSize="@dimen/equipment_font"
             android:textStyle="bold"
             android:layout_weight="1"
-            android:background="@drawable/button_tool_tip_left"/>
+            android:background="@drawable/button_tool_tip_left" />
 
         <Button
             android:id="@+id/btn_remove"
@@ -43,7 +43,7 @@
             android:textSize="@dimen/equipment_font"
             android:textStyle="bold"
             android:layout_weight="1"
-            android:background="@drawable/button_tool_tip_right"/>
+            android:background="@drawable/button_tool_tip_right" />
 
     </LinearLayout>
 

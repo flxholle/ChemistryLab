@@ -9,7 +9,6 @@ import android.widget.TextView;
 import com.chemistry.admin.chemistrylab.R;
 import com.chemistry.admin.chemistrylab.adapter.ListSubstancesPreviewAdapter;
 import com.chemistry.admin.chemistrylab.chemical.Substance;
-import com.chemistry.admin.chemistrylab.database.LaboratoryDatabaseManager;
 import com.chemistry.admin.chemistrylab.database.ReactionsDatabaseManager;
 
 /**
@@ -68,9 +67,9 @@ public class PreviewTip extends RelativeLayout implements SeekBar.OnSeekBarChang
     @Override
     public void onStopTrackingTouch(SeekBar seekBar) {
         double moleChanged = (seekBar.getProgress() + 1) * 1.0 / 100 - baseSubstance.getMole();
-        if(moleChanged > 0){
+        if (moleChanged > 0) {
             baseSubstance.addAmount(moleChanged);
-        }else {
+        } else {
             baseSubstance.reduceAmount(-moleChanged);
         }
         baseSubstance.getTip().update();

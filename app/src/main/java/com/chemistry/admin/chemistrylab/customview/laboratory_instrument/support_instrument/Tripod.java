@@ -76,7 +76,7 @@ public class Tripod extends LaboratorySupportInstrument implements View.OnDragLi
             this.alcoholBurner = (AlcoholBurner) item;
         }
 
-        if(holder != null && alcoholBurner != null){
+        if (holder != null && alcoholBurner != null) {
             alcoholBurner.setOnBoilListener(holder);
         }
 
@@ -168,7 +168,7 @@ public class Tripod extends LaboratorySupportInstrument implements View.OnDragLi
             totalHeight = heightView;
             xInGroup = 0;
             yInGroup = 0;
-            if(alcoholBurner != null) {
+            if (alcoholBurner != null) {
                 alcoholBurner.stopBoiling();
                 alcoholBurner.removeOnBoilListener();
             }

@@ -72,7 +72,7 @@
             android:text="@string/mol"
             android:textColor="@android:color/black"
             android:textSize="@dimen/equipment_font"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true" />
 
         <TextView
             android:id="@+id/txt_mole"
@@ -85,14 +85,14 @@
             android:text="3.0"
             android:textColor="@android:color/black"
             android:textSize="14sp"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true" />
 
         <SeekBar
             android:id="@+id/seek_bar_mole"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toStartOf="@id/txt_mole"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true" />
 
     </RelativeLayout>
 

@@ -8,5 +8,5 @@
     <item
         android:drawable="@color/list_background"
         android:minLevel="1"
-        android:maxLevel="1"/>
+        android:maxLevel="1" />
 </level-list>

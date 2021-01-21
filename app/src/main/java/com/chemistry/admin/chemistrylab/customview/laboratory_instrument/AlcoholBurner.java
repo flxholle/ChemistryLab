@@ -67,17 +67,17 @@ public class AlcoholBurner extends LaboratoryInstrument {
 
     public void setOnBoilListener(OnBoilListener onBoilListener) {
         this.onBoilListener = onBoilListener;
-        if(isBurning){
+        if (isBurning) {
             onBoilListener.onBoil();
         }
     }
 
-    public void removeOnBoilListener(){
+    public void removeOnBoilListener() {
         this.onBoilListener = null;
     }
 
-    public void stopBoiling(){
-        if(onBoilListener != null) {
+    public void stopBoiling() {
+        if (onBoilListener != null) {
             this.onBoilListener.onStopBoiling();
         }
     }
@@ -91,13 +91,13 @@ public class AlcoholBurner extends LaboratoryInstrument {
     protected void onDraw(Canvas canvas) {
         if (isBurning) {
             canvas.drawBitmap(burnerOpenedImage, 0, 70, null);
-            if(flameStateIndex == 7) {
+            if (flameStateIndex == 7) {
                 i = -1;
             }
-            if(flameStateIndex == 0){
+            if (flameStateIndex == 0) {
                 i = 1;
             }
-            flameStateIndex+=i;
+            flameStateIndex += i;
             canvas.drawBitmap(flameState[flameStateIndex], (widthView - flameImageWidth + 4) / 2, 0, null);
             postInvalidateDelayed(100);
         } else {
@@ -130,7 +130,7 @@ public class AlcoholBurner extends LaboratoryInstrument {
         } else {
             currentState = burnerOpenedImage;
             isBurning = true;
-            if(onBoilListener != null) {
+            if (onBoilListener != null) {
                 onBoilListener.onBoil();
             }
         }

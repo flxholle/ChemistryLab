@@ -28,7 +28,7 @@ public class ReactionEquation {
         CharSequence result = new SpannableString("");
         int substanceCount = listReactionSubstances.size();
         for (int i = 0; i < substanceCount; i++) {
-            Log.i(TAG, "getEquation: "+listReactionSubstances.size()+" "+listReactionSubstances.toString());
+            Log.i(TAG, "getEquation: " + listReactionSubstances.size() + " " + listReactionSubstances.toString());
             result = TextUtils.concat(result, listReactionSubstances.get(i).getSubstance().getConvertSymbol());
             if (i == numberOfStartSubstance - 1) {
                 result = TextUtils.concat(result, " = ");

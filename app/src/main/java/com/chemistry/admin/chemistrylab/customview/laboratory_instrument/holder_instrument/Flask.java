@@ -45,7 +45,7 @@ public class Flask extends LaboratoryHolderInstrument {
             instrumentPath.moveTo((spaceWidth - bottleNeckWidth) / 2, 0);
             instrumentPath.lineTo((spaceWidth - bottleNeckWidth) / 2, bottleNeckHeight);
             instrumentPath.arcTo(new RectF(0, bottleNeckHeight, spaceWidth, spaceHeight),
-                                startAngle, sweepAngle);
+                    startAngle, sweepAngle);
             instrumentPath.lineTo((spaceWidth - bottleNeckWidth) / 2 + bottleNeckWidth, 0);
 
             arrPoint = LaboratoryDatabaseManager.getInstance(getContext())

@@ -109,7 +109,7 @@ public abstract class LaboratoryHolderInstrument extends LaboratoryInstrument im
     public void checkReaction(Substance substance) {
         List<ReactionEquation> listAllEquation = new ArrayList<>();
         for (BaseSubstanceManager manager : listSubstanceManagers) {
-            if(manager.getSubstancesCount() != 0) {
+            if (manager.getSubstancesCount() != 0) {
                 listAllEquation.addAll(manager.checkReaction(substance));
             }
         }
@@ -131,7 +131,7 @@ public abstract class LaboratoryHolderInstrument extends LaboratoryInstrument im
             addHeightChangingAnimation(new ReactionAnimation(this, equation));
             if (equation.hasGasCreated()) {
                 Substance substance = listReactionSubstances.get(0).getSubstance();
-                if(substance instanceof Solid) {
+                if (substance instanceof Solid) {
                     addBubbleAnimation(new BubbleAnimation(this,
                             (Solid) substance,
                             equation.getBaseReactionSubstance().getSubstance()));
@@ -326,7 +326,7 @@ public abstract class LaboratoryHolderInstrument extends LaboratoryInstrument im
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        if(tripodContaining != null){
+        if (tripodContaining != null) {
             tripodContaining.onItemDetached(this);
         }
         cancelAllAnimation();

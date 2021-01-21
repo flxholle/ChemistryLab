@@ -5,8 +5,8 @@ import android.text.SpannableString;
 
 import com.chemistry.admin.chemistrylab.observer.ContainerCallBack;
 import com.chemistry.admin.chemistrylab.tooltip.ItemTip;
-import com.chemistry.admin.chemistrylab.util.SymbolConverter;
 import com.chemistry.admin.chemistrylab.util.PixelConverter;
+import com.chemistry.admin.chemistrylab.util.SymbolConverter;
 
 import java.io.Serializable;
 
@@ -40,7 +40,7 @@ public abstract class Substance implements Serializable {
 
     public void setManager(ContainerCallBack manager) {
         this.manager = manager;
-        if(manager != null){
+        if (manager != null) {
             manager.onHeightChange(this, getHeight());
         }
     }
@@ -91,14 +91,15 @@ public abstract class Substance implements Serializable {
         return maxMoleInHolder;
     }
 
-    public void removeFromContainer(){
-        if(manager != null){
+    public void removeFromContainer() {
+        if (manager != null) {
             manager.onSubstanceRemoved(this);
         }
     }
 
     /**
      * Set the width of a container which the substance is added to
+     *
      * @param width the width of the container
      */
     public void setWidth(double width) {
@@ -107,11 +108,12 @@ public abstract class Substance implements Serializable {
 
     /**
      * Split the substance to 2 substance
+     *
      * @param mole the amount of mole want to split
      * @return the substance result after splitting
      */
-    public Substance split(double mole){
-        if(mole <= 0){
+    public Substance split(double mole) {
+        if (mole <= 0) {
             return null;
         }
         Substance result = getClone();
@@ -122,11 +124,12 @@ public abstract class Substance implements Serializable {
 
     /**
      * Add amount of mole for the liquid
+     *
      * @param mole the amount of mole want to add
      * @return the amount of mole left which can't be added because the container of the liquid is full
      */
-    public double addAmount(double mole){
-        if(manager == null){
+    public double addAmount(double mole) {
+        if (manager == null) {
             this.mole += mole;
             return 0;
         }
@@ -148,13 +151,14 @@ public abstract class Substance implements Serializable {
 
     /**
      * Reduce amount of mole of the substance
+     *
      * @param mole the amount of mole want to reduce
      * @return the amount of mole lost
      */
-    public double reduceAmount(double mole){
+    public double reduceAmount(double mole) {
         double moleLost = Math.min(mole, this.mole);
         this.mole -= moleLost;
-        if(manager != null) {
+        if (manager != null) {
             manager.onHeightChange(this, -PixelConverter.calculateHeightByVolume(getVolume(moleLost), width));
         }
         return moleLost;
@@ -164,6 +168,7 @@ public abstract class Substance implements Serializable {
 
     /**
      * Get the weight by amount of mole
+     *
      * @return the weight of the substance (g)
      */
     public double getWeight(double mole) {
@@ -172,14 +177,16 @@ public abstract class Substance implements Serializable {
 
     /**
      * Get the current weight of the substance
+     *
      * @return the current weight of the substance (g)
      */
-    public double getWeight(){
+    public double getWeight() {
         return getWeight(this.mole);
     }
 
     /**
      * Get the volume by amount of mole
+     *
      * @param mole the amount of mole
      * @return the volume of the substance (ml)
      */
@@ -189,14 +196,16 @@ public abstract class Substance implements Serializable {
 
     /**
      * Get the current volume of the substance
+     *
      * @return the current volume of the substance (ml)
      */
-    public double getVolume(){
+    public double getVolume() {
         return getVolume(this.mole);
     }
 
     /**
      * Get the current height of the substance
+     *
      * @return the current height of the substance
      */
     public double getHeight() {
@@ -205,6 +214,7 @@ public abstract class Substance implements Serializable {
 
     /**
      * Get the current mole of the substance
+     *
      * @return the current mole of the substance
      */
     public double getMole() {
@@ -213,6 +223,7 @@ public abstract class Substance implements Serializable {
 
     /**
      * Get the mole by amount of volume
+     *
      * @param volume the amount of volume (ml)
      * @return the mole of the liquid
      */
@@ -236,7 +247,7 @@ public abstract class Substance implements Serializable {
         return tip;
     }
 
-    public void setTip(ItemTip tip){
+    public void setTip(ItemTip tip) {
         this.tip = tip;
     }
 }

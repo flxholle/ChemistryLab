@@ -8,10 +8,9 @@ import com.chemistry.admin.chemistrylab.chemical.reaction.ReactionEquation;
 import com.chemistry.admin.chemistrylab.chemical.solid.Solid;
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.holder_instrument.GasBottle;
 import com.chemistry.admin.chemistrylab.customview.laboratory_instrument.holder_instrument.LaboratoryHolderInstrument;
-import com.chemistry.admin.chemistrylab.database.LaboratoryDatabaseManager;
 import com.chemistry.admin.chemistrylab.database.ReactionsDatabaseManager;
-import com.chemistry.admin.chemistrylab.observer.OnReactionListener;
 import com.chemistry.admin.chemistrylab.observer.ContainerCallBack;
+import com.chemistry.admin.chemistrylab.observer.OnReactionListener;
 import com.chemistry.admin.chemistrylab.util.PixelConverter;
 
 import java.util.ArrayList;
@@ -79,7 +78,7 @@ public abstract class BaseSubstanceManager implements ContainerCallBack {
         ReactionsDatabaseManager reactionsDatabaseManager = ReactionsDatabaseManager.getInstance(context);
         boolean isBoiling = holder.isBoiling();
         for (int i = listSubstances.size() - 1; i >= 0; i--) {
-            if(listSubstances.get(i) != substance) {
+            if (listSubstances.get(i) != substance) {
                 ReactionEquation equation = reactionsDatabaseManager.findReaction(substance, listSubstances.get(i), isBoiling);
                 if (equation != null) {
                     listEquationResult.add(equation);
@@ -139,7 +138,7 @@ public abstract class BaseSubstanceManager implements ContainerCallBack {
         int size = listSubstances.size();
         Substance removedSubstance = null;
         for (int i = 0; i < size; i++) {
-            if(listSubstances.get(i) == substance){
+            if (listSubstances.get(i) == substance) {
                 removedSubstance = listSubstances.remove(i);
                 removedSubstance.getTip().destroy();
                 removedSubstance.setManager(null);
