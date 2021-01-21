@@ -87,6 +87,9 @@ public class PeriodicTableFragment extends Fragment implements EasyDialog.OnEasy
                 .setMatchParent(false)
                 .setBackgroundColor(Color.WHITE)
                 .setOnEasyDialogDismissed(this)
+                .setAnimationAlphaShow(400, 0.3f, 1.0f)
+                .setAnimationTranslationShow(EasyDialog.DIRECTION_Y, 300, -100, 0)
+                .setAnimationAlphaDismiss(300, 1.0f, 0.0f)
                 .show();
     }
 
