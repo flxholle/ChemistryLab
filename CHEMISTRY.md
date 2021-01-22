@@ -232,4 +232,4 @@ Copper Nitrate (Cu(NO3)2)
 Copper Nitrate (Cu(NO3)2)  
 Silver Nitrate (AgNO3)  
 Silver Nitrate (AgNO3)  
-Potassium Hydroxide (KOH"  
+Potassium Hydroxide (KOH)
