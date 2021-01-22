@@ -38,7 +38,6 @@ android {
 }
 
 dependencies {
-    testImplementation 'junit:junit:4.13'
     implementation 'androidx.appcompat:appcompat:1.2.0'
 
     //Horizontal listview
