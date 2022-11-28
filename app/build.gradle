@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 28
-    buildToolsVersion "24.0.3"
 
     defaultConfig {
         applicationId "com.chemistry.admin.chemistrylab"
@@ -28,13 +27,14 @@ android {
         }
     }
 
-    lintOptions {
-        checkReleaseBuilds false
-    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    lint {
+        checkReleaseBuilds false
+    }
+    namespace 'com.chemistry.admin.chemistrylab'
 }
 
 dependencies {

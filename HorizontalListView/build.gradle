@@ -2,7 +2,6 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 28
-    buildToolsVersion "24.0.3"
 
     defaultConfig {
         minSdkVersion 5
@@ -15,6 +14,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+    namespace 'com.meetme.android.horizontallistview'
 }
 
 dependencies {

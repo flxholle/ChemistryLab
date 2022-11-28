@@ -4,7 +4,13 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ChemistryLab.iml" filepath="$PROJECT_DIR$/.idea/modules/ChemistryLab.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/HorizontalListView/ChemistryLab.HorizontalListView.iml" filepath="$PROJECT_DIR$/.idea/modules/HorizontalListView/ChemistryLab.HorizontalListView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HorizontalListView/ChemistryLab.HorizontalListView.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/HorizontalListView/ChemistryLab.HorizontalListView.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HorizontalListView/ChemistryLab.HorizontalListView.main.iml" filepath="$PROJECT_DIR$/.idea/modules/HorizontalListView/ChemistryLab.HorizontalListView.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HorizontalListView/ChemistryLab.HorizontalListView.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/HorizontalListView/ChemistryLab.HorizontalListView.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ChemistryLab.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ChemistryLab.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ChemistryLab.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ChemistryLab.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ChemistryLab.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ChemistryLab.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ChemistryLab.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ChemistryLab.app.unitTest.iml" />
     </modules>
   </component>
 </project>
